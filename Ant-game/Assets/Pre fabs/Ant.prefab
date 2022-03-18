@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7364772483841004685}
   - component: {fileID: 7364772483841004686}
   - component: {fileID: 7364772483841004673}
+  - component: {fileID: 4195576525186925939}
   m_Layer: 0
   m_Name: Ant
   m_TagString: Untagged
@@ -162,3 +163,18 @@ MonoBehaviour:
   spriteRenderer: {fileID: 7364772483841004675}
   noFoodSprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
   foodSprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+--- !u!114 &4195576525186925939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7364772483841004672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a610cc4a983e3b41bb68bee15a333ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToThink: 1
+  timer: 0
+  prefab: {fileID: 9109742805270983306, guid: 2d4c8884a1ef12843bf659a0ca1f3750, type: 3}
