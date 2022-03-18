@@ -494,6 +494,7 @@ GameObject:
   - component: {fileID: 402069593}
   - component: {fileID: 402069594}
   - component: {fileID: 402069589}
+  - component: {fileID: 402069595}
   m_Layer: 0
   m_Name: Ant
   m_TagString: Untagged
@@ -518,6 +519,8 @@ MonoBehaviour:
   holdingFood: 0
   spriteRenderer: {fileID: 402069591}
   newSprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  target: {fileID: 0}
+  angle: 0
 --- !u!70 &402069590
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -592,13 +595,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 402069588}
-  m_LocalRotation: {x: -0.0000000010225824, y: 1.807596e-10, z: -0.40857297, w: 0.9127257}
-  m_LocalPosition: {x: 4.13, y: -4.43, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 34, y: -27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -48.23}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &402069593
 Rigidbody2D:
   serializedVersion: 4
@@ -641,6 +644,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   visibleTargets: []
+--- !u!114 &402069595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402069588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848862d929c27154591b58b03c7601f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &503248807 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7506791613181404686, guid: 584d9ddd4ff51c042962ef6c31c49250, type: 3}
