@@ -16,7 +16,7 @@ public class FieldOfView : MonoBehaviour{
     public List<Transform> visibleTargets = new List<Transform>();
     //public Collider2D[] targetsInViewRadius;
 
-    void FixedUpdate(){
+    void Start(){
         StartCoroutine("FindTargetsWithDelay", .2f);
     }
 

@@ -38,7 +38,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Movement.cs" />
      <Compile Include="Assets\Scripts\FieldOfView.cs" />
-     <Compile Include="Assets\scri.cs" />
+     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
