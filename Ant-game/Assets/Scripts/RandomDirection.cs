@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomDirection : MonoBehaviour
-{
+public class RandomDirection : MonoBehaviour{
+    List<int> turnAngle;
+
+
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start(){
+        turnAngle  = new List<int>();
+        turnAngle.Add(0);
+        turnAngle.Add(10);
+        turnAngle.Add(-10);
     }
 
     // Update is called once per frame
@@ -16,20 +20,24 @@ public class RandomDirection : MonoBehaviour
         
     }
 
-    public Transform Pick(List<Transform> targets){
-        List<float> weights = AssignWeights(targets);
-        return WeightedChance(targets, weights);
-    }
-
-    List<float> AssignWeights(List<Transform> targets){
+    public int Pick(List<Transform> TMid, List<Transform> TLeft, List<Transform> TRight){
         List<float> weights = new List<float>();
-        foreach (Transform target in targets){
-            weights.Add(Random.Range(0f,10f));
-        }
-        return weights;
+        weights.Add(AssignWeight(TMid));
+        weights.Add(AssignWeight(TLeft));
+        weights.Add(AssignWeight(TRight));
+
+        return WeightedChance(turnAngle, weights);
     }
 
-    Transform WeightedChance(List<Transform> targets, List<float> weights){
+    float AssignWeight(List<Transform> targets){
+        float collectiveWeight = 0;
+        foreach (Transform target in targets){
+            collectiveWeight += Random.Range(0f,10f);
+        }
+        return collectiveWeight;
+    }
+
+    int WeightedChance(List<int> result, List<float> weights){
         float sum = 0;
 
         foreach (float value in weights){
@@ -55,6 +63,6 @@ public class RandomDirection : MonoBehaviour
             }
         }
 
-        return targets[chosenID];
+        return result[chosenID];
     }
 }

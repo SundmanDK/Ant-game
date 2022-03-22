@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class Movement: MonoBehaviour{
     private Rigidbody2D rigidbodyComponent;
-    public float moveSpeed = 6;
-    public GameObject food;
     private Rigidbody2D rigidbodyComponentChild;
-    public bool holdingFood;
+    private FieldOfView fow;
     public SpriteRenderer spriteRenderer;
     public Sprite noFoodSprite;
     public Sprite foodSprite;
+    public GameObject food;
 
+    public float moveSpeed = 6;
+    public bool holdingFood;
+
+    List<float> weights;    //{left,    middle,     right}
+    List<int> turnAngles;   //{turn left, no turning, turn right}
+    
     // Start is called before the first frame update
     void Start(){
         rigidbodyComponent = GetComponent<Rigidbody2D>();
+        fow = GetComponent<FieldOfView>();
+        weights = new List<float>{1,1,1};
+        turnAngles = new List<int>{5,0,-5};
         holdingFood = false;
     }
 
@@ -33,15 +41,80 @@ public class Movement: MonoBehaviour{
     }
     // Update is called once per phycis update
     void FixedUpdate(){
-        rigidbodyComponent.velocity = transform.up * moveSpeed;
-        int chooseMove = Random.Range(0, 4);
-        if (chooseMove == 1) {
-            transform.RotateAround(transform.position, transform.forward, -10f);
-        } else if (chooseMove == 3) {
-            transform.RotateAround(transform.position, transform.forward, 10f);
-        }
+        move();
     }
 
+    void move(){
+        AssignWeightsLeftMidRight();
+        int angleIndex = WeightedChance(weights);
+        int angle = turnAngles[angleIndex];
+        
+        rigidbodyComponent.velocity = transform.up * moveSpeed;
+        transform.RotateAround(transform.position, transform.forward, angle);
+
+        //Reset weights
+        weights[0] = 1;     //Left
+        weights[1] = 1;     //Middle
+        weights[2] = 1;     //Right
+
+        //Bias toward repeating 
+        //weights[angleIndex] += 5;
+    }
+
+    float AssignWeight(List<Transform> targets){
+        float collectiveWeight = 0;
+        foreach (Transform target in targets){
+            collectiveWeight += 10;
+        }
+        return collectiveWeight;
+    }
+
+    void AssignWeightsLeftMidRight(){
+        if (fow.visibleTargetsLeft.Count > 0){   //Left
+            weights[0] += AssignWeight(fow.visibleTargetsLeft);
+        }
+        if (fow.visibleTargetsMid.Count > 0){   //Middle
+            weights[1] += AssignWeight(fow.visibleTargetsMid);
+        }
+        if (fow.visibleTargetsRight.Count > 0){ //Right
+            weights[2] += AssignWeight(fow.visibleTargetsRight);
+        }
+        //Debug.Log("weight of left: "+ weights[0] +", weight of middle: "+ weights[1] +", weight of Right: "+ weights[2]);
+    }
+
+    int WeightedChance(List<float> weights){
+        float sum = 0;
+
+        foreach (float value in weights){
+            sum += value;
+        }
+
+        float selected = Random.Range(0f, 1f) * sum;
+        //Debug.Log("selected: "+ selected);
+        int lastGoodID = -1;
+        int chosenID = 0;
+        sum = 0;
+        for (int weightIndex = 0; weightIndex < weights.Count; weightIndex++){
+            sum += weights[weightIndex];
+            //Debug.Log("sum: "+ sum);
+            if (weights[weightIndex] > 0){
+                if (selected <= sum){
+                    //Debug.Log("YEEEEEEEEEEEEEEEEES");
+                    chosenID = weightIndex;
+                    break;
+                }
+                lastGoodID = weightIndex;
+            }
+
+            if (weightIndex == weights.Count - 1){
+                chosenID = lastGoodID;
+            }
+        }
+
+        return chosenID;
+    }
+
+    /*
     void OnCollisionEnter2D(Collision2D collision2D){
         transform.RotateAround(transform.position, transform.forward, 180f);
 
@@ -61,5 +134,6 @@ public class Movement: MonoBehaviour{
             Debug.Log("a ant have delivered food");
         }
     }
+    */
 
 }
