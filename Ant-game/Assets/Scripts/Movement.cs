@@ -34,7 +34,7 @@ public class Movement: MonoBehaviour{
     // Update is called once per phycis update
     void FixedUpdate(){
         rigidbodyComponent.velocity = transform.up * moveSpeed;
-        int chooseMove = Random.Range(1, 4);
+        int chooseMove = Random.Range(0, 4);
         if (chooseMove == 1) {
             transform.RotateAround(transform.position, transform.forward, -10f);
         } else if (chooseMove == 3) {

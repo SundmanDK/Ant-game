@@ -13,11 +13,25 @@ public class FieldOfViewEditor : Editor{
         Vector3 viewAngleA = fow.DirectionFromAngle(-fow.viewAngle/2 +90, false);
         Vector3 viewAngleB = fow.DirectionFromAngle(fow.viewAngle/2 +90, false);
 
+        Vector3 viewAngle2A = fow.DirectionFromAngle(-fow.viewAngle/6 +90, false);
+        Vector3 viewAngle2B = fow.DirectionFromAngle(fow.viewAngle/6 +90, false);
+
         Handles.DrawLine(fow.transform.position, fow.transform.position + viewAngleA * fow.viewRadius);
         Handles.DrawLine(fow.transform.position, fow.transform.position + viewAngleB * fow.viewRadius);
 
+        Handles.DrawLine(fow.transform.position, fow.transform.position + viewAngle2A * fow.viewRadius);
+        Handles.DrawLine(fow.transform.position, fow.transform.position + viewAngle2B * fow.viewRadius);
+
         Handles.color = Color.red;
-        foreach (Transform visibleTarget in fow.visibleTargets){
+        foreach (Transform visibleTarget in fow.visibleTargetsMid){
+            Handles.DrawLine(fow.transform.position, visibleTarget.position);
+        }
+        Handles.color = Color.blue;
+        foreach (Transform visibleTarget in fow.visibleTargetsLeft){
+            Handles.DrawLine(fow.transform.position, visibleTarget.position);
+        }
+        Handles.color = Color.green;
+        foreach (Transform visibleTarget in fow.visibleTargetsRight){
             Handles.DrawLine(fow.transform.position, visibleTarget.position);
         }
 
