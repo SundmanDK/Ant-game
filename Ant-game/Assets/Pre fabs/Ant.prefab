@@ -160,12 +160,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5adea02efc6adeb40b62b29c7e392b21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
-  food: {fileID: 0}
-  holdingFood: 0
   spriteRenderer: {fileID: 7364772483841004675}
   noFoodSprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
   foodSprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  food: {fileID: 0}
+  moveSpeed: 6
+  holdingFood: 0
 --- !u!114 &4195576525186925939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +181,9 @@ MonoBehaviour:
   timeToThink: 1
   timer: 0
   weight: 1
-  prefab: {fileID: 9109742805270983306, guid: 2d4c8884a1ef12843bf659a0ca1f3750, type: 3}
+  mT: {fileID: 7364772483841004673}
+  prefab1: {fileID: 6012901642658095460, guid: 7e09623e87a25d549ac2082bdb0f2295, type: 3}
+  prefab2: {fileID: 1385719544258867594, guid: 2d4c8884a1ef12843bf659a0ca1f3750, type: 3}
 --- !u!114 &-4679302575545874610
 MonoBehaviour:
   m_ObjectHideFlags: 0

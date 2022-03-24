@@ -14244,6 +14244,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4195576525186925939, guid: 57a2a6b992bd55b45b3a16fe567e238c, type: 3}
+      propertyPath: mT
+      value: 
+      objectReference: {fileID: 1510393712}
+    - target: {fileID: 4195576525186925939, guid: 57a2a6b992bd55b45b3a16fe567e238c, type: 3}
+      propertyPath: prefab1
+      value: 
+      objectReference: {fileID: 6012901642658095460, guid: 7e09623e87a25d549ac2082bdb0f2295, type: 3}
+    - target: {fileID: 4195576525186925939, guid: 57a2a6b992bd55b45b3a16fe567e238c, type: 3}
+      propertyPath: prefab2
+      value: 
+      objectReference: {fileID: 1385719544258867594, guid: 2d4c8884a1ef12843bf659a0ca1f3750, type: 3}
     - target: {fileID: 7364772483841004672, guid: 57a2a6b992bd55b45b3a16fe567e238c, type: 3}
       propertyPath: m_Name
       value: Ant
@@ -14251,6 +14263,10 @@ PrefabInstance:
     - target: {fileID: 7364772483841004673, guid: 57a2a6b992bd55b45b3a16fe567e238c, type: 3}
       propertyPath: moveSpeed
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364772483841004673, guid: 57a2a6b992bd55b45b3a16fe567e238c, type: 3}
+      propertyPath: holdingFood
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7364772483841004684, guid: 57a2a6b992bd55b45b3a16fe567e238c, type: 3}
       propertyPath: m_RootOrder
@@ -15975,6 +15991,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7506791613181404686, guid: 584d9ddd4ff51c042962ef6c31c49250, type: 3}
   m_PrefabInstance: {fileID: 308437711}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1510393712 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7364772483841004673, guid: 57a2a6b992bd55b45b3a16fe567e238c, type: 3}
+  m_PrefabInstance: {fileID: 1334794664}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5adea02efc6adeb40b62b29c7e392b21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1526378496 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7506791613181404686, guid: 584d9ddd4ff51c042962ef6c31c49250, type: 3}
