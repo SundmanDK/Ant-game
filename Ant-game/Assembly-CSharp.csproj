@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
      <Compile Include="Assets\Scripts\Movement.cs" />
      <Compile Include="Assets\Scripts\FieldOfView.cs" />
 <<<<<<< Updated upstream
@@ -698,6 +699,15 @@
         <HintPath>C:\Users\askea\OneDrive\Dokumenter\GitHub\Ant-game\Ant-game\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
     </Reference>
 =======
+=======
+     <Compile Include="Assets\Scripts\RandomDirection.cs" />
+     <Compile Include="Assets\Scripts\pheromoneInstantiat.cs" />
+     <Compile Include="Assets\Scripts\typeBluePheromone.cs" />
+     <Compile Include="Assets\Scripts\Spawner.cs" />
+     <Compile Include="Assets\Scripts\Movement.cs" />
+     <Compile Include="Assets\Scripts\FieldOfView.cs" />
+     <Compile Include="Assets\Scripts\typeRedPheromone.cs" />
+>>>>>>> Stashed changes
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.30f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
