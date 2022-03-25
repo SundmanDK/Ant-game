@@ -56,15 +56,40 @@ public class Movement: MonoBehaviour{
         weights[0] = 1;     //Left
         weights[1] = 1;     //Middle
         weights[2] = 1;     //Right
-
-        //Bias toward repeating 
-        //weights[angleIndex] += 5;
     }
 
     float AssignWeight(List<Transform> targets){
         float collectiveWeight = 0;
+        //float weight;
         foreach (Transform target in targets){
-            collectiveWeight += 10;
+            if (target.gameObject.layer == 9 && !holdingFood) {  //Red
+                /*
+                //typeRedPheromone redPhero = GetComponent<typeRedPheromone>();
+                weight = 10;
+                
+                if (target.gameObject.layer == 9 && holdingFood){
+                    weight /= 10;
+                }*/
+                collectiveWeight += 10;
+
+            } else if (target.gameObject.layer == 10 && holdingFood){  //Blue
+                /*
+                //typeBluePheromone bluePhero = GetComponent<typeBluePheromone>();
+                weight = 10;
+
+                if (target.gameObject.layer == 10 && !holdingFood){
+                    weight /= 10;
+                }*/
+                collectiveWeight += 10;
+
+            } else if (target.gameObject.layer == 8 && holdingFood) {
+                collectiveWeight += 50;
+            } else {
+                if (!holdingFood){
+                    collectiveWeight += 50;
+                }
+            }
+            
         }
         return collectiveWeight;
     }
@@ -114,11 +139,11 @@ public class Movement: MonoBehaviour{
         return chosenID;
     }
 
-    /*
+    
     void OnCollisionEnter2D(Collision2D collision2D){
         transform.RotateAround(transform.position, transform.forward, 180f);
-
     }
+
     private void OnTriggerEnter2D(Collider2D col){
         if (col.gameObject.layer == 6 && holdingFood == false){
             Destroy(col.gameObject);
@@ -134,6 +159,6 @@ public class Movement: MonoBehaviour{
             Debug.Log("a ant have delivered food");
         }
     }
-    */
+    
 
 }

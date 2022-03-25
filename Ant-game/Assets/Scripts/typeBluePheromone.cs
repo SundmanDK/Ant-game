@@ -6,6 +6,7 @@ public class typeBluePheromone : MonoBehaviour
 {
 
     public float timeBeforeGone = 20f;
+    public float weight = 10f;
 
 
     // Start is called before the first frame update
