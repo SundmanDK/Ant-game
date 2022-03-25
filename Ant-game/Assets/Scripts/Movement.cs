@@ -119,7 +119,7 @@ public class Movement: MonoBehaviour{
             sum += weights[weightIndex];
             //Debug.Log("sum: "+ sum);
             if (weights[weightIndex] > 0){
-                if (selected <= sum){
+                if (sum >= selected){
                     //Debug.Log("YEEEEEEEEEEEEEEEEES");
                     chosenID = weightIndex;
                     break;
@@ -137,18 +137,20 @@ public class Movement: MonoBehaviour{
 
     
     void OnCollisionEnter2D(Collision2D collision2D){
-        transform.RotateAround(transform.position, transform.forward, 180f);
+        if (collision2D.gameObject.layer == 7){
+            transform.RotateAround(transform.position, transform.forward, 90f);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col){
-        if (col.gameObject.layer == 6 && holdingFood == false){
+        if (col.gameObject.layer == 6 && !holdingFood){
             Destroy(col.gameObject);
             holdingFood = true;
             Debug.Log("a ant is holding food");
             ChangeSprite();
             transform.RotateAround(transform.position, transform.forward, 180f);
         }
-        if(col.gameObject.layer == 8 && holdingFood == true){
+        if(col.gameObject.layer == 8 && holdingFood){
             holdingFood = false;
             ChangeSprite();
             transform.RotateAround(transform.position, transform.forward, 180f);
