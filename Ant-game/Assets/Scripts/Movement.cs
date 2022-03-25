@@ -62,28 +62,24 @@ public class Movement: MonoBehaviour{
         float collectiveWeight = 0;
         //float weight;
         foreach (Transform target in targets){
-            if (target.gameObject.layer == 9 && !holdingFood) {  //Red
-                /*
-                //typeRedPheromone redPhero = GetComponent<typeRedPheromone>();
-                weight = 10;
+            if (target.gameObject.layer == 9) {  //Red
+            
+                if (!holdingFood){
+                    collectiveWeight += 10;
+                }
+
+            } else if (target.gameObject.layer == 10){  //Blue
                 
-                if (target.gameObject.layer == 9 && holdingFood){
-                    weight /= 10;
-                }*/
-                collectiveWeight += 10;
+                if (holdingFood){
+                    collectiveWeight += 10;
+                }
 
-            } else if (target.gameObject.layer == 10 && holdingFood){  //Blue
-                /*
-                //typeBluePheromone bluePhero = GetComponent<typeBluePheromone>();
-                weight = 10;
-
-                if (target.gameObject.layer == 10 && !holdingFood){
-                    weight /= 10;
-                }*/
-                collectiveWeight += 10;
-
-            } else if (target.gameObject.layer == 8 && holdingFood) {
-                collectiveWeight += 50;
+            } else if (target.gameObject.layer == 8) { //nest
+                
+                if (holdingFood){
+                    collectiveWeight += 50;
+                }
+                
             } else {
                 if (!holdingFood){
                     collectiveWeight += 50;
