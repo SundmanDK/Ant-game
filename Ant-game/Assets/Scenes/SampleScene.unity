@@ -108740,7 +108740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4687752701114978927, guid: ed932c349d4c0ca42a5b850902343a5e, type: 3}
       propertyPath: limit
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4687752701114978927, guid: ed932c349d4c0ca42a5b850902343a5e, type: 3}
       propertyPath: colony
