@@ -38,3 +38,5 @@ public class FieldOfViewEditor : Editor{
     }
 
 }
+
+// Sourced from https://www.youtube.com/watch?v=rQG9aUWarwE&ab_channel=SebastianLague with additions to serve our purpose.

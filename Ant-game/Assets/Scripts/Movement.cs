@@ -133,6 +133,10 @@ public class Movement: MonoBehaviour{
         }
 
         return chosenID;
+        /*
+        Sourced from https://github.com/chancejs/chancejs/blob/master/docs/chance.js lines 518 - 573. 
+        Which is part of a javascript library which we rewrote in C#
+        */
     }
 
     

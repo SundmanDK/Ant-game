@@ -68,3 +68,5 @@ public class FieldOfView : MonoBehaviour{
 
     }
 }
+
+// Source from https://www.youtube.com/watch?v=rQG9aUWarwE&ab_channel=SebastianLague with additions to serve our purpose.
