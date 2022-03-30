@@ -17,10 +17,12 @@ public class Movement: MonoBehaviour{
     List<float> weights;    //{left,    middle,     right}
     List<int> turnAngles;   //{turn left, no turning, turn right}
     
+
     // Start is called before the first frame update
     void Start(){
         rigidbodyComponent = GetComponent<Rigidbody2D>();
         fow = GetComponent<FieldOfView>();
+        Physics2D.IgnoreLayerCollision(0,0,true);
         weights = new List<float>{1,1,1};
         turnAngles = new List<int>{5,0,-5};
         holdingFood = false;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class typeBluePheromone : MonoBehaviour
 {
 
-    public float timeBeforeGone = 20f;
+    public float timeBeforeGone = 0.1f;
     public float weight = 10f;
 
 
@@ -16,7 +16,7 @@ public class typeBluePheromone : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         timeBeforeGone = timeBeforeGone - Time.deltaTime;
         if (timeBeforeGone <= 0) { Destroy(gameObject); }
