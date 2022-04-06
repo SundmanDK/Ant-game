@@ -76,13 +76,13 @@ public class Movement: MonoBehaviour{
                     collectiveWeight += 10;
                 }
 
-            } else if (target.gameObject.layer == 8) { //nest
+            } else if (target.gameObject.layer == 8) { //Nest
                 
                 if (holdingFood){
                     collectiveWeight += 50;
                 }
                 
-            } else {
+            } else {    //Food
                 if (!holdingFood){
                     collectiveWeight += 50;
                 }

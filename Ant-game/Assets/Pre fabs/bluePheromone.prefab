@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f58454aa12494db4ebcd9d36a7a11dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeGone: 20
+  timeBeforeGone: 10
   weight: 10
 --- !u!212 &1375886314315755652
 SpriteRenderer:

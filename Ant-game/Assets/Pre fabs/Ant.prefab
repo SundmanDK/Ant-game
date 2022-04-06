@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 7364772483841004686}
   - component: {fileID: 7364772483841004673}
   - component: {fileID: 4195576525186925939}
-  - component: {fileID: -4679302575545874610}
   m_Layer: 0
   m_Name: Ant
   m_TagString: Untagged
@@ -184,15 +183,3 @@ MonoBehaviour:
   mT: {fileID: 7364772483841004673}
   prefab1: {fileID: 6012901642658095460, guid: 7e09623e87a25d549ac2082bdb0f2295, type: 3}
   prefab2: {fileID: 1385719544258867594, guid: 2d4c8884a1ef12843bf659a0ca1f3750, type: 3}
---- !u!114 &-4679302575545874610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7364772483841004672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 848862d929c27154591b58b03c7601f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
