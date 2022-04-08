@@ -19,25 +19,19 @@ public class pheromoneInstantiat : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (mT.holdingFood == true) { Debug.Log("I'm holding food, so I'm releasing red pheromones");
-            if (timer > timeToThink)
-            {
+        if (mT.holdingFood == true) { //Debug.Log("I'm holding food, so I'm releasing red pheromones");
+            if (timer > timeToThink){
                 Instantiate(prefab1, transform.position, Quaternion.identity);
                 timer = timer - timeToThink;
             }
 
 
-        }else if (mT.holdingFood == false) { Debug.Log("I'm not holding food, so I'm releasing blue pheromones");
-            if (timer > timeToThink)
-            {
+        }else{ //Debug.Log("I'm not holding food, so I'm releasing blue pheromones");
+            if (timer > timeToThink){
                 Instantiate(prefab2, transform.position, Quaternion.identity);
                 timer = timer - timeToThink;
             }
-
-
-
         }
-
        
     }
 }
