@@ -11,17 +11,17 @@ public class Spawner : MonoBehaviour
     private float newYPos;
  
     float spawnTimer;
+    public int moveSpeed = 10;
+    public Movement[] Ants;
  
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
         spawnTimer = rate;
     }
  
     // Update is called once per frame
-    void Update()
-    {
-        if (colony.transform.childCount < limit)
+    void Update(){
+        if (gameObject.transform.childCount < limit)
         {
             spawnTimer -= Time.deltaTime;
             if (spawnTimer <= 0f)
@@ -31,21 +31,28 @@ public class Spawner : MonoBehaviour
                     newXPos = this.transform.position.x + GetModifier();
                     newYPos = this.transform.position.y + GetModifier();
                     Instantiate(Ant, new Vector3(newXPos, newYPos)
-                        , Quaternion.Euler(0, 0, Random.Range(0f, 360f)), colony.transform);
+                        , Quaternion.Euler(0, 0, Random.Range(0f, 360f)), gameObject.transform);
                 }
                 spawnTimer = rate;
             }
         }
+
     }
  
-    float GetModifier()
-    {
+    float GetModifier(){
         float modifier = 5f;
         if (Random.Range(0, 2) > 0)
             return -modifier;
         else
             return modifier;
     }
+    public void SpeedStuff(){
+        Ants = GetComponentsInChildren<Movement>();
+        foreach(Movement mov in Ants){
+            mov.moveSpeed = moveSpeed;
+        }
+    }
+
 }
 
 
