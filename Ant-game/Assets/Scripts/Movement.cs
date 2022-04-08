@@ -6,7 +6,6 @@ public class Movement: MonoBehaviour{
     private Rigidbody2D rigidbodyComponent;
     private Rigidbody2D rigidbodyComponentChild;
     private FieldOfView fow;
-    GameObject Nest;
     private NestStorage NS;
     public SpriteRenderer spriteRenderer;
     public Sprite noFoodSprite;
@@ -23,7 +22,7 @@ public class Movement: MonoBehaviour{
     // Start is called before the first frame update
     void Start(){
         rigidbodyComponent = GetComponent<Rigidbody2D>();
-        NS = Nest.GetComponent<NestStorage>();
+        NS = GetComponentInParent<NestStorage>();
         fow = GetComponent<FieldOfView>();
         Physics2D.IgnoreLayerCollision(0,0,true);
         weights = new List<float>{1,2,1};
@@ -131,7 +130,7 @@ public class Movement: MonoBehaviour{
         }
         if(col.gameObject.layer == 8 && holdingFood){
             holdingFood = false;
-            //NS.food += 1;
+            NS.food += 1;
             ChangeSprite();
             transform.RotateAround(transform.position, transform.forward, 180f);
             Debug.Log("a ant have delivered food");
