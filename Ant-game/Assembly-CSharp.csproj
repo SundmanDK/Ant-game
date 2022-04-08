@@ -47,7 +47,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\RandomDirection.cs" />
+     <Compile Include="Assets\FoodCounter.cs" />
      <Compile Include="Assets\Scripts\pheromoneInstantiat.cs" />
      <Compile Include="Assets\Scripts\typeBluePheromone.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
