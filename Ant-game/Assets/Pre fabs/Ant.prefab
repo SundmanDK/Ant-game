@@ -163,8 +163,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 7364772483841004675}
   noFoodSprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
   foodSprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  food: {fileID: 0}
-  moveSpeed: 6
+  nest: {fileID: 4687752701114978927, guid: ed932c349d4c0ca42a5b850902343a5e, type: 3}
+  moveSpeed: 12
   holdingFood: 0
 --- !u!114 &4195576525186925939
 MonoBehaviour:

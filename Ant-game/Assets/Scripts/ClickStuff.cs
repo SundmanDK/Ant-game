@@ -6,11 +6,20 @@ using UnityEngine.UI;
 public class ClickStuff : MonoBehaviour
 {
     public Image buttonBackground;
-    public Movement Move;
+    public Spawner Move;
+    private bool clicked = false;
 
     public void ButtonClicked(){
-        Move.moveSpeed = Move.moveSpeed + 10;
         buttonBackground.color = Random.ColorHSV();
         Debug.Log("clickyli click click");
+        Move.SpeedStuff();
+        if (clicked){
+            Move.moveSpeed = 40;
+            clicked = false;
+        } else{
+            Move.moveSpeed = 12;
+            clicked = true;
+        }
     }
+    
 }

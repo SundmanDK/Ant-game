@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
 public class Movement: MonoBehaviour{
@@ -9,8 +10,6 @@ public class Movement: MonoBehaviour{
     public SpriteRenderer spriteRenderer;
     public Sprite noFoodSprite;
     public Sprite foodSprite;
-    public GameObject food;
-
     public float moveSpeed = 6;
     public bool holdingFood;
 
@@ -40,7 +39,7 @@ public class Movement: MonoBehaviour{
 
     }
     // Update is called once per phycis update
-    void FixedUpdate(){
+    void FixedUpdate(){        
         move();
     }
 
@@ -63,8 +62,32 @@ public class Movement: MonoBehaviour{
 
     float AssignWeight(List<Transform> targets){
         float collectiveWeight = 0;
+        //float weight;
         foreach (Transform target in targets){
-            collectiveWeight += 10;
+            if (target.gameObject.layer == 9) {  //Red
+            
+                if (!holdingFood){
+                    collectiveWeight += 10;
+                }
+
+            } else if (target.gameObject.layer == 10){  //Blue
+                
+                if (holdingFood){
+                    collectiveWeight += 10;
+                }
+
+            } else if (target.gameObject.layer == 8) { //nest
+                
+                if (holdingFood){
+                    collectiveWeight += 50;
+                }
+                
+            } else { //food
+                if (!holdingFood){
+                    collectiveWeight += 50;
+                }
+            }
+            
         }
         return collectiveWeight;
     }
@@ -98,7 +121,7 @@ public class Movement: MonoBehaviour{
             sum += weights[weightIndex];
             //Debug.Log("sum: "+ sum);
             if (weights[weightIndex] > 0){
-                if (selected <= sum){
+                if (sum >= selected){
                     //Debug.Log("YEEEEEEEEEEEEEEEEES");
                     chosenID = weightIndex;
                     break;
@@ -114,26 +137,28 @@ public class Movement: MonoBehaviour{
         return chosenID;
     }
 
-    /*
+    
     void OnCollisionEnter2D(Collision2D collision2D){
-        transform.RotateAround(transform.position, transform.forward, 180f);
-
+        if (collision2D.gameObject.layer == 7){
+            transform.RotateAround(transform.position, transform.forward, 90f);
+        }
     }
+
     private void OnTriggerEnter2D(Collider2D col){
-        if (col.gameObject.layer == 6 && holdingFood == false){
+        if (col.gameObject.layer == 6 && !holdingFood){
             Destroy(col.gameObject);
             holdingFood = true;
             Debug.Log("a ant is holding food");
             ChangeSprite();
             transform.RotateAround(transform.position, transform.forward, 180f);
         }
-        if(col.gameObject.layer == 8 && holdingFood == true){
+        if(col.gameObject.layer == 8 && holdingFood){
             holdingFood = false;
             ChangeSprite();
             transform.RotateAround(transform.position, transform.forward, 180f);
             Debug.Log("a ant have delivered food");
         }
     }
-    */
+    
 
 }
