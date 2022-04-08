@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4687752701114978924}
   - component: {fileID: 4687752701114978927}
   - component: {fileID: 4687752701114978898}
-  - component: {fileID: 2789402059105242003}
   - component: {fileID: 4687752701114978899}
   m_Layer: 8
   m_Name: Nest
@@ -99,7 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ant: {fileID: 7364772483841004672, guid: 57a2a6b992bd55b45b3a16fe567e238c, type: 3}
-  colony: {fileID: 0}
   numberToSpawn: 1
   limit: 10
   rate: 1
@@ -121,22 +119,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 4.5
---- !u!58 &2789402059105242003
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4687752701114978926}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 4.4
 --- !u!50 &4687752701114978899
 Rigidbody2D:
   serializedVersion: 4

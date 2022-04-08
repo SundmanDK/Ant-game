@@ -3,7 +3,6 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject Ant;
-    public GameObject colony;
     public int numberToSpawn;
     public int limit = 20;
     public float rate;
@@ -32,6 +31,7 @@ public class Spawner : MonoBehaviour
                     newYPos = this.transform.position.y + GetModifier();
                     Instantiate(Ant, new Vector3(newXPos, newYPos)
                         , Quaternion.Euler(0, 0, Random.Range(0f, 360f)), gameObject.transform);
+                    SpeedStuff();
                 }
                 spawnTimer = rate;
             }

@@ -7,6 +7,8 @@ public class ClickStuff : MonoBehaviour
 {
     public Image buttonBackground;
     public Spawner Move;
+    public int upperLimitSpeed = 12;
+    public int lowerLimitSpeed = 6;
     private bool clicked = false;
 
     public void ButtonClicked(){
@@ -14,10 +16,10 @@ public class ClickStuff : MonoBehaviour
         Debug.Log("clickyli click click");
         Move.SpeedStuff();
         if (clicked){
-            Move.moveSpeed = 40;
+            Move.moveSpeed = upperLimitSpeed;
             clicked = false;
         } else{
-            Move.moveSpeed = 12;
+            Move.moveSpeed = lowerLimitSpeed;
             clicked = true;
         }
     }
