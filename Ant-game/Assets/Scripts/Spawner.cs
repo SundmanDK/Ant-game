@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
     private float newYPos;
  
     float spawnTimer;
-    public int moveSpeed = 10;
+    public int moveSpeed = 6;
     public Movement[] Ants;
  
     // Start is called before the first frame update

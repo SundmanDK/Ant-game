@@ -102,7 +102,7 @@ MonoBehaviour:
   numberToSpawn: 1
   limit: 10
   rate: 1
-  moveSpeed: 10
+  moveSpeed: 6
   Ants: []
 --- !u!58 &4687752701114978898
 CircleCollider2D:
