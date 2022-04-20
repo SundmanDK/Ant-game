@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class ClickStuff : MonoBehaviour
 {
-    public Image buttonBackground;
     public Spawner Move;
     public int upperLimitSpeed = 12;
     public int lowerLimitSpeed = 6;
@@ -14,20 +13,19 @@ public class ClickStuff : MonoBehaviour
     private int food;
 
     public void ButtonClicked(){
-        buttonBackground.color = Random.ColorHSV();
-        Debug.Log("clickyli click click");
+        //Debug.Log("clickyli click click");
         Move.SpeedStuff();
         food = nestStorage.food;
-        if (clicked && food >= 10){
+        if (clicked && food >= 10){ 
             Move.moveSpeed = lowerLimitSpeed;
             clicked = false;
             nestStorage.food -= 10;
-            Debug.Log("clicked false speed 12");
+            //Debug.Log("clicked false speed 6");
         } else if (!clicked && food >= 10){
             Move.moveSpeed = upperLimitSpeed;
             clicked = true;
             nestStorage.food -= 10;
-            Debug.Log("clicked true speed 6");
+            //Debug.Log("clicked true speed 12");
         }
     }
     
