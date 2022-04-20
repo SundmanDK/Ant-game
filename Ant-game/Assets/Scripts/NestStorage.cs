@@ -7,6 +7,6 @@ public class NestStorage : MonoBehaviour{
 
     // Start is called before the first frame update
     void Start() {
-        food = 0;
+        food = 20;
     }
 }
