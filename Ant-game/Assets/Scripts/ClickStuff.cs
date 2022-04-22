@@ -14,7 +14,6 @@ public class ClickStuff : MonoBehaviour
 
     public void ButtonClicked(){
         //Debug.Log("clickyli click click");
-        Move.SpeedStuff();
         food = nestStorage.food;
         if (clicked && food >= 10){ 
             Move.moveSpeed = lowerLimitSpeed;
@@ -27,6 +26,7 @@ public class ClickStuff : MonoBehaviour
             nestStorage.food -= 10;
             //Debug.Log("clicked true speed 12");
         }
+        Move.SpeedStuff();
     }
     
 }
