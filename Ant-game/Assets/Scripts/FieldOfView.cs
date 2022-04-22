@@ -49,11 +49,8 @@ public class FieldOfView : MonoBehaviour{
                 visibleTargetsRight.Add(target);
 
             } else if (Vector3.Angle(transform.up, directionToTarget) < viewAngle/6){
-                float distanceToTarget = Vector3.Distance(transform.position, target.position);
-
-                if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstacleMask)){
-                    visibleTargetsMid.Add(target);
-                }
+                visibleTargetsMid.Add(target);
+            
             }
         }
     }
