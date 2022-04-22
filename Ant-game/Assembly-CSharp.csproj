@@ -43,7 +43,6 @@
      <Compile Include="Assets\Scripts\NestStorage.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Scripts\Movement.cs" />
-     <Compile Include="Assets\Scripts\DisableBoarders.cs" />
      <Compile Include="Assets\Scripts\FieldOfView.cs" />
      <Compile Include="Assets\Scripts\typeRedPheromone.cs" />
     <Reference Include="UnityEngine">
