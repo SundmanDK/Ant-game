@@ -61,25 +61,27 @@ public class Movement: MonoBehaviour{
     float AssignWeight(List<Transform> targets){
         float collectiveWeight = 0;
         foreach (Transform target in targets){
-            if (target.gameObject.layer == 9) {  //Red
-                if (!holdingFood){
-                    collectiveWeight += 10;
-                } else {
-                    collectiveWeight += 0.1f;
-                }
-            } else if (target.gameObject.layer == 10){  //Blue
-                if (holdingFood){
-                    collectiveWeight += 10;
-                } else {
-                    collectiveWeight += 0.1f;
-                }
-            } else if (target.gameObject.layer == 8) { //Nest
-                if (holdingFood){
-                    collectiveWeight += 500;
-                }
-            } else {    //Food
-                if (!holdingFood){
-                    collectiveWeight += 500;
+            if (target != null){
+                if (target.gameObject.layer == 9) {  //Red
+                    if (!holdingFood){
+                        collectiveWeight += 10;
+                    } else {
+                        collectiveWeight += 0.1f;
+                    }
+                } else if (target.gameObject.layer == 10){  //Blue
+                    if (holdingFood){
+                        collectiveWeight += 10;
+                    } else {
+                        collectiveWeight += 0.1f;
+                    }
+                } else if (target.gameObject.layer == 8) { //Nest
+                    if (holdingFood){
+                        collectiveWeight += 500;
+                    }
+                } else {    //Food
+                    if (!holdingFood){
+                        collectiveWeight += 500;
+                    }
                 }
             }
         }

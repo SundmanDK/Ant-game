@@ -6,17 +6,17 @@ public class pheromoneInstantiat : MonoBehaviour
     public float timeToThink = 2.0f;
     public float timer = 0.0f;
     public float weight = 1;
-    public Movement mT;
+    private Movement mT;
     public Transform prefab1;
     public Transform prefab2;
     void Start()
     {
-        
+        mT = GetComponent<Movement>();
     }
 
 
 
-    void Update()
+    void FixedUpdate()
     {
         timer += Time.deltaTime;
         if (mT.holdingFood == true) { //Debug.Log("I'm holding food, so I'm releasing red pheromones");
