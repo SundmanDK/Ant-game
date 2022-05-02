@@ -36,20 +36,21 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\curencyTab.cs" />
+     <Compile Include="Assets\FoodCounter.cs" />
      <Compile Include="Assets\Scripts\ClickStuff.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\pheromoneInstantiat.cs" />
      <Compile Include="Assets\Scripts\typeBluePheromone.cs" />
      <Compile Include="Assets\Scripts\NestStorage.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
+     <Compile Include="Assets\Scripts\ControlableAnt.cs" />
      <Compile Include="Assets\Scripts\Movement.cs" />
      <Compile Include="Assets\Scripts\DisableBoarders.cs" />
      <Compile Include="Assets\Scripts\FieldOfView.cs" />
      <Compile Include="Assets\Scripts\typeRedPheromone.cs" />
-     <Compile Include="Assets\FoodCounter.cs" />
-     <Compile Include="Assets\Scripts\curencyTab.cs" />
-     <Compile Include="Assets\Scripts\ControlableAnt.cs" />
      <Compile Include="Assets\Scripts\GoToMarker.cs" />
+     <Compile Include="Assets\Scripts\pheromoneControlableAnt.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.27f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

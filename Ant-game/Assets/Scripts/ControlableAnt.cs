@@ -13,7 +13,7 @@ public class ControlableAnt : MonoBehaviour{
     public GameObject food;
 
     public float moveSpeed = 8;
-    private bool holdingFood;
+    public bool holdingFood;
     private bool goTo = false;
     private float angle;
     Camera viewCamera;

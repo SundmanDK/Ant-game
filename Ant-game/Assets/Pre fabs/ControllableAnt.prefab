@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4345894374680401507}
   - component: {fileID: 4345894374680401506}
   - component: {fileID: 4345894374680401517}
-  - component: {fileID: 4345894374680401516}
+  - component: {fileID: -8079183091384580027}
   - component: {fileID: 4345894374680401510}
   - component: {fileID: 4345894374680401505}
   m_Layer: 0
@@ -104,6 +104,7 @@ MonoBehaviour:
   foodSprite: {fileID: 21300000, guid: 1a55b3e332d79b541a354ed25aff0374, type: 3}
   food: {fileID: 0}
   moveSpeed: 6
+  holdingFood: 0
 --- !u!114 &4345894374680401517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +128,7 @@ MonoBehaviour:
   visibleTargetsMid: []
   visibleTargetsLeft: []
   visibleTargetsRight: []
---- !u!114 &4345894374680401516
+--- !u!114 &-8079183091384580027
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,14 +137,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4345894374680401519}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a610cc4a983e3b41bb68bee15a333ee, type: 3}
+  m_Script: {fileID: 11500000, guid: b7ab7906fa2b3c946a7c21fb7b484be7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToThink: 0.5
+  timeToThink: 2
   timer: 0
   weight: 1
-  prefab1: {fileID: 6012901642658095460, guid: 7e09623e87a25d549ac2082bdb0f2295, type: 3}
-  prefab2: {fileID: 1385719544258867594, guid: 2d4c8884a1ef12843bf659a0ca1f3750, type: 3}
+  redPheromone: {fileID: 6012901642658095460, guid: 7e09623e87a25d549ac2082bdb0f2295, type: 3}
+  bluePheromone: {fileID: 1385719544258867594, guid: 2d4c8884a1ef12843bf659a0ca1f3750, type: 3}
 --- !u!70 &4345894374680401510
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
