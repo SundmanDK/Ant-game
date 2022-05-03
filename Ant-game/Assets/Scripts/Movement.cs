@@ -46,7 +46,6 @@ public class Movement: MonoBehaviour{
 
     void move(){
         AssignWeightsLeftMidRight();
-        //int angleIndex = WeightedChance();//weights);
         int angle = turnAngles[WeightedChance()];
         
         rigidbodyComponent.velocity = transform.up * moveSpeed;
@@ -98,7 +97,6 @@ public class Movement: MonoBehaviour{
         if (fow.visibleTargetsRight.Count > 0){ //Right
             weights[2] += AssignWeight(fow.visibleTargetsRight);
         }
-        //Debug.Log("weight of left: "+ weights[0] +", weight of middle: "+ weights[1] +", weight of Right: "+ weights[2]);
     }
 
     int WeightedChance(){
@@ -123,59 +121,17 @@ public class Movement: MonoBehaviour{
     }
 
     private void OnTriggerEnter2D(Collider2D col){
-        if (col.gameObject.layer == 6 && !holdingFood){
-            Destroy(col.gameObject);
+        if (col.gameObject.layer == 6 && !holdingFood){     //pick up food
+            //Destroy(col.gameObject);
             holdingFood = true;
-            Debug.Log("a ant is holding food");
             ChangeSprite();
             transform.RotateAround(transform.position, transform.forward, 180f);
         }
-        if(col.gameObject.layer == 8 && holdingFood){
+        if(col.gameObject.layer == 8 && holdingFood){       //deliver food to nest
             holdingFood = false;
             NS.food += 1;
             ChangeSprite();
             transform.RotateAround(transform.position, transform.forward, 180f);
-            Debug.Log("a ant have delivered food");
         }
     }
-    
-
-    /*
-    int WeightedChance(List<float> weights){
-        float sum = 0;
-
-        foreach (float value in weights){
-            sum += value;
-        }
-
-        float selected = Random.Range(0f, 1f) * sum;
-        //Debug.Log("selected: "+ selected);
-        int lastGoodID = -1;
-        int chosenID = 0;
-        sum = 0;
-        for (int weightIndex = 0; weightIndex < weights.Count; weightIndex++){
-            sum += weights[weightIndex];
-            //Debug.Log("sum: "+ sum);
-            if (weights[weightIndex] > 0){
-                if (sum >= selected){
-                    //Debug.Log("YEEEEEEEEEEEEEEEEES");
-                    chosenID = weightIndex;
-                    break;
-                }
-                lastGoodID = weightIndex;
-            }
-
-            if (weightIndex == weights.Count - 1){
-                chosenID = lastGoodID;
-            }
-        }
-
-        return chosenID;
-        /*
-        Sourced from https://github.com/chancejs/chancejs/blob/master/docs/chance.js lines 518 - 573. 
-        Which is part of a javascript library which we rewrote in C#
-        
-    }
-*/
-
 }
