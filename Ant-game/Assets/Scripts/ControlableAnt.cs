@@ -11,12 +11,20 @@ public class ControlableAnt : MonoBehaviour{
     public Sprite noFoodSprite;
     public Sprite foodSprite;
     public GameObject food;
+    
 
     public float moveSpeed = 8;
     public bool holdingFood;
     private bool goTo = false;
     private float angle;
     Camera viewCamera;
+
+    public int maxHealth = 25;
+    public int currentHealth;
+
+    public HealthBar healthBar;
+
+    
 
     void Start(){
         rigidbodyComponent = GetComponent<Rigidbody2D>();
@@ -26,11 +34,24 @@ public class ControlableAnt : MonoBehaviour{
         viewCamera = Camera.main;
         Physics2D.IgnoreLayerCollision(0,0,true);
         holdingFood = false;
+
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     void Update(){
         if (Input.GetMouseButtonDown(0))
             goTo = true;
+        
+        if (Input.GetKeyDown(KeyCode.Space)){
+            TakeDamage(5);
+        }
+    }
+
+    void TakeDamage(int damage){
+        currentHealth -= damage;
+
+        healthBar.SetHealth(currentHealth);
     }
 
     void FixedUpdate(){
