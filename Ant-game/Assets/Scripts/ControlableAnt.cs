@@ -77,7 +77,6 @@ public class ControlableAnt : MonoBehaviour{
 
     private void OnTriggerEnter2D(Collider2D col){
         if (col.gameObject.layer == 6 && !holdingFood){
-            Destroy(col.gameObject);
             holdingFood = true;
             ChangeSprite();
         }
