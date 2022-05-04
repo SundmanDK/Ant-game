@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour{
     private float tuneBorderRight = 75f;
     private float tuneBorderLeft  = 75f;
     private float tuneBorderUp    = 75f;
-    private float tuneBorderDown  = 150f;
+   // private float tuneBorderDown  = 150f;
 
     private float boundsCameraRight  =  40f;
     private float boundsCameraLeft   = -50f;
