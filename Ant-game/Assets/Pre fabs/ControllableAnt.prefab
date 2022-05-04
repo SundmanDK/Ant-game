@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ab7906fa2b3c946a7c21fb7b484be7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToThink: 2
+  timeToThink: 0.5
   timer: 0
   weight: 1
   redPheromone: {fileID: 6012901642658095460, guid: 7e09623e87a25d549ac2082bdb0f2295, type: 3}

@@ -121,13 +121,13 @@ public class Movement: MonoBehaviour{
     }
 
     private void OnTriggerEnter2D(Collider2D col){
-        if (col.gameObject.layer == 6 && !holdingFood){
-            Destroy(col.gameObject);
+        if (col.gameObject.layer == 6 && !holdingFood){     //pick up food
+            //Destroy(col.gameObject);
             holdingFood = true;
             ChangeSprite();
             transform.RotateAround(transform.position, transform.forward, 180f);
         }
-        if(col.gameObject.layer == 8 && holdingFood){
+        if(col.gameObject.layer == 8 && holdingFood){       //deliver food to nest
             holdingFood = false;
             NS.food += 1;
             ChangeSprite();
