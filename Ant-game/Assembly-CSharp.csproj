@@ -51,6 +51,9 @@
      <Compile Include="Assets\Scripts\typeRedPheromone.cs" />
      <Compile Include="Assets\Scripts\GoToMarker.cs" />
      <Compile Include="Assets\Scripts\pheromoneControlableAnt.cs" />
+     <Compile Include="Assets\Scripts\SpiderStuff.cs" />
+     <Compile Include="Assets\Scripts\EnemyFieldOfView.cs" />
+     <Compile Include="Assets\Scripts\homeCall.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.27f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
