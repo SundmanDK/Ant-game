@@ -10,10 +10,10 @@ public class CameraController : MonoBehaviour{
     private float tuneBorderUp    = 75f;
    // private float tuneBorderDown  = 150f;
 
-    private float boundsCameraRight  =  40f;
-    private float boundsCameraLeft   = -50f;
-    private float boundsCameraTop    =  46f;
-    private float boundsCameraBottom = -52f;
+    private float boundsCameraRight  =  100f;
+    private float boundsCameraLeft   = -100f;
+    private float boundsCameraTop    =  100f;
+    private float boundsCameraBottom = -100f;
 
     void Update()
     {
@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour{
             transform.Translate(-panSpeed, 0f, 0f);}
         if (transform.position.y <= boundsCameraTop  && Input.GetKey(KeyCode.W)  || transform.position.y <= boundsCameraTop  && mousePos.y >= Screen.height-tuneBorderUp ) {
             transform.Translate(0f, panSpeed, 0f);}
-        if (transform.position.y >= boundsCameraBottom && Input.GetKey(KeyCode.S)|| transform.position.y >= boundsCameraBottom && mousePos.y-100 <= 0+tuneBorderRight && mousePos.y>= 100) {
+        if (transform.position.y >= boundsCameraBottom && Input.GetKey(KeyCode.S)|| transform.position.y >= boundsCameraBottom && mousePos.y <=  300 && mousePos.y >= 230 ) {
             transform.Translate(0f, -panSpeed, 0f);}
        
     }
