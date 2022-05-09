@@ -1,37 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class NestStorage : MonoBehaviour{
     public int food;
+    private int oldFood;
     public int score;
     public int gold;
-    public int accountedFood;
+
+    public TMPro.TextMeshProUGUI textDisplayFood;
+    private Color numberColor;
 
     // Start is called before the first frame update
     void Start() {
         food  = 0;
-        accountedFood = 0;
+        oldFood = 0;
         score = 0;
         gold  = 0;
 
+        Color numberColor = new Color(0, 0, 0);
+        textDisplayFood.color = numberColor;
 
-  
 
     }
 
 
     void Update(){
-        if (food != accountedFood)
-        {
-            accountedFood = food;
-            UpdateScore();
-            UpdateGold();
-       
-                     Debug.Log("The food" + food);
-                     Debug.Log("The gold" + gold);
-                     Debug.Log("The score" + score);
+        if (food != oldFood) {
+        everyFood();
         }
+        oldFood = food;
+    }
+
+    void everyFood()
+    {
+        UpdateGold();
+        UpdateScore();
     }
 
     void UpdateScore(){
@@ -40,5 +46,6 @@ public class NestStorage : MonoBehaviour{
     }
     void UpdateGold(){
         gold += 10;
+        textDisplayFood.text = gold.ToString();
     }
 }
