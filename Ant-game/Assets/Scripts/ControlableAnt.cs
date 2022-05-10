@@ -50,7 +50,13 @@ public class ControlableAnt : MonoBehaviour{
 
     void TakeDamage(int damage){
         currentHealth -= damage;
+        updateHealthbar();
 
+
+    }
+
+   public void updateHealthbar()
+    {
         healthBar.SetHealth(currentHealth);
     }
 

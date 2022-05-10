@@ -9,23 +9,45 @@ public class NestStorage : MonoBehaviour{
     private int oldFood;
     public int score;
     public int gold;
+    public int maxHealth;
+    public int currentHealth;
 
-    public TMPro.TextMeshProUGUI textDisplayFood;
+    public Button spawnButton;
+    public Button healthButton;
+    public Button healButton;
+
+    public TextMeshPro textDisplayFood;
     public TextMeshPro FloatingText;
-    private Color numberColor;
+    public GameObject Ant;
+    public GameObject ControllableAnt;
+    private ControlableAnt CA;
+    
+    public Color numberWhiteColor;
+    public Color numberRedColor;
+   
+
 
     // Start is called before the first frame update
     void Start() {
-        food  = 0;
+        food    = 0;
         oldFood = 0;
-        score = 0;
-        gold  = 0;
-      
-        FloatingText.text = "10";
-        Color numberColor = new Color(255, 255, 255);
-        textDisplayFood.color = numberColor;
+        score   = 0;
+        gold    = 0;
+         CA = ControllableAnt.GetComponent<ControlableAnt>();
+
+        FloatingText.text     = "10";
+        Color numberWhiteColor= new Color(255,255,255);
+        Color numberRedColor  = new Color(255,0,0);
+
+        Button spawnBtn = spawnButton.GetComponent<Button>();
+        spawnBtn.onClick.AddListener(checkSpawnButton);
 
 
+        Button healBtn = healButton.GetComponent<Button>();
+        healBtn.onClick.AddListener(checkHealButton);
+
+        Button healthBtn = healthButton.GetComponent<Button>();
+        healthBtn.onClick.AddListener(checkHealthButton);
     }
 
 
@@ -53,11 +75,64 @@ public class NestStorage : MonoBehaviour{
         textDisplayFood.text = gold.ToString();
     }
 
-    void CallFloatingText()
-        {
+    void CallFloatingText(){
         Instantiate(FloatingText,new Vector3(0f,0f,0f),Quaternion.identity);
 
-
+    }
+   void checkSpawnButton()
+    {
+        if (gold >= 250){
+        executeSpawnButton();
         }
-   
-}
+    }
+    void executeSpawnButton()
+    {
+        gold = gold - 250;
+        Instantiate(Ant, new Vector3(0f, 0f, 0f), Quaternion.identity, gameObject.transform);
+        textDisplayFood.text = gold.ToString();
+    }
+    
+
+    void checkHealButton()
+    {
+        if (gold >= 250)
+        {
+            executeHealButton();
+        }
+    }
+    void executeHealButton()
+    {
+        gold = gold - 250;
+      CA.currentHealth = CA.currentHealth + 2;
+        CA.updateHealthbar();
+        textDisplayFood.text = gold.ToString();
+    }
+
+    void checkHealthButton()
+    {
+        failedMoney();
+        if (gold >= 250)
+        {
+            executeHealthButton();
+        }
+    }
+    void executeHealthButton()
+    {
+        gold = gold - 250;
+   CA.maxHealth = CA.maxHealth + 2;
+        CA.updateHealthbar();
+        textDisplayFood.text = gold.ToString();
+    }
+
+    void failedMoney()
+    {
+        textDisplayFood.color = numberRedColor;
+        textDisplayFood.alpha = 255f;
+        textDisplayFood.text = gold.ToString();
+        textDisplayFood.color = numberWhiteColor;
+        textDisplayFood.alpha = 255f;
+
+    }
+
+    }
+    
