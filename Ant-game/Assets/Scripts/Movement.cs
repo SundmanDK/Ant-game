@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movement: MonoBehaviour{
     private Rigidbody2D rigidbodyComponent;
     private Rigidbody2D rigidbodyComponentChild;
+    private FoodGrouping FG;
     private FieldOfView fow;
     private NestStorage NS;
     public SpriteRenderer spriteRenderer;
@@ -122,7 +123,9 @@ public class Movement: MonoBehaviour{
 
     private void OnTriggerEnter2D(Collider2D col){
         if (col.gameObject.layer == 6 && !holdingFood){     //pick up food
-            //Destroy(col.gameObject);
+            FG = col.gameObject.GetComponent<FoodGrouping>();
+            FG.amountOfFood -= 1;
+            FG.updateSize();
             holdingFood = true;
             ChangeSprite();
             transform.RotateAround(transform.position, transform.forward, 180f);

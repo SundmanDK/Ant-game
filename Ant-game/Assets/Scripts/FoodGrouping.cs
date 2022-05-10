@@ -23,17 +23,10 @@ public class FoodGrouping : MonoBehaviour{
     }
 
     // Update is called once per frame
-    void updateSize(){
+    public void updateSize(){
         scaleBasedOnFoodAmount = 1 + (amountOfFood / 10);
         Vector3 newScale = new Vector3(scaleBasedOnFoodAmount, scaleBasedOnFoodAmount, 1);
         transform.localScale = newScale;
-        //circleCol.radius = scaleBasedOnFoodAmount/2;
     }
 
-    private void OnTriggerEnter2D(Collider2D col){
-        if (col.gameObject.layer == 0){
-            amountOfFood -= 1;
-            updateSize();
-        }
-    }
 }
