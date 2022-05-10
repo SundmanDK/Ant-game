@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement: MonoBehaviour{
     private Rigidbody2D rigidbodyComponent;
-    private Rigidbody2D rigidbodyComponentChild;
+    //private Rigidbody2D rigidbodyComponentChild;
     private FoodGrouping FG;
     private FieldOfView fow;
     private NestStorage NS;

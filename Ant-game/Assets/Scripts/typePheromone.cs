@@ -2,14 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class typePheromone : MonoBehaviour
-{
-
-
-    public float timeBeforeGone = 20f;
-    public float weight = 10f;
-
-
+public class typePheromone : MonoBehaviour{
+    public float timeBeforeGone = 40f;
 
     // Start is called before the first frame update
     void Start()

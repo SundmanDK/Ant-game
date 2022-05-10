@@ -38,7 +38,7 @@ public class NestStorage : MonoBehaviour{
 
     void everyFood()
     {
-        CallFloatingText();
+        //CallFloatingText();
         UpdateGold();
         UpdateScore();
     
