@@ -27,6 +27,7 @@ public class SpiderStuff : MonoBehaviour
 
     void move(){
         rigidbodyComponent.velocity = transform.up * moveSpeed;
+        transform.RotateAround(transform.position, transform.forward, Random.Range(-5f,5f));
     }
     private void followAnt(){
         if (fow.visibleTargetsMid.Count > 0){
