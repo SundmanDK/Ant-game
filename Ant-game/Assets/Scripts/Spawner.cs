@@ -8,25 +8,19 @@ public class Spawner : MonoBehaviour
     public float rate;
     private float newXPos;
     private float newYPos;
- 
     float spawnTimer;
     public int moveSpeed = 6;
     public Movement[] Ants;
  
-    // Start is called before the first frame update
     void Start(){
         spawnTimer = rate;
     }
  
-    // Update is called once per frame
     void Update(){
-        if (gameObject.transform.childCount < limit)
-        {
+        if (gameObject.transform.childCount < limit){
             spawnTimer -= Time.deltaTime;
-            if (spawnTimer <= 0f)
-            {
-                for (int i = 0; i < numberToSpawn; i++)
-                {
+            if (spawnTimer <= 0f){
+                for (int i = 0; i < numberToSpawn; i++){
                     newXPos = this.transform.position.x + GetModifier();
                     newYPos = this.transform.position.y + GetModifier();
                     Instantiate(Ant, new Vector3(newXPos, newYPos)
@@ -36,7 +30,6 @@ public class Spawner : MonoBehaviour
                 spawnTimer = rate;
             }
         }
-
     }
  
     float GetModifier(){
@@ -46,13 +39,13 @@ public class Spawner : MonoBehaviour
         else
             return modifier;
     }
+
     public void SpeedStuff(){
         Ants = GetComponentsInChildren<Movement>();
         foreach(Movement mov in Ants){
             mov.moveSpeed = moveSpeed;
         }
     }
-
 }
 
 
