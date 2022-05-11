@@ -83,7 +83,7 @@ public class NestStorage : MonoBehaviour{
     {
         if (gold >= 250){
         executeSpawnButton();
-        }
+        }else failedMoney();
     }
     void executeSpawnButton()
     {
@@ -98,23 +98,23 @@ public class NestStorage : MonoBehaviour{
         if (gold >= 250)
         {
             executeHealButton();
-        }
+        }else failedMoney();
     }
     void executeHealButton()
     {
         gold = gold - 250;
-      CA.currentHealth = CA.currentHealth + 2;
+     if(CA.currentHealth<CA.maxHealth){ CA.currentHealth = CA.currentHealth + 2;}
         CA.updateHealthbar();
         textDisplayFood.text = gold.ToString();
     }
 
     void checkHealthButton()
     {
-        failedMoney();
+        
         if (gold >= 250)
         {
             executeHealthButton();
-        }
+        }else failedMoney();
     }
     void executeHealthButton()
     {
@@ -129,10 +129,12 @@ public class NestStorage : MonoBehaviour{
         textDisplayFood.color = numberRedColor;
         textDisplayFood.alpha = 255f;
         textDisplayFood.text = gold.ToString();
-        textDisplayFood.color = numberWhiteColor;
-        textDisplayFood.alpha = 255f;
+       Invoke("changeColorBack",1);
 
     }
-
+    void changeColorBack(){
+ textDisplayFood.color = numberWhiteColor;
+        textDisplayFood.alpha = 255f;
+    }
     }
     

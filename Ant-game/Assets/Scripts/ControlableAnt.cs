@@ -58,6 +58,7 @@ public class ControlableAnt : MonoBehaviour{
    public void updateHealthbar()
     {
         healthBar.SetHealth(currentHealth);
+      
     }
 
     void FixedUpdate(){
