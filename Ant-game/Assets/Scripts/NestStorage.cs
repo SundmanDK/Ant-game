@@ -35,9 +35,13 @@ public class NestStorage : MonoBehaviour{
         gold    = 0;
          CA = ControllableAnt.GetComponent<ControlableAnt>();
 
-        FloatingText.text     = "10";
+       
+       
         Color numberWhiteColor= new Color(255,255,255);
         Color numberRedColor  = new Color(255,0,0);
+
+ 
+        FloatingText.text = "10";
 
         Button spawnBtn = spawnButton.GetComponent<Button>();
         spawnBtn.onClick.AddListener(checkSpawnButton);
@@ -81,13 +85,13 @@ public class NestStorage : MonoBehaviour{
     }
    void checkSpawnButton()
     {
-        if (gold >= 250){
+        if (gold >= 20){
         executeSpawnButton();
         }else failedMoney();
     }
     void executeSpawnButton()
     {
-        gold = gold - 250;
+        gold = gold - 20;
         Instantiate(Ant, new Vector3(0f, 0f, 0f), Quaternion.identity, gameObject.transform);
         textDisplayFood.text = gold.ToString();
     }
@@ -95,14 +99,14 @@ public class NestStorage : MonoBehaviour{
 
     void checkHealButton()
     {
-        if (gold >= 250)
+        if (gold >= 20)
         {
             executeHealButton();
         }else failedMoney();
     }
     void executeHealButton()
     {
-        gold = gold - 250;
+        gold = gold - 20;
      if(CA.currentHealth<CA.maxHealth){ CA.currentHealth = CA.currentHealth + 2;}
         CA.updateHealthbar();
         textDisplayFood.text = gold.ToString();
@@ -111,14 +115,14 @@ public class NestStorage : MonoBehaviour{
     void checkHealthButton()
     {
         
-        if (gold >= 250)
+        if (gold >= 20)
         {
             executeHealthButton();
         }else failedMoney();
     }
     void executeHealthButton()
     {
-        gold = gold - 250;
+        gold = gold - 20;
    CA.maxHealth = CA.maxHealth + 2;
         CA.updateHealthbar();
         textDisplayFood.text = gold.ToString();
