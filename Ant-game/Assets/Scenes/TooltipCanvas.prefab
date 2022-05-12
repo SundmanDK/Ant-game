@@ -280,7 +280,7 @@ MonoBehaviour:
   textContent: {fileID: 3138408709218094680}
   LayoutElement: {fileID: 1840415816}
   characterWrapLimit: 2
-  rectTransform: {fileID: 0}
+  rectTransform: {fileID: 4941897813170415050}
 --- !u!1 &6066832673149168865
 GameObject:
   m_ObjectHideFlags: 0
