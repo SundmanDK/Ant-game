@@ -52,7 +52,15 @@ public class ControlableAnt : MonoBehaviour{
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth);
+        updateHealthbar();
     }
+
+    public void updateHealthbar()
+    {
+        healthBar.SetHealth(currentHealth);
+
+    }
+
 
     void FixedUpdate(){
         if (goTo)
