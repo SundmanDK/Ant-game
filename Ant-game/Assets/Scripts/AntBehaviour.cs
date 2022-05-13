@@ -34,11 +34,19 @@ public class AntBehaviour : MonoBehaviour{
         Physics2D.IgnoreLayerCollision(0,0,true);
         holdingFood = false;
         angleSegment = viewAngle / 3;
+        StartCoroutine("FindTargetsWithDelay", .2f);
+    }
+
+    IEnumerator FindTargetsWithDelay(float delay){
+        while (true) {
+            yield return new WaitForSeconds(delay);
+            FOVAssignWeights();
+        }
     }
 
     // Update is called once per frame
     void FixedUpdate(){
-        FOWAssigningWeight();
+        //FOVAssignWeights();
 
         move();
 
@@ -46,7 +54,7 @@ public class AntBehaviour : MonoBehaviour{
     }
 
     void move(){
-        int angle = pickDirection();
+        int angle = pickDirection() + Random.Range(-1,2);
         
         rigidbodyComponent.velocity = transform.up * moveSpeed;
         transform.RotateAround(transform.position, transform.forward, angle);        
@@ -67,7 +75,7 @@ public class AntBehaviour : MonoBehaviour{
         }
     }
 
-    void FOWAssigningWeight(){
+    void FOVAssignWeights(){
         //Reset weights
         weightLeft = 1;
         weightRight = 1;
@@ -95,29 +103,24 @@ public class AntBehaviour : MonoBehaviour{
         float targetWeight = 0;
         if (target != null) {
             if (target.gameObject.layer == 9) {  //Red
-                if (!holdingFood) {
-                    targetWeight += 10;
-                } else {
-                    targetWeight += 0.1f;
-                }
-            } else if (target.gameObject.layer == 10) {  //Blue
-                if (holdingFood) {
-                    targetWeight += 10;
-                } else {
-                    targetWeight += 0.1f;
-                }
-            } else if (target.gameObject.layer == 8 && holdingFood) { //Nest
-                targetWeight += 500;
+                if (!holdingFood) targetWeight = 10;
+                else targetWeight = 0.1f;
                 
+            } else if (target.gameObject.layer == 10) {  //Blue
+                if (holdingFood) targetWeight = 10;
+                else targetWeight = 0.1f;
+                
+            } else if (target.gameObject.layer == 8 && holdingFood) { //Nest
+                targetWeight = 500;
             } else if (target.gameObject.layer == 6 && !holdingFood) {    //Food
-                targetWeight += 500;
+                targetWeight = 500;
             }
         }
         return targetWeight;
     }
 
     int pickDirection(){
-        float sum = (weightLeft + weightForward + weightRight);
+        float sum = weightLeft + weightForward + weightRight;
         float selected = Random.Range(0f, 1f) * sum;
         int chosenAngle = -1;
 
@@ -125,7 +128,7 @@ public class AntBehaviour : MonoBehaviour{
             chosenAngle = 5;   //turn left 5 degrees
         } else if (selected <= weightLeft + weightForward){
             chosenAngle = 0;   //go forward
-        } else if (selected <= weightLeft + weightForward + weightRight){
+        } else if (selected <= sum){
             chosenAngle = -5;  //turn right 5 degrees
         }
         return chosenAngle;

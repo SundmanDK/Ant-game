@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeGone: 20
-  weight: 10
 --- !u!212 &-3524968984498354667
 SpriteRenderer:
   m_ObjectHideFlags: 0

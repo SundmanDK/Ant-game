@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 1632736739319565638}
   - component: {fileID: 1632736739319565633}
   - component: {fileID: 1632736739319565634}
+  - component: {fileID: 5567051940601707152}
   m_Layer: 12
   m_Name: Spiderboy
   m_TagString: Untagged
@@ -219,3 +220,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   visibleTargetsMid: []
+--- !u!114 &5567051940601707152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632736739319565636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34dfc026e5f069b49b1f6e9bf18a6d27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  armor: 0
+  attackSpeed: 0
+  damage: 0
+  targetLayer: 0

@@ -6,6 +6,7 @@ public class ControlableAnt : MonoBehaviour{
     private Rigidbody2D rigidbodyComponentChild;
     private GameObject Marker;
     private FieldOfView fow;
+    private FoodGrouping FG;
     private NestStorage NS;
     public SpriteRenderer spriteRenderer;
     public Sprite noFoodSprite;
@@ -84,13 +85,16 @@ public class ControlableAnt : MonoBehaviour{
     }
 
     private void OnTriggerEnter2D(Collider2D col){
-        if (col.gameObject.layer == 6 && !holdingFood){
+        if (col.gameObject.layer == 6 && !holdingFood){     //pick up food
+            FG = col.gameObject.GetComponent<FoodGrouping>();
+            FG.amountOfFood -= 2;
+            FG.updateSize();
             holdingFood = true;
             ChangeSprite();
         }
-        if(col.gameObject.layer == 8 && holdingFood){
+        if(col.gameObject.layer == 8 && holdingFood){       //deliver food to nest
             holdingFood = false;
-            NS.food += 1;
+            NS.food += 2;
             ChangeSprite();
         }
         if (col.gameObject.layer == 11 || col.gameObject.layer == 7){
