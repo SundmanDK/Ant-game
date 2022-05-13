@@ -1015,5 +1015,5 @@ MonoBehaviour:
   overlayDeathMenu: {fileID: 929389253614846770}
   scoreMenu: {fileID: 8079799801326418605}
   textScore: {fileID: 1929925594772948166}
-  Nest: {fileID: 0}
+  Nest: {fileID: 4687752701114978926, guid: ed932c349d4c0ca42a5b850902343a5e, type: 3}
   quitButton: {fileID: 4352012596134881265}

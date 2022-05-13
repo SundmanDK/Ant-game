@@ -40,7 +40,7 @@ public class ControlableAnt : MonoBehaviour{
         healthBar.SetMaxHealth(maxHealth);
     }
 
-    void Update(){
+    void Update(){ 
         if (Input.GetMouseButtonDown(0))
             goTo = true;
         
@@ -82,6 +82,10 @@ public class ControlableAnt : MonoBehaviour{
         else{
             spriteRenderer.sprite = noFoodSprite;
         }
+    }
+
+    private void OnTriggerExit2D(){
+        goTo = true;
     }
 
     private void OnTriggerEnter2D(Collider2D col){

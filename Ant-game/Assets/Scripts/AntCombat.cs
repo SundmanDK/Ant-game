@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class AntCombat : Stats{
     public HealthBar healthBar;
+    public GameObject endMessage;
+    private Camera cam;
 
     void Start(){
         healthBar = GameObject.Find("Health bar").GetComponent<HealthBar>();
         healthBar.SetMaxHealth(health);
+        cam = Camera.main;
     }
     public override void TakeDamage(int Dmg){
         if(Dmg - armor > 0){
@@ -20,6 +23,6 @@ public class AntCombat : Stats{
             Death();
     }
     public override void Death(){
-        Debug.Log("just act like you did something like opening a end screen or something");
+        Instantiate(endMessage, cam.gameObject.transform.position, Quaternion.identity);
     }
 }

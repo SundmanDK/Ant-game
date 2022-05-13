@@ -157,7 +157,9 @@ public class AntBehaviour : MonoBehaviour{
             holdingFood = true;
             ChangeSprite();
             transform.RotateAround(transform.position, transform.forward, 180f);
-        }
+        } else if (col.gameObject.layer == 6 && holdingFood)
+            transform.RotateAround(transform.position, transform.forward, 180f);
+
         if(col.gameObject.layer == 8 && holdingFood){       //deliver food to nest
             holdingFood = false;
             NS.food += 1;

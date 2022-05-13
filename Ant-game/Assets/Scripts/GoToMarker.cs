@@ -14,10 +14,11 @@ public class GoToMarker : MonoBehaviour{
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0)){
+    void Update() {
+        Vector3 mousePos = Input.mousePosition;
+        if (Input.GetMouseButtonDown(0) && mousePos.y >= 230){
             transform.position = viewCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
         }
+        
     }
 }
