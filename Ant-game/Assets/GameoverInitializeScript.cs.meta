@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 37a36364da5221c439b104ff3239c464
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - OverlayMenu: {fileID: 3305271226535565562, guid: ae68f22bb6cc3f54b915b155e50b5eba, type: 3}
+  - endMessege: {fileID: 8282467007614070424, guid: 2c1d6aca7cbbe7c40a83b0aff10d3f71, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -9,6 +9,8 @@ public class manageOverlayMenu : MonoBehaviour {
 public GameObject overlayMenu;
 public GameObject scoreMenu;
 public GameObject warningMenu;
+public GameObject ui;
+
 public TMPro.TextMeshProUGUI textScore;
 public GameObject Nest;
 private Color scoreColor;
@@ -16,9 +18,14 @@ public Button resumeButton;
 public Button quitButton;
 public Button yesButton;
 public Button noButton;
+    
+
     // Start is called before the first frame update
     void Start()
     {
+       
+
+
         Color scoreColor = new Color(255f,255f, 0);
         textScore.color = scoreColor;
         Button resumeBtn = resumeButton.GetComponent<Button>();
@@ -40,6 +47,8 @@ public Button noButton;
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("This is Gameover in UI desabler :");
+
         if (Input.GetKeyDown(KeyCode.Escape)){
         warningMenu.gameObject.SetActive(false);
            toggleWindow();
@@ -52,15 +61,25 @@ public Button noButton;
 
         } else {
             Time.timeScale = 1;
-        }
-
     
+        }
+        
+ 
+
 
     }
 
+    public void GameOverfunction()
+    {
+        Debug.Log("GameOverfunction called");
+        ui.gameObject.SetActive(false);
+        warningMenu.gameObject.SetActive(false);
 
-void toggleWindow(){
-    overlayMenu.gameObject.SetActive(!overlayMenu.gameObject.activeSelf);
+    }
+
+    void toggleWindow(){
+       
+        overlayMenu.gameObject.SetActive(!overlayMenu.gameObject.activeSelf);
         scoreMenu.gameObject.SetActive(!scoreMenu.gameObject.activeSelf);
 }
 
