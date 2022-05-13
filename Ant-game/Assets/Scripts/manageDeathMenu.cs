@@ -10,8 +10,7 @@ using TMPro;
 public class manageDeathMenu : MonoBehaviour
 {
 
-    public GameObject scoreMenu;
-    public GameObject overlayMenu;
+  
     public TMPro.TextMeshProUGUI textScore;
     public GameObject Nest;
     public Button quitButton;
@@ -24,12 +23,6 @@ public class manageDeathMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-
-
-
-        //gameObject.overlayMenu.GetComponent<manageOverlayMenu>().GameOverfunction();
-        Debug.Log("This is Gameover in DEATH :");
 
         textScore.text = Nest.GetComponent<NestStorage>().score.ToString();
         Button quitBtn = quitButton.GetComponent<Button>();

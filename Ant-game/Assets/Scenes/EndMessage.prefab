@@ -1012,8 +1012,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 406a9d8c0ef04bf41908db8d074defdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overlayDeathMenu: {fileID: 929389253614846770}
+  overlayMenu: {fileID: 3305271226535565562, guid: ae68f22bb6cc3f54b915b155e50b5eba, type: 3}
   scoreMenu: {fileID: 8079799801326418605}
   textScore: {fileID: 1929925594772948166}
   Nest: {fileID: 4687752701114978926, guid: ed932c349d4c0ca42a5b850902343a5e, type: 3}
   quitButton: {fileID: 4352012596134881265}
+  boolFieldui: 1
