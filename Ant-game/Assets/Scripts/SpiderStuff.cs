@@ -32,9 +32,11 @@ public class SpiderStuff : MonoBehaviour
     private void followAnt(){
         if (fow.visibleTargetsMid.Count > 0){
             Transform target = fow.visibleTargetsMid[0];
-            Vector3 directionToTarget = (target.transform.position - transform.position).normalized;
-            float angle = Vector3.Angle(transform.up, directionToTarget);
-            transform.RotateAround(transform.position, transform.forward, angle);
+            if(target != null){
+                Vector3 directionToTarget = (target.transform.position - transform.position).normalized;
+                float angle = Vector3.Angle(transform.up, directionToTarget);
+                transform.RotateAround(transform.position, transform.forward, angle);
+            }
         }
     }
     private void goHome(){

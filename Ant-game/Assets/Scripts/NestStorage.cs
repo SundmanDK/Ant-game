@@ -12,6 +12,7 @@ public class NestStorage : MonoBehaviour
     public int gold;
     public int maxHealth;
     public int currentHealth;
+    private int antCostFactor;
 
     public Button spawnButton;
     public Button healthButton;
@@ -35,6 +36,8 @@ public class NestStorage : MonoBehaviour
         oldFood = 0;
         score = 0;
         gold = 0;
+        antCostFactor = 0;
+
         CA = ControllableAnt.GetComponent<ControlableAnt>();
 
 
@@ -55,7 +58,6 @@ public class NestStorage : MonoBehaviour
         Button healthBtn = healthButton.GetComponent<Button>();
         healthBtn.onClick.AddListener(checkHealthButton);
     }
-
 
     void Update()
     {
@@ -92,19 +94,18 @@ public class NestStorage : MonoBehaviour
     }
     void checkSpawnButton()
     {
-        if (gold >= 20)
-        {
-            executeSpawnButton();
+        if (gold >= (5 + 5 * antCostFactor)){
+            executeSpawnButton(5 + 5 * antCostFactor);
+            antCostFactor += 1;
         }
         else failedMoney();
     }
-    void executeSpawnButton()
+    void executeSpawnButton(int cost)
     {
-        gold = gold - 20;
+        gold = gold - cost;
         Instantiate(Ant, new Vector3(0f, 0f, 0f), Quaternion.identity, gameObject.transform);
         textDisplayFood.text = gold.ToString();
     }
-
 
     void checkHealButton()
     {

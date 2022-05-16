@@ -21,9 +21,13 @@ public class Stats : MonoBehaviour{
     }
     private void OnCollisionEnter2D(Collision2D target){
         if(target.gameObject.layer == targetLayer && readyForAttack){
-            Attack(target);
-            readyForAttack = false;
-            timeForAttack = 0;
+            if (target.gameObject.GetComponent<Stats>() != null){ //Check if target is a combatant or a worker 
+                Attack(target);
+                readyForAttack = false;
+                timeForAttack = 0;
+            } else {
+                killWorkerAnts(target);
+            }
         }
     }
     private void Attack(Collision2D target){
@@ -38,9 +42,11 @@ public class Stats : MonoBehaviour{
         if(health <= 0){
             Death();
         }
-        Debug.Log("rasmus lugter");
     }
     public virtual void Death(){
         Destroy(gameObject);
+    }
+    public virtual void killWorkerAnts(Collision2D target){
+        Destroy(target.gameObject);
     }
 }
