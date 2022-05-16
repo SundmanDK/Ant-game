@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1316874385095857669}
-  DmgTextSpawn: {fileID: 5422652131888303661}
+  DmgTextSpawn: {fileID: 4885865928676251705}
 --- !u!114 &7920003575461947262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,7 +76,6 @@ GameObject:
   - component: {fileID: 46158586572958476}
   - component: {fileID: 3361425169596128944}
   - component: {fileID: 1316874385095857669}
-  - component: {fileID: 7355637000648251033}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -191,13 +190,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
-  m_fontSizeBase: 72
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -236,16 +235,3 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
---- !u!114 &7355637000648251033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5422652131888303661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 316d74e0480f3894db18c52c57dce081, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBeforeGone: 5
