@@ -23,7 +23,7 @@ public class AntCombat : Stats{
             Death();
     }
     public override void Death(){
+        Destroy(gameObject);
         InitializeGameover.gameObject.SetActive(true);
-        
     }
 }

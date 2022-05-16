@@ -11,7 +11,7 @@ public class Stats : MonoBehaviour{
     private float timeForAttack;
     private bool readyForAttack = true;
 
-    void FixedUpdate(){
+    virtual void FixedUpdate(){
         if(!readyForAttack){
             timeForAttack += Time.deltaTime;
             if (timeForAttack > attackSpeed){
@@ -30,7 +30,7 @@ public class Stats : MonoBehaviour{
             }
         }
     }
-    private void Attack(Collision2D target){
+    virtual void Attack(Collision2D target){
         target.gameObject.GetComponent<Stats>().TakeDamage(damage);
     }
     public virtual void TakeDamage(int Dmg){
@@ -43,10 +43,10 @@ public class Stats : MonoBehaviour{
             Death();
         }
     }
-    public virtual void Death(){
-        Destroy(gameObject);
+    virtual void Death(){
+        Destroy(transform.parent.gameObject);
     }
-    public virtual void killWorkerAnts(Collision2D target){
+    virtual void killWorkerAnts(Collision2D target){
         Destroy(target.gameObject);
     }
 }
