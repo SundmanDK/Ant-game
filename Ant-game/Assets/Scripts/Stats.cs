@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 
 public class Stats : MonoBehaviour{
     public int health;
@@ -11,8 +13,13 @@ public class Stats : MonoBehaviour{
     private float timeForAttack;
     private bool readyForAttack = true;
 
+
+    public GameObject dmgText;
+    private string numberText;
+    
+
     void FixedUpdate(){
-        Debug.Log("X");
+      //  Debug.Log("X");
         AttackTimer();
     }
     private void OnCollisionEnter2D(Collision2D target){
@@ -36,6 +43,8 @@ public class Stats : MonoBehaviour{
     }
     void Attack(Collision2D target){
         target.gameObject.GetComponent<Stats>().TakeDamage(damage);
+        CallDamangeVisual();
+
     }
     public virtual void TakeDamage(int Dmg){
         if(Dmg - armor > 0){
@@ -53,4 +62,23 @@ public class Stats : MonoBehaviour{
     void killWorkerAnts(Collision2D target){
         Destroy(target.gameObject);
     }
+
+
+
+public void CallDamangeVisual()
+{
+        numberText = damage.ToString();
+        dmgText.GetComponentInChildren<TextMeshPro>().text = numberText;
+        dmgText.GetComponent<SpawnDmgText>().PrintDmg();
+     
+        
+
+
+
+
+
+    }
+
+
+
 }

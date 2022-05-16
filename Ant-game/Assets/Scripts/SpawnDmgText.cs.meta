@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6cd827b364ad2754aa58248e11d76e6e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - TextLocation: {fileID: 4345894374680401504, guid: ffa7de7fdaff26049ac2bb5ff2dc126a, type: 3}
+  - text: {instanceID: 0}
+  - DmgTextSpawn: {fileID: 4885865928676251705, guid: 1dfe2fb7cfa3fbe44899b2b488428de3, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
