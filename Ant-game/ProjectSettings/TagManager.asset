@@ -14,11 +14,19 @@ TagManager:
   - Food
   - Obstacles
   - Nest
+<<<<<<< Updated upstream
   - 
   - 
   - 
   - 
   - 
+=======
+  - Red Pheromone
+  - Blue Pheromone
+  - Marker
+  - FloatingText
+  - Enemies
+>>>>>>> Stashed changes
   - 
   - 
   - 

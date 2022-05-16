@@ -138,15 +138,22 @@ public class Movement: MonoBehaviour{
     }
 
     
-    void OnCollisionEnter2D(Collision2D collision2D){
-        if (collision2D.gameObject.layer == 7){
+    void OnCollisionEnter2D(Collision2D col){
+        if (col.gameObject.layer == 7){
             transform.RotateAround(transform.position, transform.forward, 90f);
         }
+<<<<<<< Updated upstream
     }
 
     private void OnTriggerEnter2D(Collider2D col){
         if (col.gameObject.layer == 6 && !holdingFood){
             Destroy(col.gameObject);
+=======
+        if (col.gameObject.layer == 6 && !holdingFood){     //pick up food
+            FG = col.gameObject.GetComponent<FoodGrouping>();
+            FG.amountOfFood -= 1;
+            FG.updateSize();
+>>>>>>> Stashed changes
             holdingFood = true;
             Debug.Log("a ant is holding food");
             ChangeSprite();
@@ -159,6 +166,13 @@ public class Movement: MonoBehaviour{
             Debug.Log("a ant have delivered food");
         }
     }
+<<<<<<< Updated upstream
     
 
+=======
+
+    //private void OnTriggerEnter2D(Collider2D col){
+
+    //}
+>>>>>>> Stashed changes
 }
