@@ -6,8 +6,8 @@ public class WaspStats : Stats{
 
     float chargeTimer = 0; 
 
-    override void FixedUpdate(){
-        base.FixedUpdate();
+    void FixedUpdate(){
+        Debug.Log("y");
 
     }
 
