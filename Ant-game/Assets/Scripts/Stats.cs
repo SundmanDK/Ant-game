@@ -26,7 +26,7 @@ public class Stats : MonoBehaviour{
                 readyForAttack = false;
                 timeForAttack = 0;
             } else {
-                killWorkerAnts();
+                killWorkerAnts(target);
             }
         }
     }
@@ -46,7 +46,7 @@ public class Stats : MonoBehaviour{
     public virtual void Death(){
         Destroy(gameObject);
     }
-    public virtual void killWorkerAnts(){
+    public virtual void killWorkerAnts(Collision2D target){
         Destroy(target.gameObject);
     }
 }
