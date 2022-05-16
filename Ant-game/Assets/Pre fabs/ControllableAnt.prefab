@@ -204,3 +204,4 @@ MonoBehaviour:
   damage: 1
   targetLayer: 13
   healthBar: {fileID: 0}
+  InitailizeGameover: {fileID: 0}
