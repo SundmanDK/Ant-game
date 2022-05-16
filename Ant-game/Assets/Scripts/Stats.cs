@@ -8,13 +8,13 @@ public class Stats : MonoBehaviour{
     public float attackSpeed;
     public int damage;
     public int targetLayer;
-    public float timeForAttack;
+    private float timeForAttack;
     private bool readyForAttack = true;
 
     void FixedUpdate(){
         AttackTimer();
     }
-    
+
     protected void AttackTimer(){
         if(!readyForAttack){
             timeForAttack += Time.deltaTime;

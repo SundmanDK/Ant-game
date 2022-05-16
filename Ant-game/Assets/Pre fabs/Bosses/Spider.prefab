@@ -100,8 +100,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: -0.26867676, y: -1.1463318}
+  m_Size: {x: 2.755371, y: 6.1585083}
   m_Direction: 0
 --- !u!50 &8193837132948636542
 Rigidbody2D:
@@ -176,6 +176,7 @@ MonoBehaviour:
   attackSpeed: 1
   damage: 20
   targetLayer: 0
+  timeForAttack: 0
 --- !u!1 &8193837133826089693
 GameObject:
   m_ObjectHideFlags: 0

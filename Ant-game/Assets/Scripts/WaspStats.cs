@@ -7,7 +7,6 @@ public class WaspStats : Stats{
     float chargeTimer = 0; 
 
     void FixedUpdate(){
-        Debug.Log("y");
 
     }
 
