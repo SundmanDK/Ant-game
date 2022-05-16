@@ -8,7 +8,7 @@ public class typePheromone : MonoBehaviour{
     // Start is called before the first frame update
     void Start()
     {
-
+  
     }
 
     // Update is called once per frame
@@ -16,5 +16,18 @@ public class typePheromone : MonoBehaviour{
     {
         timeBeforeGone = timeBeforeGone - Time.deltaTime;
         if (timeBeforeGone <= 0) { Destroy(gameObject); }
+    }
+
+
+   public void Invisable()
+    {
+        this.GetComponent<SpriteRenderer>().enabled = false;
+        Debug.Log("Who call1");
+    }
+
+    public void Visable()
+    {
+        this.GetComponent<SpriteRenderer>().enabled = true;
+        Debug.Log("Who cal22");
     }
 }

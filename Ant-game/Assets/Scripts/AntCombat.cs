@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AntCombat : Stats{
     public HealthBar healthBar;
-    public GameObject endMessage;
+    public GameObject InitializeGameover;
     private Camera cam;
 
     void Start(){
@@ -23,6 +23,7 @@ public class AntCombat : Stats{
             Death();
     }
     public override void Death(){
-        Instantiate(endMessage, cam.gameObject.transform.position, Quaternion.identity);
+        InitializeGameover.gameObject.SetActive(true);
+        
     }
 }

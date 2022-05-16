@@ -9,7 +9,10 @@ public class manageOverlayMenu : MonoBehaviour {
 public GameObject overlayMenu;
 public GameObject scoreMenu;
 public GameObject warningMenu;
+public GameObject options;
 public GameObject ui;
+public GameObject changeSpritePheromone;
+//public GameObject[] pheromones;
 
 public TMPro.TextMeshProUGUI textScore;
 public GameObject Nest;
@@ -18,6 +21,15 @@ public Button resumeButton;
 public Button quitButton;
 public Button yesButton;
 public Button noButton;
+    
+public Button optionsButtonRed;
+public Button optionsButtonBlue;
+public Button optionsCamaraLock;
+
+    public bool toogleButttonRed;
+    public bool toggleButtonBlue;
+    public bool toogleButtonCamaraLock;
+
     
 
     // Start is called before the first frame update
@@ -40,14 +52,25 @@ public Button noButton;
         Button noBtn = noButton.GetComponent<Button>();
         noBtn.onClick.AddListener(closeWarningWindow);
 
-     //   textScore = gameObject.GetComponent<TMPro.TextMeshProUGUI>();
-    
+        Button optionsBtnRed = optionsButtonRed.GetComponent<Button>();
+        optionsBtnRed.onClick.AddListener(showRed);
+
+        Button optionsBtnBlue = optionsButtonBlue.GetComponent<Button>();
+        optionsBtnBlue.onClick.AddListener(showBlue);
+
+        Button optionsBtnCamara = optionsCamaraLock.GetComponent<Button>();
+        optionsBtnCamara.onClick.AddListener(lockCamara);
+
+
+
+        //   textScore = gameObject.GetComponent<TMPro.TextMeshProUGUI>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("This is Gameover in UI desabler :");
+        
 
         if (Input.GetKeyDown(KeyCode.Escape)){
         warningMenu.gameObject.SetActive(false);
@@ -73,7 +96,7 @@ public Button noButton;
     {
         Debug.Log("GameOverfunction called");
         ui.gameObject.SetActive(false);
-        warningMenu.gameObject.SetActive(false);
+       
 
     }
 
@@ -81,6 +104,7 @@ public Button noButton;
        
         overlayMenu.gameObject.SetActive(!overlayMenu.gameObject.activeSelf);
         scoreMenu.gameObject.SetActive(!scoreMenu.gameObject.activeSelf);
+        options.gameObject.SetActive(!options.gameObject.activeSelf);
 }
 
 
@@ -98,4 +122,49 @@ void closeWarningWindow(){
         warningMenu.gameObject.SetActive(false);
 
 }
+
+
+    void showRed()
+    {
+        /* if (toggleButtonRed)
+         {
+             toggleButtonRed = !toggleButtonRed;
+             optionsButtonRed.GetComponent<ButtonSpriteChanger>().ButtonOnVisual();
+             changeSpritePheromone.GetComponent<typePheromone>().Visable();
+
+         }
+         else
+         {
+             toggleButtonRed = !toggleButtonRed;
+             optionsButtonRed.GetComponent<ButtonSpriteChanger>().ButtonOffVisual();
+             changeSpritePheromone.GetComponent<typePheromone>().Invisable();
+
+         }
+ */
+    }
+        void showBlue()
+        {
+            
+      
+        if (toggleButtonBlue) {
+            toggleButtonBlue = !toggleButtonBlue;
+            optionsButtonBlue.GetComponent<ButtonSpriteChanger>().ButtonOnVisual();
+            changeSpritePheromone.GetComponent<typePheromone>().Visable();
+
+    
+            
+
+        }
+        else
+        {
+            toggleButtonBlue = !toggleButtonBlue;
+            optionsButtonBlue.GetComponent<ButtonSpriteChanger>().ButtonOffVisual();
+            changeSpritePheromone.GetComponent<typePheromone>().Invisable();
+
+        }
+    }
+void lockCamara()
+    {
+     
+    }
 }
