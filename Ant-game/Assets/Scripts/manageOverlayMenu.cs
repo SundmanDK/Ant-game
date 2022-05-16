@@ -12,6 +12,7 @@ public GameObject warningMenu;
 public GameObject options;
 public GameObject ui;
 public GameObject changeSpritePheromone;
+public GameObject changeCameralock;
 //public GameObject[] pheromones;
 
 public TMPro.TextMeshProUGUI textScore;
@@ -126,21 +127,21 @@ void closeWarningWindow(){
 
     void showRed()
     {
-        /* if (toggleButtonRed)
+         if (toogleButttonRed)
          {
-             toggleButtonRed = !toggleButtonRed;
+            toogleButttonRed = !toogleButttonRed;
              optionsButtonRed.GetComponent<ButtonSpriteChanger>().ButtonOnVisual();
              changeSpritePheromone.GetComponent<typePheromone>().Visable();
 
          }
          else
          {
-             toggleButtonRed = !toggleButtonRed;
+            toogleButttonRed = !toogleButttonRed;
              optionsButtonRed.GetComponent<ButtonSpriteChanger>().ButtonOffVisual();
              changeSpritePheromone.GetComponent<typePheromone>().Invisable();
 
          }
- */
+ 
     }
         void showBlue()
         {
@@ -165,6 +166,21 @@ void closeWarningWindow(){
     }
 void lockCamara()
     {
-     
+        if (toogleButtonCamaraLock)
+        {
+            toogleButtonCamaraLock = !toogleButtonCamaraLock;
+            optionsCamaraLock.GetComponent<ButtonSpriteChanger>().ButtonOnVisual();
+            changeCameralock.GetComponent<CameraController>().lookToggleCamera();
+
+
+        }
+        else
+        {
+            toogleButtonCamaraLock = !toogleButtonCamaraLock;
+            optionsCamaraLock.GetComponent<ButtonSpriteChanger>().ButtonOffVisual();
+            changeCameralock.GetComponent<CameraController>().lookToggleCamera();
+
+        }
+
     }
 }

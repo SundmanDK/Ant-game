@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public bool lockCamera = false;
 
     private float panSpeed = 0.5f;
     private float tuneBorderRight = 75f;
@@ -23,23 +24,79 @@ public class CameraController : MonoBehaviour
         //Debug.Log("these are the mousePos.y:" + mousePos.y);
         //    Debug.Log("these are the position.x:" + transform.position.x);
         //Debug.Log("these are the position.y:" + transform.position.y);
-        if (transform.position.x <= boundsCameraRight && Input.GetKey(KeyCode.D) || transform.position.x <= boundsCameraRight && mousePos.x >= Screen.width - tuneBorderRight)
+
+
+        if (lockCamera==true) {
+
+
+            if (transform.position.x <= boundsCameraRight && Input.GetKey(KeyCode.D) || transform.position.x <= boundsCameraRight && mousePos.x >= Screen.width - tuneBorderRight)
+            {
+                transform.Translate(panSpeed, 0f, 0f);
+            }
+            if (transform.position.x >= boundsCameraLeft && Input.GetKey(KeyCode.A) || transform.position.x >= boundsCameraLeft && mousePos.x <= 0 + tuneBorderLeft)
+            {
+                transform.Translate(-panSpeed, 0f, 0f);
+            }
+            if (transform.position.y <= boundsCameraTop && Input.GetKey(KeyCode.W) || transform.position.y <= boundsCameraTop && mousePos.y >= Screen.height - tuneBorderUp)
+            {
+                transform.Translate(0f, panSpeed, 0f);
+            }
+            if (transform.position.y >= boundsCameraBottom && Input.GetKey(KeyCode.S) || transform.position.y >= boundsCameraBottom && mousePos.y <= 300 && mousePos.y >= 230)
+            {
+                transform.Translate(0f, -panSpeed, 0f);
+            }
+            if(lockCamera == false) {
+                lookToggleCamera();
+            }
+
+        } else 
         {
-            transform.Translate(panSpeed, 0f, 0f);
-        }
-        if (transform.position.x >= boundsCameraLeft && Input.GetKey(KeyCode.A) || transform.position.x >= boundsCameraLeft && mousePos.x <= 0 + tuneBorderLeft)
-        {
-            transform.Translate(-panSpeed, 0f, 0f);
-        }
-        if (transform.position.y <= boundsCameraTop && Input.GetKey(KeyCode.W) || transform.position.y <= boundsCameraTop && mousePos.y >= Screen.height - tuneBorderUp)
-        {
-            transform.Translate(0f, panSpeed, 0f);
-        }
-        if (transform.position.y >= boundsCameraBottom && Input.GetKey(KeyCode.S) || transform.position.y >= boundsCameraBottom && mousePos.y <= 300 && mousePos.y >= 230)
-        {
-            transform.Translate(0f, -panSpeed, 0f);
+            if (lockCamera==false) {
+
+
+
+                if (transform.position.x <= boundsCameraRight && Input.GetKey(KeyCode.D) )
+                {
+                    transform.Translate(panSpeed, 0f, 0f);
+                }
+                if (transform.position.x >= boundsCameraLeft && Input.GetKey(KeyCode.A))
+                {
+                    transform.Translate(-panSpeed, 0f, 0f);
+                }
+                if (transform.position.y <= boundsCameraTop && Input.GetKey(KeyCode.W) )
+                {
+                    transform.Translate(0f, panSpeed, 0f);
+                }
+                if (transform.position.y >= boundsCameraBottom && Input.GetKey(KeyCode.S))
+                {
+                    transform.Translate(0f, -panSpeed, 0f);
+                }
+
+                if (lockCamera == true) { lookToggleCamera(); }
+
+
+
+
+
+
+
+
+
+
+
+
+
+            }
         }
 
+
+    } 
+
+    public void lookToggleCamera()
+    {
+        lockCamera = !lockCamera;
     }
+
+
 
 }
