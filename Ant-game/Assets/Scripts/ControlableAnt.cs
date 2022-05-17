@@ -14,7 +14,7 @@ public class ControlableAnt : MonoBehaviour{
     public GameObject food;
     
 
-    public float moveSpeed = 8;
+    public float moveSpeed;
     public bool holdingFood;
     private bool goTo = false;
     private float angle;
@@ -22,6 +22,7 @@ public class ControlableAnt : MonoBehaviour{
 
     public int maxHealth = 25;
     public int currentHealth;
+    private Stats stats;
 
     public HealthBar healthBar;
 
@@ -35,9 +36,9 @@ public class ControlableAnt : MonoBehaviour{
         viewCamera = Camera.main;
         Physics2D.IgnoreLayerCollision(0,0,true);
         holdingFood = false;
+        stats = GetComponent<Stats>(); 
+        moveSpeed = stats.moveSpeed;
 
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
     }
 
     void Update(){ 
@@ -73,7 +74,7 @@ public class ControlableAnt : MonoBehaviour{
         Vector3 directionToTarget = (destination.position - transform.position).normalized;
         float angle = Vector3.Angle(transform.up, directionToTarget);
         transform.RotateAround(transform.position, transform.forward, angle);
-        rigidbodyComponent.velocity = transform.up * moveSpeed;
+        rigidbodyComponent.velocity = transform.up * stats.moveSpeed;
     }
 
     void ChangeSprite(){

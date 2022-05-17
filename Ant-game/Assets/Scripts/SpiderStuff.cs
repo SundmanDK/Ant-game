@@ -5,29 +5,31 @@ using UnityEngine;
 public class SpiderStuff : MonoBehaviour
 {
     private Rigidbody2D rigidbodyComponent;
-    public float moveSpeed = 8;
+    private float moveSpeed;
     public bool inArea;
-    private CombatFieldOfView fow;
-    // Start is called before the first frame update
+    private EnemyFieldOfView fow;
+    private Stats stats;
+    
     void Start(){
         inArea = true;
         rigidbodyComponent = GetComponent<Rigidbody2D>();
         fow = GetComponent<CombatFieldOfView>();
+        stats = GetComponent<Stats>();
+        moveSpeed = stats.moveSpeed;
     }
 
-    // Update is called once per frame
+    
     void FixedUpdate(){
         move();
         if(inArea){
             followAnt();
-        } else{
+        } else if (!inArea){
             goHome();
         }
     }
 
     void move(){
         rigidbodyComponent.velocity = transform.up * moveSpeed;
-        transform.RotateAround(transform.position, transform.forward, Random.Range(-5f,5f));
     }
     private void followAnt(){
         if (fow.visibleTargets.Count > 0){
@@ -37,6 +39,8 @@ public class SpiderStuff : MonoBehaviour
                 float angle = Vector3.Angle(transform.up, directionToTarget);
                 transform.RotateAround(transform.position, transform.forward, angle);
             }
+        } else{
+            transform.RotateAround(transform.position, transform.forward, Random.Range(-5f,5f));
         }
     }
     private void goHome(){

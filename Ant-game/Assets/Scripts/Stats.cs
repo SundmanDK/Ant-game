@@ -7,15 +7,25 @@ public class Stats : MonoBehaviour{
     public int armor;
     public float attackSpeed;
     public int damage;
+    public float moveSpeed;
     public int targetLayer;
     private float timeForAttack;
     private bool readyForAttack = true;
+    private bool slowedSpeed = false;
+    private float slowTimer;
+    private float slowedTime = 4;
 
     public string numberText;
     public GameObject dmgText;
 
     void FixedUpdate(){
         AttackTimer();
+        if(slowedSpeed){
+            slowTimer += Time.deltaTime;
+            if (slowTimer > slowedTime){
+                NormalSpeed();
+            }
+        }
     }
 
     protected void AttackTimer(){
@@ -25,8 +35,9 @@ public class Stats : MonoBehaviour{
                 readyForAttack = true;
             }
         }
+        
     }
- 
+
     private void OnCollisionEnter2D(Collision2D target){
         if(target.gameObject.layer == targetLayer && readyForAttack){
             Debug.Log("hit");
@@ -41,7 +52,7 @@ public class Stats : MonoBehaviour{
         }
     }
 
-    protected void Attack(Collision2D target){
+    protected virtual void Attack(Collision2D target){
         target.gameObject.GetComponent<Stats>().TakeDamage(damage);
         CallDamangeVisual();
     }
@@ -56,6 +67,20 @@ public class Stats : MonoBehaviour{
             Death();
         }
     }
+    public void SlowedSpeed(){
+        slowTimer = 0;
+        if(slowedSpeed == false){
+            moveSpeed /= 2;
+            slowedSpeed = true;
+        }
+    }
+
+    private void NormalSpeed(){
+        moveSpeed *= 2;
+        slowedSpeed = false;
+    }
+
+
 
     protected virtual void Death(){
         Destroy(transform.parent.gameObject);
@@ -63,6 +88,7 @@ public class Stats : MonoBehaviour{
 
     private void killWorkerAnts(Collision2D target){
         Destroy(target.gameObject);
+        Debug.Log("target: "+target);
     }
 
     public void CallDamangeVisual()
