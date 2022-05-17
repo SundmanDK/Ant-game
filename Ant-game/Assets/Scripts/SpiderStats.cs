@@ -7,16 +7,6 @@ public class SpiderStats : Stats{
     public bool slowOnCooldown = false;
     private float timeOnCooldown;
 
-    void Update(){
-        if(slowOnCooldown){
-            timeOnCooldown += Time.deltaTime;
-            if (timeOnCooldown > slowCooldown){
-                slowOnCooldown = false;
-                timeOnCooldown = 0;
-            }
-        }
-    }
-    
     protected override void Attack(Collision2D target){
         base.Attack(target);
         if(!slowOnCooldown){
@@ -29,5 +19,12 @@ public class SpiderStats : Stats{
     }
     void FixedUpdate(){
         AttackTimer();
+        if(slowOnCooldown){
+            timeOnCooldown += Time.deltaTime;
+            if (timeOnCooldown > slowCooldown){
+                slowOnCooldown = false;
+                timeOnCooldown = 0;
+            }
+        }
     }
 }

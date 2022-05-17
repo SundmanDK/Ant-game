@@ -14,18 +14,17 @@ public class Stats : MonoBehaviour{
     private bool slowedSpeed = false;
     private float slowTimer;
     private float slowedTime = 4;
-
+    private bool poisoned;
+    private float poisonTimer;
+    private float poisonTickDuration = 2;
+    private int poisonTicks;
     public string numberText;
     public GameObject dmgText;
 
     void FixedUpdate(){
         AttackTimer();
-        if(slowedSpeed){
-            slowTimer += Time.deltaTime;
-            if (slowTimer > slowedTime){
-                NormalSpeed();
-            }
-        }
+        SlowedTimer();
+        PoisonTimer();
         if(health <= 0){
             Death();
         }
@@ -38,7 +37,27 @@ public class Stats : MonoBehaviour{
                 readyForAttack = true;
             }
         }
-        
+    }
+    protected void SlowedTimer(){
+        if(slowedSpeed){
+            slowTimer += Time.deltaTime;
+            if (slowTimer > slowedTime){
+                NormalSpeed();
+            }
+        }
+    }
+    protected void PoisonTimer(){
+        if(poisoned){
+            poisonTimer += Time.deltaTime;
+            if (poisonTimer > poisonTickDuration){
+                TakeDamage(1);
+                poisonTimer = 0;
+                poisonTicks += 1;
+                if(poisonTicks >= 4){
+                    poisoned = false;
+                }
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D target){
@@ -79,7 +98,11 @@ public class Stats : MonoBehaviour{
         slowedSpeed = false;
     }
 
-
+    public void Poison(){
+        poisonTimer = 0;
+        if(poisoned == false)
+            poisoned = true;
+    }
 
     protected virtual void Death(){
         Destroy(transform.parent.gameObject);
