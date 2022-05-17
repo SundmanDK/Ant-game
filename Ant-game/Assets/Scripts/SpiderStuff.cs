@@ -20,12 +20,12 @@ public class SpiderStuff : MonoBehaviour
 
     
     void FixedUpdate(){
-        move();
         if(inArea){
             followAnt();
         } else if (!inArea){
             goHome();
         }
+        move();
     }
 
     void move(){

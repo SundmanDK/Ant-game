@@ -74,7 +74,6 @@ public class Stats : MonoBehaviour{
 
     protected virtual void Attack(Collision2D target){
         target.gameObject.GetComponent<Stats>().TakeDamage(damage);
-        CallDamangeVisual();
     }
 
     public virtual void TakeDamage(int Dmg){
@@ -83,7 +82,7 @@ public class Stats : MonoBehaviour{
         } else {
             health -= 1;
         }
-        
+        CallDamangeVisual();
     }
     public void SlowedSpeed(){
         slowTimer = 0;
