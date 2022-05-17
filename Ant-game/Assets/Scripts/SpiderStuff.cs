@@ -7,7 +7,7 @@ public class SpiderStuff : MonoBehaviour
     private Rigidbody2D rigidbodyComponent;
     private float moveSpeed;
     public bool inArea;
-    private EnemyFieldOfView fow;
+    private CombatFieldOfView fow;
     private Stats stats;
     
     void Start(){
