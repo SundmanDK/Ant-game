@@ -18,7 +18,8 @@ public class AntCombat : Stats{
         healthBar.SetHealth(health);
     }
 
-    public override void Death(){
+    protected override void Death(){
+        Destroy(gameObject);
         InitializeGameover.gameObject.SetActive(true);
     }
 }

@@ -33,4 +33,11 @@ public class SpiderStats : Stats{
         target.gameObject.GetComponent<Stats>().SlowedSpeed();
         slowOnCooldown = true;
     }
+    void FixedUpdate(){
+        AttackTimer();
+    }
+
+    public override void TakeDamage(int Dmg){
+        base.TakeDamage(Dmg);
+    }
 }

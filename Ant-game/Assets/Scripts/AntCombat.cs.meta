@@ -4,8 +4,9 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
+  - dmgText: {fileID: 4885865928676251705, guid: 1dfe2fb7cfa3fbe44899b2b488428de3, type: 3}
   - healthBar: {instanceID: 0}
-  - endMessage: {fileID: 8282467007614070424, guid: 2c1d6aca7cbbe7c40a83b0aff10d3f71, type: 3}
+  - InitializeGameover: {fileID: 7836954424590789521, guid: 0ed312f70e8e93740b92c759a33b2d63, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class Stats : MonoBehaviour{
     public int health;
     public int armor;
@@ -15,13 +15,11 @@ public class Stats : MonoBehaviour{
     private float slowTimer;
     private float slowedTime = 4;
 
+    public string numberText;
+    public GameObject dmgText;
+
     void FixedUpdate(){
-        if(!readyForAttack){
-            timeForAttack += Time.deltaTime;
-            if (timeForAttack > attackSpeed){
-                readyForAttack = true;
-            }
-        }
+        AttackTimer();
         if(slowedSpeed){
             slowTimer += Time.deltaTime;
             if (slowTimer > slowedTime){
@@ -30,21 +28,33 @@ public class Stats : MonoBehaviour{
         }
     }
 
+    protected void AttackTimer(){
+        if(!readyForAttack){
+            timeForAttack += Time.deltaTime;
+            if (timeForAttack > attackSpeed){
+                readyForAttack = true;
+            }
+        }
+        
+    }
+
     private void OnCollisionEnter2D(Collision2D target){
         if(target.gameObject.layer == targetLayer && readyForAttack){
             if (target.gameObject.GetComponent<Stats>() != null){ //Check if target is a combatant or a worker 
+                timeForAttack = 0;
                 Attack(target);
                 readyForAttack = false;
-                timeForAttack = 0;
             } else {
                 killWorkerAnts(target);
             }
         }
     }
-    
-    public virtual void Attack(Collision2D target){
+
+    protected void Attack(Collision2D target){
         target.gameObject.GetComponent<Stats>().TakeDamage(damage);
+        CallDamangeVisual();
     }
+
     public virtual void TakeDamage(int Dmg){
         if(Dmg - armor > 0){
             health -= Dmg - armor;
@@ -68,10 +78,21 @@ public class Stats : MonoBehaviour{
         slowedSpeed = false;
     }
 
-    public virtual void Death(){
-        Destroy(gameObject);
+
+
+    protected virtual void Death(){
+        Destroy(transform.parent.gameObject);
     }
-    public virtual void killWorkerAnts(Collision2D target){
+
+    private void killWorkerAnts(Collision2D target){
         Destroy(target.gameObject);
+        Debug.Log("target: "+target);
+    }
+
+    public void CallDamangeVisual()
+    {
+        numberText = damage.ToString();
+        dmgText.GetComponentInChildren<TextMeshPro>().text = numberText;
+        dmgText.GetComponent<SpawnDmgText>().PrintDmg();
     }
 }
