@@ -7,9 +7,13 @@ public class Stats : MonoBehaviour{
     public int armor;
     public float attackSpeed;
     public int damage;
+    public float moveSpeed;
     public int targetLayer;
     private float timeForAttack;
     private bool readyForAttack = true;
+    private bool slowedSpeed = false;
+    private float slowTimer;
+    private float slowedTime = 4;
 
     void FixedUpdate(){
         if(!readyForAttack){
@@ -18,7 +22,14 @@ public class Stats : MonoBehaviour{
                 readyForAttack = true;
             }
         }
+        if(slowedSpeed){
+            slowTimer += Time.deltaTime;
+            if (slowTimer > slowedTime){
+                NormalSpeed();
+            }
+        }
     }
+
     private void OnCollisionEnter2D(Collision2D target){
         if(target.gameObject.layer == targetLayer && readyForAttack){
             if (target.gameObject.GetComponent<Stats>() != null){ //Check if target is a combatant or a worker 
@@ -30,7 +41,8 @@ public class Stats : MonoBehaviour{
             }
         }
     }
-    private void Attack(Collision2D target){
+    
+    public virtual void Attack(Collision2D target){
         target.gameObject.GetComponent<Stats>().TakeDamage(damage);
     }
     public virtual void TakeDamage(int Dmg){
@@ -43,6 +55,19 @@ public class Stats : MonoBehaviour{
             Death();
         }
     }
+    public void SlowedSpeed(){
+        slowTimer = 0;
+        if(slowedSpeed == false){
+            moveSpeed /= 2;
+            slowedSpeed = true;
+        }
+    }
+
+    private void NormalSpeed(){
+        moveSpeed *= 2;
+        slowedSpeed = false;
+    }
+
     public virtual void Death(){
         Destroy(gameObject);
     }

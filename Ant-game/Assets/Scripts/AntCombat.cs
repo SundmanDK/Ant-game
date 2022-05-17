@@ -12,18 +12,13 @@ public class AntCombat : Stats{
         healthBar.SetMaxHealth(health);
         cam = Camera.main;
     }
+
     public override void TakeDamage(int Dmg){
-        if(Dmg - armor > 0){
-            health -= Dmg - armor;
-        } else {
-            health -= 1;
-        }
+        base.TakeDamage(Dmg);
         healthBar.SetHealth(health);
-        if(health <= 0 )
-            Death();
     }
+
     public override void Death(){
         InitializeGameover.gameObject.SetActive(true);
-        
     }
 }
