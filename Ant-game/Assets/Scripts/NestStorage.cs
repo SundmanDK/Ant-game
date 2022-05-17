@@ -27,7 +27,8 @@ public class NestStorage : MonoBehaviour
     public Color numberWhiteColor;
     public Color numberRedColor;
 
-
+    TooltipTrigger antTip;
+    string antToolTip;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +37,7 @@ public class NestStorage : MonoBehaviour
         oldFood = 0;
         score = 0;
         gold = 0;
-        antCostFactor = 0;
+        antCostFactor = 1;
 
         CA = ControllableAnt.GetComponent<ControlableAnt>();
 
@@ -49,6 +50,9 @@ public class NestStorage : MonoBehaviour
         FloatingText.text = "10";
 
         Button spawnBtn = spawnButton.GetComponent<Button>();
+        antTip = spawnButton.GetComponent<TooltipTrigger>();
+        antToolTip = antTip.content;
+        antTip.content = antToolTip + " Costs: " + (5 * antCostFactor);
         spawnBtn.onClick.AddListener(checkSpawnButton);
 
 
@@ -94,9 +98,10 @@ public class NestStorage : MonoBehaviour
     }
     void checkSpawnButton()
     {
-        if (gold >= (5 + 5 * antCostFactor)){
-            executeSpawnButton(5 + 5 * antCostFactor);
+        if (gold >= (5 * antCostFactor)){
+            executeSpawnButton(5 * antCostFactor);
             antCostFactor += 1;
+            antTip.content = antToolTip + " Costs: " + (5 * antCostFactor); 
         }
         else failedMoney();
     }
