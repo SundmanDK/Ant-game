@@ -48,6 +48,7 @@
      <Compile Include="Assets\LeanTween\Framework\LeanTweenExt.cs" />
      <Compile Include="Assets\Scripts\AntBehaviour.cs" />
      <Compile Include="Assets\Scripts\HealthBar.cs" />
+     <Compile Include="Assets\ButtonSpriteChanger.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
      <Compile Include="Assets\LeanTween\Framework\LTSeq.cs" />
      <Compile Include="Assets\Scripts\ClickStuff.cs" />
@@ -65,9 +66,11 @@
      <Compile Include="Assets\Scripts\SpiderStuff.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
+     <Compile Include="Assets\Scripts\SpawnDmgText.cs" />
      <Compile Include="Assets\LeanTween\Framework\LeanSmooth.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
      <Compile Include="Assets\Scripts\manageDeathMenu.cs" />
+     <Compile Include="Assets\Scripts\WaspStats.cs" />
      <Compile Include="Assets\Scripts\NestStorage.cs" />
      <Compile Include="Assets\Scripts\homeCall.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
@@ -92,7 +95,7 @@
      <Compile Include="Assets\Scripts\typePheromone.cs" />
      <Compile Include="Assets\Scripts\AntCombat.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
-     <Compile Include="Assets\Scripts\EnemyFieldOfView.cs" />
+     <Compile Include="Assets\Scripts\CombatFieldOfView.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
      <Compile Include="Assets\Scripts\TooltipTrigger.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
@@ -109,9 +112,8 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
      <Compile Include="Assets\Scripts\selfDestroy.cs" />
-     <Compile Include="Assets\ButtonSpriteChanger.cs" />
-     <Compile Include="Assets\Scripts\SpawnDmgText.cs" />
-     <Compile Include="Assets\Scripts\WaspStats.cs" />
+     <Compile Include="Assets\SnakeStats.cs" />
+     <Compile Include="Assets\Scripts\FlyStats.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\LeanTween\ReadMe.txt" />
