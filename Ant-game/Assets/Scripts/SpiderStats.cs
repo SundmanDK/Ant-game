@@ -18,6 +18,10 @@ public class SpiderStats : Stats{
         slowOnCooldown = true;
     }
     void FixedUpdate(){
+        if (health <= 0)
+        {
+            Death();
+        }
         AttackTimer();
         if(slowOnCooldown){
             timeOnCooldown += Time.deltaTime;

@@ -20,6 +20,8 @@ public class Stats : MonoBehaviour{
     private int poisonTicks;
     public string numberText;
     public GameObject dmgText;
+    public GameObject bossManage;
+   
 
     void FixedUpdate(){
         AttackTimer();
@@ -105,6 +107,8 @@ public class Stats : MonoBehaviour{
 
     protected virtual void Death(){
         Destroy(transform.parent.gameObject);
+        bossManage.GetComponent<BossManage>().updateBossCount();
+        Debug.Log("DeathTime");
     }
 
     private void killWorkerAnts(Collision2D target){

@@ -6,9 +6,7 @@ public class WaspStats : Stats{
 
     float chargeTimer = 0; 
 
-    void FixedUpdate(){
-
-    }
+    //void FixedUpdate(){ }
 
     public override void TakeDamage(int Dmg){
         base.TakeDamage(Dmg);
