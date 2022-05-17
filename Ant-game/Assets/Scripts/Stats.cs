@@ -25,6 +25,9 @@ public class Stats : MonoBehaviour{
         AttackTimer();
         SlowedTimer();
         PoisonTimer();
+        if(health <= 0){
+            Death();
+        }
     }
 
     protected void AttackTimer(){
@@ -80,9 +83,7 @@ public class Stats : MonoBehaviour{
         } else {
             health -= 1;
         }
-        if(health <= 0){
-            Death();
-        }
+        
     }
     public void SlowedSpeed(){
         slowTimer = 0;
