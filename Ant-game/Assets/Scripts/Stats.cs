@@ -61,6 +61,7 @@ public class Stats : MonoBehaviour{
 
     private void killWorkerAnts(Collision2D target){
         Destroy(target.gameObject);
+        Debug.Log("target: "+target);
     }
 
     public void CallDamangeVisual()
