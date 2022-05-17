@@ -16,15 +16,9 @@ public class SpiderStats : Stats{
             }
         }
     }
-    public override void TakeDamage(int Dmg){
-        base.TakeDamage(Dmg);
-    }
     
-    public override void Death(){
-        Destroy(transform.parent.gameObject);
-    }
-    public override void Attack(Collision2D target){
-        target.gameObject.GetComponent<Stats>().TakeDamage(damage);
+    protected override void Attack(Collision2D target){
+        base.Attack(target);
         if(!slowOnCooldown){
             ApplySlow(target);
         }
@@ -35,9 +29,5 @@ public class SpiderStats : Stats{
     }
     void FixedUpdate(){
         AttackTimer();
-    }
-
-    public override void TakeDamage(int Dmg){
-        base.TakeDamage(Dmg);
     }
 }

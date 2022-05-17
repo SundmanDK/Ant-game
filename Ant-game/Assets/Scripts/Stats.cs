@@ -50,7 +50,7 @@ public class Stats : MonoBehaviour{
         }
     }
 
-    protected void Attack(Collision2D target){
+    protected virtual void Attack(Collision2D target){
         target.gameObject.GetComponent<Stats>().TakeDamage(damage);
         CallDamangeVisual();
     }
