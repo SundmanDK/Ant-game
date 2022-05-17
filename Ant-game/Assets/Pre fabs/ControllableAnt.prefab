@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 4345894374680401504}
   - component: {fileID: 4345894374680401507}
   - component: {fileID: 4345894374680401506}
-  - component: {fileID: 4345894374680401517}
   - component: {fileID: -8079183091384580027}
   - component: {fileID: 4345894374680401510}
   - component: {fileID: 4345894374680401505}
   - component: {fileID: -8704101353495265315}
-  m_Layer: 0
+  - component: {fileID: -6733370617328179807}
+  m_Layer: 14
   m_Name: ControllableAnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,29 +109,6 @@ MonoBehaviour:
   maxHealth: 25
   currentHealth: 0
   healthBar: {fileID: 0}
---- !u!114 &4345894374680401517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4345894374680401519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32588e2799c887643a09ffe15c6de5dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viewRadius: 0
-  viewAngle: 0
-  targetMask:
-    serializedVersion: 2
-    m_Bits: 0
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 0
-  visibleTargetsMid: []
-  visibleTargetsLeft: []
-  visibleTargetsRight: []
 --- !u!114 &-8079183091384580027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +180,28 @@ MonoBehaviour:
   attackSpeed: 1
   damage: 1
   targetLayer: 13
+  numberText: 
   dmgText: {fileID: 0}
   healthBar: {fileID: 0}
   InitializeGameover: {fileID: 0}
+--- !u!114 &-6733370617328179807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4345894374680401519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc6e522ab92fb14ea2ab525183f8abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRadius: 12
+  viewAngle: 80
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 8192
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 128
+  visibleTargets: []

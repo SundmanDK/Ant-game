@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class EnemyFieldOfView : MonoBehaviour{
+public class CombatFieldOfView : MonoBehaviour{
 
     public float viewRadius;
     [Range(0,360)]
@@ -14,13 +14,12 @@ public class EnemyFieldOfView : MonoBehaviour{
     public LayerMask obstacleMask; //not used yet
 
     //[HideInInspector]
-    public List<Transform> visibleTargetsMid = new List<Transform>();
+    public List<Transform> visibleTargets = new List<Transform>();
+
     void Start(){
         StartCoroutine("FindTargetsWithDelay", .2f);
         angleSegment = viewAngle / 3;
     }
-
-
 
     IEnumerator FindTargetsWithDelay(float delay){
         while (true) {
@@ -30,27 +29,17 @@ public class EnemyFieldOfView : MonoBehaviour{
     }
 
     void FindVisableTargets(){
-        visibleTargetsMid.Clear();
+        visibleTargets.Clear();
         Collider2D[] targetsInViewRadius = Physics2D.OverlapCircleAll(transform.position, viewRadius, targetMask);
 
         for (int i = 0; i < targetsInViewRadius.Length; i++){
             Transform target = targetsInViewRadius[i].transform;
             Vector3 directionToTarget = (target.position - transform.position).normalized;
             if (Vector3.Angle(transform.up, directionToTarget) < viewAngle){
-                visibleTargetsMid.Add(target);
+                visibleTargets.Add(target);
             
             }
         }
-    }
-
-
-    public Vector3 DirectionFromAngle(float angleInDegrees, bool angleIsGlobal){
-        if (!angleIsGlobal){
-            angleInDegrees += transform.eulerAngles.z;
-        }
-
-        return new Vector3(Mathf.Cos(angleInDegrees * Mathf.Deg2Rad), Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0);
-
     }
 }
 

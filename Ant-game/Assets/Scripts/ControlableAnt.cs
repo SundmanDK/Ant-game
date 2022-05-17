@@ -5,7 +5,7 @@ public class ControlableAnt : MonoBehaviour{
     private Rigidbody2D rigidbodyComponent;
     private Rigidbody2D rigidbodyComponentChild;
     private GameObject Marker;
-    private FieldOfView fow;
+    private CombatFieldOfView fow;
     private FoodGrouping FG;
     private NestStorage NS;
     public SpriteRenderer spriteRenderer;
@@ -30,7 +30,7 @@ public class ControlableAnt : MonoBehaviour{
     void Start(){
         rigidbodyComponent = GetComponent<Rigidbody2D>();
         NS = GetComponentInParent<NestStorage>();
-        fow = GetComponent<FieldOfView>();
+        fow = GetComponent<CombatFieldOfView>();
         Marker = GameObject.Find("GoToMarker");
         viewCamera = Camera.main;
         Physics2D.IgnoreLayerCollision(0,0,true);
@@ -57,20 +57,20 @@ public class ControlableAnt : MonoBehaviour{
         updateHealthbar();
     }
 
-    public void updateHealthbar()
-    {
+    public void updateHealthbar(){
         healthBar.SetHealth(currentHealth);
-
     }
 
 
     void FixedUpdate(){
         if (goTo)
-            move();
+            MoveTo(Marker.transform);
+        else if (fow.visibleTargets.Count > 0)
+            MoveTo(fow.visibleTargets[0]);
     }
 
-    void move(){
-        Vector3 directionToTarget = (Marker.transform.position - transform.position).normalized;
+    void MoveTo(Transform destination){
+        Vector3 directionToTarget = (destination.position - transform.position).normalized;
         float angle = Vector3.Angle(transform.up, directionToTarget);
         transform.RotateAround(transform.position, transform.forward, angle);
         rigidbodyComponent.velocity = transform.up * moveSpeed;
@@ -86,7 +86,15 @@ public class ControlableAnt : MonoBehaviour{
     }
 
     private void OnTriggerExit2D(){
-        goTo = true;
+        if (fow.visibleTargets.Count == 0)
+            goTo = true;
+    }
+
+    private void OnCollisionEnter2D(Collision2D col){
+        if (col.gameObject.layer == 7){
+            goTo = false;
+            rigidbodyComponent.velocity = new Vector3(0,0,0);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col){
@@ -97,12 +105,12 @@ public class ControlableAnt : MonoBehaviour{
             holdingFood = true;
             ChangeSprite();
         }
-        if(col.gameObject.layer == 8 && holdingFood){       //deliver food to nest
+        if (col.gameObject.layer == 8 && holdingFood){       //deliver food to nest
             holdingFood = false;
             NS.food += 2;
             ChangeSprite();
         }
-        if (col.gameObject.layer == 11 || col.gameObject.layer == 7){
+        if (col.gameObject.layer == 11){
             goTo = false;
             rigidbodyComponent.velocity = new Vector3(0,0,0);
         }

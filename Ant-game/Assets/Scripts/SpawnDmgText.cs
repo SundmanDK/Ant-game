@@ -13,8 +13,7 @@ public class SpawnDmgText : MonoBehaviour
     public float timeBeforeGone = 1f;
 
 
-    void Update()
-    {
+    void Update(){
         timeBeforeGone = timeBeforeGone - Time.deltaTime;
         if (timeBeforeGone <= 0) { Destroy(gameObject); }
     }
@@ -22,9 +21,7 @@ public class SpawnDmgText : MonoBehaviour
 
 
 
-    public void PrintDmg()
-    {
+    public void PrintDmg(){
         Instantiate(DmgTextSpawn, GameObject.Find("ControllableAnt").transform.position, Quaternion.identity);
-        Debug.Log("sddsdsds");
     }
 }
