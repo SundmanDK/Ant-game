@@ -47,10 +47,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1556993710213782457}
     m_Modifications:
-    - target: {fileID: 1518841834831263613, guid: 508cb90af6b101442b774a424f0d25da, type: 3}
-      propertyPath: m_Name
-      value: FlyGuy
-      objectReference: {fileID: 0}
     - target: {fileID: 3911412669700928489, guid: 508cb90af6b101442b774a424f0d25da, type: 3}
       propertyPath: m_Name
       value: Fly
@@ -241,10 +237,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4370726715200266918, guid: 9e7fc977cd41d1644aab42a575e420e1, type: 3}
-      propertyPath: m_Name
-      value: SnakeDude
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e7fc977cd41d1644aab42a575e420e1, type: 3}
 --- !u!224 &5581324046810273741 stripped
@@ -259,10 +251,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1556993710213782457}
     m_Modifications:
-    - target: {fileID: 3284317645753193436, guid: 4d22d405344de9645a1eec70b5e51641, type: 3}
-      propertyPath: m_Name
-      value: BeetleBuddy
-      objectReference: {fileID: 0}
     - target: {fileID: 5554078140297958978, guid: 4d22d405344de9645a1eec70b5e51641, type: 3}
       propertyPath: m_Name
       value: Beetle
@@ -448,10 +436,6 @@ PrefabInstance:
     - target: {fileID: 303909870857923439, guid: a26dca3279375b54d9ce11707b806da0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193837132948636540, guid: a26dca3279375b54d9ce11707b806da0, type: 3}
-      propertyPath: m_Name
-      value: SpiderBoy
       objectReference: {fileID: 0}
     - target: {fileID: 8193837133826089693, guid: a26dca3279375b54d9ce11707b806da0, type: 3}
       propertyPath: m_Name

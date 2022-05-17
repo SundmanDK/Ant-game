@@ -69,7 +69,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4370726715200266916}
   - component: {fileID: 4370726715200266915}
   - component: {fileID: 4370726715200266912}
-  - component: {fileID: 199014250736915609}
+  - component: {fileID: 7443730679021147506}
   m_Layer: 13
   m_Name: SnakeDude
   m_TagString: Untagged
@@ -233,7 +233,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   visibleTargets: []
---- !u!114 &199014250736915609
+--- !u!114 &7443730679021147506
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -242,15 +242,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4370726715200266918}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48d0caab0d4e18b4db909c68a40ea19f, type: 3}
+  m_Script: {fileID: 11500000, guid: 34dfc026e5f069b49b1f6e9bf18a6d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 600
   armor: 2
   attackSpeed: 1
   damage: 4
-  moveSpeed: 10
+  moveSpeed: 6
   targetLayer: 14
   numberText: 
   dmgText: {fileID: 4885865928676251705, guid: 1dfe2fb7cfa3fbe44899b2b488428de3, type: 3}
-  poisonOnCooldown: 0
+  slowOnCooldown: 0

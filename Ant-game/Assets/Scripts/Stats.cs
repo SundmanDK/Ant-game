@@ -59,14 +59,12 @@ public class Stats : MonoBehaviour{
 
     private void OnCollisionEnter2D(Collision2D target){
         if(target.gameObject.layer == targetLayer && readyForAttack){
-            Debug.Log("hit");
             if (target.gameObject.GetComponent<Stats>() != null){ //Check if target is a combatant or a worker, relevant for enemies.
                 Attack(target);
                 timeForAttack = 0;
                 readyForAttack = false;
             } else {
                 killWorkerAnts(target);
-                Debug.Log(target.gameObject.layer +" this!!!!!!!!!!!!!!!");
             }
         }
     }

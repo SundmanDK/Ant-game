@@ -21,7 +21,7 @@ public class SpawnDmgText : MonoBehaviour
 
 
     public void PrintDmg(){
-        Instantiate(DmgTextSpawn, GameObject.Find("ControllableAnt").transform.position, Quaternion.identity);
+        Instantiate(DmgTextSpawn, GameObject.Find("ControllableAnt").transform.position + new Vector3(Random.Range(-20, 40), Random.Range(-30, 10), 0), Quaternion.identity);
     }
 
 }
