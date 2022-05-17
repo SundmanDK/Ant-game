@@ -13,7 +13,7 @@ public GameObject options;
 public GameObject ui;
 public GameObject changeSpritePheromone;
 public GameObject changeCameralock;
-//public GameObject[] pheromones;
+
 
 public TMPro.TextMeshProUGUI textScore;
 public GameObject Nest;
@@ -33,7 +33,7 @@ public Button optionsCamaraLock;
 
     
 
-    // Start is called before the first frame update
+ 
     void Start()
     {
        
