@@ -31,7 +31,7 @@ public class SnakeStats : Stats{
         }
     }
     private void ApplyPoison(Collision2D target){
-        target.gameObject.GetComponent<Stats>().Poison();
+        target.gameObject.GetComponent<Stats>().Poison(damage/4);
         poisonOnCooldown = true;
     }
 

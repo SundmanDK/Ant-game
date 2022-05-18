@@ -14,6 +14,7 @@ public class Stats : MonoBehaviour{
     private bool slowedSpeed = false;
     private float slowTimer;
     private float slowedTime = 4;
+    private int poisonDmg;
     private bool poisoned;
     private float poisonTimer;
     private float poisonTickDuration = 2;
@@ -52,11 +53,12 @@ public class Stats : MonoBehaviour{
         if(poisoned){
             poisonTimer += Time.deltaTime;
             if (poisonTimer > poisonTickDuration){
-                TakeDamage(1);
+                TakeTrueDamage(poisonDmg);
                 poisonTimer = 0;
                 poisonTicks += 1;
                 if(poisonTicks >= 4){
                     poisoned = false;
+                    poisonTicks = 0;
                 }
             }
         }
@@ -76,6 +78,11 @@ public class Stats : MonoBehaviour{
 
     protected virtual void Attack(Collision2D target){
         target.gameObject.GetComponent<Stats>().TakeDamage(damage);
+    }
+
+    private void TakeTrueDamage(int Dmg){
+        health -= Dmg;
+        CallDamangeVisual();
     }
 
     public virtual void TakeDamage(int Dmg){
@@ -99,8 +106,9 @@ public class Stats : MonoBehaviour{
         slowedSpeed = false;
     }
 
-    public void Poison(){
+    public void Poison(int incomingPoisonDmg){
         poisonTimer = 0;
+        poisonDmg = incomingPoisonDmg;
         if(poisoned == false)
             poisoned = true;
     }
