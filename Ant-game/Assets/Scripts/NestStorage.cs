@@ -22,6 +22,7 @@ public class NestStorage : MonoBehaviour
     public TextMeshPro FloatingText;
     public GameObject Ant;
     public GameObject ControllableAnt;
+    private AntCombat AC;
     
 
     public Color numberWhiteColor;
@@ -40,7 +41,7 @@ public class NestStorage : MonoBehaviour
         antCostFactor = 1;
 
        
-
+        AC = ControllableAnt.GetComponent<AntCombat>();
 
 
         Color numberWhiteColor = new Color(255, 255, 255);
@@ -123,12 +124,11 @@ public class NestStorage : MonoBehaviour
     void executeHealButton()
     {
         gold = gold - 20;
-      /*  Debug.Log(ControllableAnt.GetComponent<AntCombat>().health);
-        //  if (ControllableAnt.GetComponent<AntCombat>().currentHealth < ControllableAnt.GetComponent<AntCombat>().maxHealth) { ControllableAnt.GetComponent<AntCombat>().currentHealth = ControllableAnt.GetComponent<AntCombat>().currentHealth + 2; }
-        // ControllableAnt.GetComponent<AntCombat>().updateHealthbar();
-        ControllableAnt.GetComponent<AntCombat>().health = ControllableAnt.GetComponent<AntCombat>().health + 100;
+        if (AC.health < AC.maxHealth){
+            AC.heal(2);
+        }
         textDisplayFood.text = gold.ToString();
-       */
+
     }
     
     void checkHealthButton()
@@ -141,10 +141,9 @@ public class NestStorage : MonoBehaviour
         else failedMoney();
     }
     void executeHealthButton()
-    {/*
+    {
         gold = gold - 20;
-      //  ControllableAnt.GetComponent<AntCombat>().maxHealth = ControllableAnt.GetComponent<AntCombat>().maxHealth + 2;
-      //  ControllableAnt.GetComponent<AntCombat>().updateHealthbar();
+
        */ textDisplayFood.text = gold.ToString();
     }
 

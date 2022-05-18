@@ -6,11 +6,22 @@ public class AntCombat : Stats{
     public HealthBar healthBar;
     public GameObject InitializeGameover;
     private Camera cam;
+    public int maxHealth;
+
 
     void Start(){
+        maxHealth = health;
         healthBar = GameObject.Find("Health bar").GetComponent<HealthBar>();
         healthBar.SetMaxHealth(health);
         cam = Camera.main;
+    }
+
+    public void heal(int hp){
+        health += hp;
+        
+        if (health > maxHealth){
+            health = maxHealth;
+        }
     }
 
     public override void TakeDamage(int Dmg){
