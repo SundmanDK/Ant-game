@@ -17,6 +17,8 @@ public class NestStorage : MonoBehaviour
     public Button spawnButton;
     public Button healthButton;
     public Button healButton;
+    public Button damageButton;
+    public Button armorButton;
 
     public TextMeshProUGUI textDisplayFood;
     public TextMeshPro FloatingText;
@@ -62,6 +64,12 @@ public class NestStorage : MonoBehaviour
 
         Button healthBtn = healthButton.GetComponent<Button>();
         healthBtn.onClick.AddListener(checkHealthButton);
+
+        Button damageBtn = damageButton.GetComponent<Button>();
+        healBtn.onClick.AddListener(checkDamageButton);
+
+        Button armorBtn = armorButton.GetComponent<Button>();
+        armorBtn.onClick.AddListener(checkArmorButton);
     }
 
     void Update()
@@ -167,7 +175,7 @@ public class NestStorage : MonoBehaviour
     void checkDamageButton(){
         int cost = 20;
         if (gold >= cost){
-            executeDamageButton();
+            executeDamageButton(cost);
         }
     }
 
