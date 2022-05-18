@@ -6,21 +6,23 @@ using UnityEngine;
 
 public class GameoverInitializeScript : MonoBehaviour
 {
-    public GameObject OverlayMenu;
     public GameObject endMessege;
+    public GameObject winMessege;
+    public GameObject ui;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log("death call");
-        OverlayMenu.GetComponent<manageOverlayMenu>().GameOverfunction();
-        Instantiate(endMessege, gameObject.transform.position, Quaternion.identity);
 
+
+    public void Lost()
+    {
+    
+        ui.gameObject.SetActive(false);
+        Instantiate(endMessege, new Vector3(0, 0, 0), Quaternion.identity);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void Win()
     {
-       
+
+        ui.gameObject.SetActive(false);
+        Instantiate(winMessege, new Vector3(0, 0, 0), Quaternion.identity);
     }
 }

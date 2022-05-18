@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 501343102}
   - component: {fileID: 501343104}
   - component: {fileID: 501343105}
+  - component: {fileID: 178401240}
   m_Layer: 5
   m_Name: Health bar
   m_TagString: Untagged
@@ -363,6 +364,20 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   fill: {fileID: 337523471}
+--- !u!114 &178401240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501343101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0491139952823842853789905b2c955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: If you die, you lose the game
+  header: Health
 --- !u!1 &1654320529
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,8 +465,9 @@ GameObject:
   - component: {fileID: 4715226335874029540}
   - component: {fileID: 1784233994660999023}
   - component: {fileID: 6371309132250036920}
+  - component: {fileID: 124976979}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: ButtonHeal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -559,6 +575,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &124976979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379918666181033832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0491139952823842853789905b2c955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: Mend your wounds
+  header: Heal Up
 --- !u!1 &451406175721122289
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,6 +601,7 @@ GameObject:
   - component: {fileID: 5234120979171025992}
   - component: {fileID: 6010315960844322130}
   - component: {fileID: 7721331489826311644}
+  - component: {fileID: 1907224022}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -680,6 +711,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1907224022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451406175721122289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0491139952823842853789905b2c955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: 
+  header: 
 --- !u!1 &869987682328321911
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +737,7 @@ GameObject:
   - component: {fileID: 3307383740176290705}
   - component: {fileID: 2303621948867643289}
   - component: {fileID: 831436686513832313}
+  - component: {fileID: 1245835607}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -801,6 +847,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1245835607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869987682328321911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0491139952823842853789905b2c955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: 
+  header: 
 --- !u!1 &1365314019942705807
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,6 +952,7 @@ GameObject:
   - component: {fileID: 1210447561156185849}
   - component: {fileID: 3874941209681054753}
   - component: {fileID: 742141672620760669}
+  - component: {fileID: 1148020050}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1001,6 +1062,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1148020050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764664255374131629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0491139952823842853789905b2c955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: 
+  header: 
 --- !u!1 &1846764114544891238
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,6 +1151,7 @@ GameObject:
   - component: {fileID: 4078912002981753461}
   - component: {fileID: 4710052497210893224}
   - component: {fileID: 8137618226844580507}
+  - component: {fileID: 1898942508}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -1185,6 +1261,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1898942508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855005689267968141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0491139952823842853789905b2c955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: 
+  header: 
 --- !u!1 &1916120591865988418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,6 +1287,7 @@ GameObject:
   - component: {fileID: 1988631303950306886}
   - component: {fileID: 9096535220246073280}
   - component: {fileID: 765340668797024867}
+  - component: {fileID: 1516097042}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -1306,6 +1397,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1516097042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916120591865988418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0491139952823842853789905b2c955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: 
+  header: 
 --- !u!1 &2052102464385312201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1463,7 +1568,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 'Heal up
+
+'
 --- !u!1 &2817849665293824237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1542,7 +1649,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 'Incresse maximum health
+
+'
 --- !u!1 &2928227269425948008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1784,6 +1893,7 @@ GameObject:
   - component: {fileID: 859442518400442494}
   - component: {fileID: 7345875584425997996}
   - component: {fileID: 7255882227717700937}
+  - component: {fileID: 1980249477}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -1893,6 +2003,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1980249477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3505199276519281514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0491139952823842853789905b2c955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: 
+  header: 
 --- !u!1 &3506689044935444041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1984,8 +2108,9 @@ GameObject:
   - component: {fileID: 6771725784987884349}
   - component: {fileID: 3352209363342416836}
   - component: {fileID: 4013125002676050325}
+  - component: {fileID: 1439796810}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: ButtonMoreAnts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2093,6 +2218,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1439796810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3507082662757536616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0491139952823842853789905b2c955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: Spawn 1 additional worker to collect food for your colony
+  header: Grow Population
 --- !u!1 &3522934670404088460
 GameObject:
   m_ObjectHideFlags: 0
@@ -2443,6 +2582,7 @@ GameObject:
   - component: {fileID: 3693286333032553035}
   - component: {fileID: 3693286333032553036}
   - component: {fileID: 3693286333032553033}
+  - component: {fileID: 711610569}
   m_Layer: 5
   m_Name: SpeedButton
   m_TagString: Untagged
@@ -2579,6 +2719,20 @@ MonoBehaviour:
   Move: {fileID: 0}
   speedLimit: 20
   nestStorage: {fileID: 0}
+--- !u!114 &711610569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3693286333032553038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0491139952823842853789905b2c955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: Hasten your ants speed! Making them move faster over the tarain
+  header: Speed
 --- !u!1 &3693286333991139082
 GameObject:
   m_ObjectHideFlags: 0
@@ -3592,6 +3746,7 @@ GameObject:
   - component: {fileID: 2441668156055541353}
   - component: {fileID: 6363760339683428398}
   - component: {fileID: 5168402512081055155}
+  - component: {fileID: 575337927}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -3701,6 +3856,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &575337927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6176654449249811031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0491139952823842853789905b2c955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: 
+  header: 
 --- !u!1 &6231380658252952569
 GameObject:
   m_ObjectHideFlags: 0
@@ -3976,6 +4145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2796471620941385252}
   - component: {fileID: 5103018088578594683}
+  - component: {fileID: 526989697}
   m_Layer: 5
   m_Name: Money bar
   m_TagString: Untagged
@@ -4014,6 +4184,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7501601533516262870}
   m_CullTransparentMesh: 1
+--- !u!114 &526989697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7501601533516262870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0491139952823842853789905b2c955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: This is your currency. Spend it wisely
+  header: Resource Bar
 --- !u!1 &7654954491045128053
 GameObject:
   m_ObjectHideFlags: 0
@@ -4092,7 +4276,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 'Spawn worker
+
+'
 --- !u!1 &7796341034475651082
 GameObject:
   m_ObjectHideFlags: 0
@@ -4105,6 +4291,7 @@ GameObject:
   - component: {fileID: 4184811406112166357}
   - component: {fileID: 4934111201201961355}
   - component: {fileID: 8405768577159115140}
+  - component: {fileID: 1287809070}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -4214,6 +4401,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1287809070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7796341034475651082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0491139952823842853789905b2c955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: 
+  header: 
 --- !u!1 &7877036550376420387
 GameObject:
   m_ObjectHideFlags: 0
@@ -4292,8 +4493,9 @@ GameObject:
   - component: {fileID: 8511462723602589496}
   - component: {fileID: 4053477757755755534}
   - component: {fileID: 6896701509269068754}
+  - component: {fileID: 1125494843}
   m_Layer: 5
-  m_Name: ButtonScaleWall
+  m_Name: ButtonMaxHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4413,6 +4615,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1125494843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8381546342037654320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0491139952823842853789905b2c955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: Grow your excoskeleton thicker to withstand more severe attacks
+  header: Upgrade Max Health
 --- !u!1 &8813681878687102786
 GameObject:
   m_ObjectHideFlags: 0

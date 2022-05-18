@@ -20,6 +20,6 @@ public class AntCombat : Stats{
 
     protected override void Death(){
         Destroy(gameObject);
-        InitializeGameover.gameObject.SetActive(true);
+        InitializeGameover.GetComponent<GameoverInitializeScript>().Lost();
     }
 }

@@ -53,6 +53,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b922c5a9f1ac548aa9623ad46616c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WinMenu: {fileID: 5869484479537895787, guid: daed83ceb1709a548ac1d57008abc72e, type: 3}
+  OverlayMenuField: {fileID: 3305271226535565562, guid: ae68f22bb6cc3f54b915b155e50b5eba, type: 3}
+  bosses: []
 --- !u!1001 &4751382477896231675
 PrefabInstance:
   m_ObjectHideFlags: 0

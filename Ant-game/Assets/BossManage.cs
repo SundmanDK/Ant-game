@@ -4,30 +4,20 @@ using UnityEngine;
 
 public class BossManage : MonoBehaviour
 {
-    int childCount;
-    int newChildCount;
-    void Start()
+   
+    public GameObject InitializeGameover;
+    public List<GameObject> bosses = new List<GameObject>();
+
+    public void updateBossCount()
     {
-        childCount = 0;
-        foreach (Transform child in transform)
-        {
-            childCount++;
-           
-        }
-        Debug.Log(childCount);
+        bosses.RemoveAt(0);
+        if (bosses.Count <= 1) { Victory(); }
     }
 
 
-  public void updateBossCount()
+    public void Victory()
     {
+        InitializeGameover.GetComponent<GameoverInitializeScript>().Win();
 
-        childCount = childCount - 1;
-        if (childCount==0) { Victory(); }
-        Debug.Log(childCount);
-    }
-
-    void Victory()
-    {
-        Debug.Log(" You won! Amazing!!!");
     }
 }

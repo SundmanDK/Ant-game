@@ -5,6 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - dmgText: {fileID: 4885865928676251705, guid: 1dfe2fb7cfa3fbe44899b2b488428de3, type: 3}
+  - bossManage: {fileID: 312312045886027120, guid: e066b626b7c8b1246a21419a8bc949d9, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

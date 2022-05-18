@@ -3,7 +3,23 @@ guid: c00da706492eeaf40985b3879cc6c2e7
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - overlayMenu: {instanceID: 0}
+  - scoreMenu: {instanceID: 0}
+  - warningMenu: {instanceID: 0}
+  - options: {instanceID: 0}
+  - ui: {fileID: 3693286334549891047, guid: 2504ceedd9b93e048bf00e969fda73bc, type: 3}
+  - changeSpritePheromone: {instanceID: 0}
+  - changeCameralock: {instanceID: 0}
+  - textScore: {instanceID: 0}
+  - Nest: {instanceID: 0}
+  - resumeButton: {instanceID: 0}
+  - quitButton: {instanceID: 0}
+  - yesButton: {instanceID: 0}
+  - noButton: {instanceID: 0}
+  - optionsButtonRed: {instanceID: 0}
+  - optionsButtonBlue: {instanceID: 0}
+  - optionsCamaraLock: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

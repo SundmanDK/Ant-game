@@ -10,7 +10,6 @@ public GameObject overlayMenu;
 public GameObject scoreMenu;
 public GameObject warningMenu;
 public GameObject options;
-public GameObject ui;
 public GameObject changeSpritePheromone;
 public GameObject changeCameralock;
 
@@ -93,13 +92,7 @@ public Button optionsCamaraLock;
 
     }
 
-    public void GameOverfunction()
-    {
-        Debug.Log("GameOverfunction called");
-        ui.gameObject.SetActive(false);
-       
-
-    }
+  
 
     void toggleWindow(){
        

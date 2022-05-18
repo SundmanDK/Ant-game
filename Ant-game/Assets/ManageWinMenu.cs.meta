@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 34cb7e27de21149479fd5d48c82472b8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - textScore: {instanceID: 0}
+  - Nest: {fileID: 4687752701114978926, guid: ed932c349d4c0ca42a5b850902343a5e, type: 3}
+  - quitButton: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -3,7 +3,9 @@ guid: f1b922c5a9f1ac548aa9623ad46616c5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - WinMenu: {fileID: 5869484479537895787, guid: daed83ceb1709a548ac1d57008abc72e, type: 3}
+  - OverlayMenuField: {fileID: 3305271226535565562, guid: ae68f22bb6cc3f54b915b155e50b5eba, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

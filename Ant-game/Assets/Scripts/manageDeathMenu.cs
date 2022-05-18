@@ -15,7 +15,6 @@ public class manageDeathMenu : MonoBehaviour
     public GameObject Nest;
     public Button quitButton;
 
- 
 
 
 
@@ -23,7 +22,7 @@ public class manageDeathMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Nest = GameObject.Find("Nest");
         textScore.text = Nest.GetComponent<NestStorage>().score.ToString();
         Button quitBtn = quitButton.GetComponent<Button>();
         quitBtn.onClick.AddListener(QuitToMenu);

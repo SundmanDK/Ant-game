@@ -420,7 +420,7 @@ GameObject:
   - component: {fileID: 8467563261507914493}
   - component: {fileID: 2538416248584412992}
   m_Layer: 5
-  m_Name: backToMainMenuButton
+  m_Name: yesButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 7284579958472143024}
   - component: {fileID: 6794968734775758722}
   m_Layer: 5
-  m_Name: resumeButton
+  m_Name: noButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -289,7 +289,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Text
+  m_text: 101
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1012,9 +1012,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 406a9d8c0ef04bf41908db8d074defdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overlayMenu: {fileID: 3305271226535565562, guid: ae68f22bb6cc3f54b915b155e50b5eba, type: 3}
-  scoreMenu: {fileID: 8079799801326418605}
   textScore: {fileID: 1929925594772948166}
-  Nest: {fileID: 4687752701114978926, guid: ed932c349d4c0ca42a5b850902343a5e, type: 3}
+  Nest: {fileID: 0}
   quitButton: {fileID: 4352012596134881265}
-  boolFieldui: 1

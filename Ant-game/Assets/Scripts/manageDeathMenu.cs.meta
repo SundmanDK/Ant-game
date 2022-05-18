@@ -3,7 +3,9 @@ guid: 406a9d8c0ef04bf41908db8d074defdb
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Nest: {fileID: 4687752701114978926, guid: ed932c349d4c0ca42a5b850902343a5e, type: 3}
+  - quitButton: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
