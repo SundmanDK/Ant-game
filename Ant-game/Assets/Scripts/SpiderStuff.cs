@@ -9,6 +9,7 @@ public class SpiderStuff : MonoBehaviour
     public bool inArea;
     private CombatFieldOfView fow;
     private Stats stats;
+    public bool followingAnt;
     
     void Start(){
         inArea = true;
@@ -29,7 +30,7 @@ public class SpiderStuff : MonoBehaviour
     }
 
     void move(){
-        rigidbodyComponent.velocity = transform.up * moveSpeed;
+        rigidbodyComponent.velocity = transform.up * stats.moveSpeed;
     }
     private void followAnt(){
         if (fow.visibleTargets.Count > 0){
@@ -38,9 +39,11 @@ public class SpiderStuff : MonoBehaviour
                 Vector3 directionToTarget = (target.transform.position - transform.position).normalized;
                 float angle = Vector3.Angle(transform.up, directionToTarget);
                 transform.RotateAround(transform.position, transform.forward, angle);
+                followingAnt = true;
             }
         } else{
             transform.RotateAround(transform.position, transform.forward, Random.Range(-5f,5f));
+            followingAnt = false;
         }
     }
     private void goHome(){
