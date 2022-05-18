@@ -737,7 +737,7 @@ GameObject:
   - component: {fileID: 3307383740176290705}
   - component: {fileID: 2303621948867643289}
   - component: {fileID: 831436686513832313}
-  - component: {fileID: 1245835607}
+  - component: {fileID: 6311710358636426157}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -847,7 +847,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1245835607
+--- !u!114 &6311710358636426157
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -953,6 +953,7 @@ GameObject:
   - component: {fileID: 3874941209681054753}
   - component: {fileID: 742141672620760669}
   - component: {fileID: 1148020050}
+  - component: {fileID: 7470911422455290287}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1063,6 +1064,20 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1148020050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764664255374131629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0491139952823842853789905b2c955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: 
+  header: 
+--- !u!114 &7470911422455290287
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1287,7 +1302,7 @@ GameObject:
   - component: {fileID: 1988631303950306886}
   - component: {fileID: 9096535220246073280}
   - component: {fileID: 765340668797024867}
-  - component: {fileID: 1516097042}
+  - component: {fileID: 2134037637247111234}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -1397,7 +1412,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1516097042
+--- !u!114 &2134037637247111234
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1893,7 +1908,7 @@ GameObject:
   - component: {fileID: 859442518400442494}
   - component: {fileID: 7345875584425997996}
   - component: {fileID: 7255882227717700937}
-  - component: {fileID: 1980249477}
+  - component: {fileID: 4866474703114015538}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -2003,7 +2018,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1980249477
+--- !u!114 &4866474703114015538
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2108,7 +2123,7 @@ GameObject:
   - component: {fileID: 6771725784987884349}
   - component: {fileID: 3352209363342416836}
   - component: {fileID: 4013125002676050325}
-  - component: {fileID: 1439796810}
+  - component: {fileID: 3825455915169804072}
   m_Layer: 5
   m_Name: ButtonMoreAnts
   m_TagString: Untagged
@@ -2218,7 +2233,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1439796810
+--- !u!114 &3825455915169804072
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2583,6 +2598,7 @@ GameObject:
   - component: {fileID: 3693286333032553036}
   - component: {fileID: 3693286333032553033}
   - component: {fileID: 711610569}
+  - component: {fileID: 379130552991368895}
   m_Layer: 5
   m_Name: SpeedButton
   m_TagString: Untagged
@@ -2720,6 +2736,20 @@ MonoBehaviour:
   speedLimit: 20
   nestStorage: {fileID: 0}
 --- !u!114 &711610569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3693286333032553038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0491139952823842853789905b2c955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: Hasten your ants speed! Making them move faster over the tarain
+  header: Speed
+--- !u!114 &379130552991368895
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4494,6 +4524,7 @@ GameObject:
   - component: {fileID: 4053477757755755534}
   - component: {fileID: 6896701509269068754}
   - component: {fileID: 1125494843}
+  - component: {fileID: 3482901847595284206}
   m_Layer: 5
   m_Name: ButtonMaxHealth
   m_TagString: Untagged
@@ -4616,6 +4647,20 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1125494843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8381546342037654320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0491139952823842853789905b2c955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: Grow your excoskeleton thicker to withstand more severe attacks
+  header: Upgrade Max Health
+--- !u!114 &3482901847595284206
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
