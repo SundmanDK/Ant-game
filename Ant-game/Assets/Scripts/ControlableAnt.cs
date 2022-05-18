@@ -45,10 +45,6 @@ public class ControlableAnt : MonoBehaviour{
         Vector3 mousePos = Input.mousePosition;
         if (Input.GetMouseButtonDown(0) && mousePos.y > 230)
             goTo = true;
-        
-        if (Input.GetKeyDown(KeyCode.Space)){
-            TakeDamage(5);
-        }
     }
 
     void TakeDamage(int damage){
