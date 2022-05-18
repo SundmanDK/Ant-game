@@ -150,6 +150,35 @@ public class NestStorage : MonoBehaviour
        textDisplayFood.text = gold.ToString();
     }
 
+    void checkArmorButton(){
+        int cost = 20;
+        if (gold >= cost){
+            executeArmorButton(cost);
+        }
+    }
+
+    void executeArmorButton(int cost){
+        gold -= cost;
+        AC.armor += 10;
+        
+        textDisplayFood.text = gold.ToString();
+    }
+
+    void checkDamageButton(){
+        int cost = 20;
+        if (gold >= cost){
+            executeDamageButton();
+        }
+    }
+
+    void executeDamageButton(int cost){
+        gold -= cost;
+        AC.damage += 5;
+        
+        textDisplayFood.text = gold.ToString();
+    }
+
+
     void failedMoney()
     {
         textDisplayFood.color = numberRedColor;
