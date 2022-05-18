@@ -10,6 +10,7 @@ public class NestStorage : MonoBehaviour
     private int oldFood;
     public int score;
     public int gold;
+    private int cost;
     public int maxHealth;
     public int currentHealth;
     private int antCostFactor;
@@ -34,8 +35,7 @@ public class NestStorage : MonoBehaviour
     string antToolTip;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
         food = 0;
         oldFood = 0;
         score = 0;
@@ -66,7 +66,7 @@ public class NestStorage : MonoBehaviour
         healthBtn.onClick.AddListener(checkHealthButton);
 
         Button damageBtn = damageButton.GetComponent<Button>();
-        healBtn.onClick.AddListener(checkDamageButton);
+        damageBtn.onClick.AddListener(checkDamageButton);
 
         Button armorBtn = armorButton.GetComponent<Button>();
         armorBtn.onClick.AddListener(checkArmorButton);
@@ -100,89 +100,69 @@ public class NestStorage : MonoBehaviour
         textDisplayFood.text = gold.ToString();
     }
 
-    void CallFloatingText()
-    {
+    void CallFloatingText(){
         Instantiate(FloatingText, new Vector3(0f, 0f, 0f), Quaternion.identity);
-
     }
-    void checkSpawnButton()
-    {
+
+    void checkSpawnButton(){
         if (gold >= (5 * antCostFactor)){
             executeSpawnButton(5 * antCostFactor);
             antCostFactor += 1;
             antTip.content = antToolTip + " Costs: " + (5 * antCostFactor); 
-        }
-        else failedMoney();
+        } else failedMoney();
     }
-    void executeSpawnButton(int cost)
-    {
-        gold = gold - cost;
+    void executeSpawnButton(int cost){
+        pay(cost);
         Instantiate(Ant, new Vector3(0f, 0f, 0f), Quaternion.identity, gameObject.transform);
-        textDisplayFood.text = gold.ToString();
     }
 
-    void checkHealButton()
-    {
-        if (gold >= 20)
-        {
-            executeHealButton();
-        }
-        else failedMoney();
+    void checkHealButton(){
+        cost = 20;
+        if (gold >= cost && AC.health < AC.maxHealth){
+            executeHealButton(cost);
+        } else failedMoney();
     }
-    void executeHealButton()
-    {
-        gold = gold - 20;
-        if (AC.health < AC.maxHealth){
-            AC.heal(2);
-        }
-        textDisplayFood.text = gold.ToString();
-
+    void executeHealButton(int cost){
+        pay(cost);
+        AC.heal(2);
     }
     
-    void checkHealthButton()
-    {
-
-        if (gold >= 20)
-        {
-            executeHealthButton();
-        }
-        else failedMoney();
+    void checkHealthButton(){
+        cost = 20;
+        if (gold >= cost){
+            executeHealthButton(cost);
+        } else failedMoney();
     }
-    void executeHealthButton()
-    {
-        gold = gold - 20;
-
+    void executeHealthButton(int cost){
+        pay(cost);
         AC.maxHealth += 50;
         AC.heal(50);
-
-       textDisplayFood.text = gold.ToString();
     }
 
     void checkArmorButton(){
         int cost = 20;
         if (gold >= cost){
             executeArmorButton(cost);
-        }
+        } else failedMoney();
     }
-
     void executeArmorButton(int cost){
-        gold -= cost;
+        pay(cost);
         AC.armor += 10;
-        
-        textDisplayFood.text = gold.ToString();
     }
 
     void checkDamageButton(){
         int cost = 20;
         if (gold >= cost){
             executeDamageButton(cost);
-        }
+        } else failedMoney();
+    }
+    void executeDamageButton(int cost){
+        pay(cost);
+        AC.damage += 5;
     }
 
-    void executeDamageButton(int cost){
+    void pay(int cost){
         gold -= cost;
-        AC.damage += 5;
-        
         textDisplayFood.text = gold.ToString();
     }
 
