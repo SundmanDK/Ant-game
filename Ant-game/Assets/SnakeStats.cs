@@ -7,6 +7,23 @@ public class SnakeStats : Stats{
     private float poisonCooldown = 10;
     public bool poisonOnCooldown = false;
     private float timeOnCooldown;
+
+    void FixedUpdate(){
+        AttackTimer();
+        SlowedTimer();
+        PoisonTimer();
+        if(health <= 0){
+            Death();
+        }
+        if(poisonOnCooldown){
+            timeOnCooldown += Time.deltaTime;
+            if (timeOnCooldown > poisonCooldown){
+                poisonOnCooldown = false;
+                timeOnCooldown = 0;
+            }
+        }
+    }
+
     protected override void Attack(Collision2D target){
         base.Attack(target);
         if(!poisonOnCooldown){
