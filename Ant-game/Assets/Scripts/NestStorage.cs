@@ -31,8 +31,17 @@ public class NestStorage : MonoBehaviour
     public Color numberWhiteColor;
     public Color numberRedColor;
 
-    TooltipTrigger antTip;
-    string antToolTip;
+    Text antBuyRef;
+    string antBuyText;
+    Text healRef;
+    string healText;
+    Text healthRef;
+    string healthText;
+    Text damageRef;
+    string damageText;
+    Text armorRef;
+    string armorText;
+
 
     // Start is called before the first frame update
     void Start(){
@@ -53,22 +62,34 @@ public class NestStorage : MonoBehaviour
         FloatingText.text = "10";
 
         Button spawnBtn = spawnButton.GetComponent<Button>();
-        antTip = spawnButton.GetComponent<TooltipTrigger>();
-        antToolTip = antTip.content;
-        antTip.content = antToolTip + " Costs: " + (5 * antCostFactor);
+        antBuyRef = spawnButton.transform.GetChild(0).gameObject.GetComponent<Text>();
+        antBuyText = antBuyRef.text;
+        updateButtonText(antBuyRef, antBuyText, 5 * antCostFactor);
         spawnBtn.onClick.AddListener(checkSpawnButton);
 
 
         Button healBtn = healButton.GetComponent<Button>();
+        healRef = healBtn.transform.GetChild(0).gameObject.GetComponent<Text>();
+        healText = healRef.text;
+        updateButtonText(healRef, healText, 20);
         healBtn.onClick.AddListener(checkHealButton);
 
         Button healthBtn = healthButton.GetComponent<Button>();
+        healthRef = healthBtn.transform.GetChild(0).gameObject.GetComponent<Text>();
+        healthText = healthRef.text;
+        updateButtonText(healthRef, healthText, 20);
         healthBtn.onClick.AddListener(checkHealthButton);
 
         Button damageBtn = damageButton.GetComponent<Button>();
+        damageRef = damageBtn.transform.GetChild(0).gameObject.GetComponent<Text>();
+        damageText = damageRef.text;
+        updateButtonText(damageRef, damageText, 20);
         damageBtn.onClick.AddListener(checkDamageButton);
 
         Button armorBtn = armorButton.GetComponent<Button>();
+        armorRef = armorBtn.transform.GetChild(0).gameObject.GetComponent<Text>();
+        armorText = armorRef.text;
+        updateButtonText(armorRef, armorText, 20);
         armorBtn.onClick.AddListener(checkArmorButton);
     }
 
@@ -108,7 +129,7 @@ public class NestStorage : MonoBehaviour
         if (gold >= (5 * antCostFactor)){
             executeSpawnButton(5 * antCostFactor);
             antCostFactor += 1;
-            antTip.content = antToolTip + " Costs: " + (5 * antCostFactor); 
+            updateButtonText(antBuyRef, antBuyText, 5 * antCostFactor);
         } else failedMoney();
     }
     void executeSpawnButton(int cost){
@@ -166,6 +187,9 @@ public class NestStorage : MonoBehaviour
         textDisplayFood.text = gold.ToString();
     }
 
+    void updateButtonText(Text reference, string buttonText, int cost){
+        reference.text = buttonText + " ( " + cost +" )";
+    }
 
     void failedMoney()
     {
