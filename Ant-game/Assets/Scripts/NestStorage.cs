@@ -14,6 +14,9 @@ public class NestStorage : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
     private int antCostFactor;
+    private int armorCostFactor;
+    private int healthCostFactor;
+    private int damageCostFactor;
 
     public Button spawnButton;
     public Button healthButton;
@@ -50,6 +53,10 @@ public class NestStorage : MonoBehaviour
         score = 0;
         gold = 0;
         antCostFactor = 1;
+        armorCostFactor = 1;
+        healthCostFactor = 1;
+        damageCostFactor = 1;
+
 
        
         AC = ControllableAnt.GetComponent<AntCombat>();
@@ -102,12 +109,10 @@ public class NestStorage : MonoBehaviour
         oldFood = food;
     }
 
-    void everyFood()
-    {
+    void everyFood() {
         CallFloatingText();
         UpdateGold();
         UpdateScore();
-
     }
 
     void UpdateScore()
@@ -126,10 +131,11 @@ public class NestStorage : MonoBehaviour
     }
 
     void checkSpawnButton(){
-        if (gold >= (5 * antCostFactor)){
-            executeSpawnButton(5 * antCostFactor);
+        cost = calculateCost(5, antCostFactor);
+        if (gold >= (cost)){
+            executeSpawnButton(cost);
             antCostFactor += 1;
-            updateButtonText(antBuyRef, antBuyText, 5 * antCostFactor);
+            updateButtonText(antBuyRef, antBuyText, calculateCost(5, antCostFactor));
         } else failedMoney();
     }
     void executeSpawnButton(int cost){
@@ -149,9 +155,11 @@ public class NestStorage : MonoBehaviour
     }
     
     void checkHealthButton(){
-        cost = 20;
+        cost = calculateCost(20, healthCostFactor);
         if (gold >= cost){
             executeHealthButton(cost);
+            healthCostFactor += 1;
+            updateButtonText(healthRef, healthText, calculateCost(20, healthCostFactor));
         } else failedMoney();
     }
     void executeHealthButton(int cost){
@@ -161,9 +169,11 @@ public class NestStorage : MonoBehaviour
     }
 
     void checkArmorButton(){
-        int cost = 20;
+        int cost = calculateCost(20, armorCostFactor);
         if (gold >= cost){
             executeArmorButton(cost);
+            armorCostFactor += 1;
+            updateButtonText(armorRef, armorText, calculateCost(20, armorCostFactor));
         } else failedMoney();
     }
     void executeArmorButton(int cost){
@@ -172,9 +182,11 @@ public class NestStorage : MonoBehaviour
     }
 
     void checkDamageButton(){
-        int cost = 20;
+        int cost = calculateCost(20, damageCostFactor);
         if (gold >= cost){
             executeDamageButton(cost);
+            damageCostFactor += 1;
+            updateButtonText(damageRef, damageText, calculateCost(20, damageCostFactor));
         } else failedMoney();
     }
     void executeDamageButton(int cost){
@@ -189,6 +201,10 @@ public class NestStorage : MonoBehaviour
 
     void updateButtonText(Text reference, string buttonText, int cost){
         reference.text = buttonText + " ( " + cost +" )";
+    }
+
+    int calculateCost(int startCost, int factor){
+        return startCost * factor;
     }
 
     void failedMoney()
