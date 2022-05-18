@@ -144,7 +144,10 @@ public class NestStorage : MonoBehaviour
     {
         gold = gold - 20;
 
-       */ textDisplayFood.text = gold.ToString();
+        AC.maxHealth += 50;
+        AC.heal(50);
+
+       textDisplayFood.text = gold.ToString();
     }
 
     void failedMoney()

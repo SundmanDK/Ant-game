@@ -22,6 +22,7 @@ public class AntCombat : Stats{
         if (health > maxHealth){
             health = maxHealth;
         }
+        healthBar.SetHealth(health);
     }
 
     public override void TakeDamage(int Dmg){
