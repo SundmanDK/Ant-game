@@ -118,6 +118,7 @@ public class NestStorage : MonoBehaviour{
         speedText = speedRef.text;
         updateButtonText(speedRef, speedText, 20);
         speedbtn.onClick.AddListener(checkSpeedButton);
+        showStats();
     }
 
     void Update(){
