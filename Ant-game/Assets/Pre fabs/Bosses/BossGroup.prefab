@@ -53,9 +53,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b922c5a9f1ac548aa9623ad46616c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WinMenu: {fileID: 5869484479537895787, guid: daed83ceb1709a548ac1d57008abc72e, type: 3}
-  OverlayMenuField: {fileID: 3305271226535565562, guid: ae68f22bb6cc3f54b915b155e50b5eba, type: 3}
-  bosses: []
+  InitializeGameover: {fileID: 0}
+  enemies: []
 --- !u!1001 &4751382477896231675
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63,6 +62,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1556993710213782457}
     m_Modifications:
+    - target: {fileID: 3704898063717100126, guid: 508cb90af6b101442b774a424f0d25da, type: 3}
+      propertyPath: bossManage
+      value: 
+      objectReference: {fileID: 312312045886027120}
     - target: {fileID: 3911412669700928489, guid: 508cb90af6b101442b774a424f0d25da, type: 3}
       propertyPath: m_Name
       value: Fly
@@ -133,11 +136,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5832508907110700388, guid: 508cb90af6b101442b774a424f0d25da, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 60.5
+      value: -5.3
       objectReference: {fileID: 0}
     - target: {fileID: 5832508907110700388, guid: 508cb90af6b101442b774a424f0d25da, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 75.6
+      value: 61.2
       objectReference: {fileID: 0}
     - target: {fileID: 5832508907110700388, guid: 508cb90af6b101442b774a424f0d25da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -235,11 +238,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 701922886308541431, guid: 9e7fc977cd41d1644aab42a575e420e1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1.1
+      value: -131.4
       objectReference: {fileID: 0}
     - target: {fileID: 701922886308541431, guid: 9e7fc977cd41d1644aab42a575e420e1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 76.6
+      value: 9.6
       objectReference: {fileID: 0}
     - target: {fileID: 701922886308541431, guid: 9e7fc977cd41d1644aab42a575e420e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -253,6 +256,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9042932767260055916, guid: 9e7fc977cd41d1644aab42a575e420e1, type: 3}
+      propertyPath: bossManage
+      value: 
+      objectReference: {fileID: 312312045886027120}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e7fc977cd41d1644aab42a575e420e1, type: 3}
 --- !u!224 &5581324046810273741 stripped
@@ -267,6 +274,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1556993710213782457}
     m_Modifications:
+    - target: {fileID: 1289070334, guid: 4d22d405344de9645a1eec70b5e51641, type: 3}
+      propertyPath: bossManage
+      value: 
+      objectReference: {fileID: 312312045886027120}
     - target: {fileID: 5554078140297958978, guid: 4d22d405344de9645a1eec70b5e51641, type: 3}
       propertyPath: m_Name
       value: Beetle
@@ -337,11 +348,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5554078140297958991, guid: 4d22d405344de9645a1eec70b5e51641, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 84.6
+      value: 101.9
       objectReference: {fileID: 0}
     - target: {fileID: 5554078140297958991, guid: 4d22d405344de9645a1eec70b5e51641, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 68.1
+      value: -80.8
       objectReference: {fileID: 0}
     - target: {fileID: 5554078140297958991, guid: 4d22d405344de9645a1eec70b5e51641, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -435,11 +446,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 303909870857923439, guid: a26dca3279375b54d9ce11707b806da0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 94.8
+      value: 127.1
       objectReference: {fileID: 0}
     - target: {fileID: 303909870857923439, guid: a26dca3279375b54d9ce11707b806da0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 87.3
+      value: 78.5
       objectReference: {fileID: 0}
     - target: {fileID: 303909870857923439, guid: a26dca3279375b54d9ce11707b806da0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -453,6 +464,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3052554490565031080, guid: a26dca3279375b54d9ce11707b806da0, type: 3}
+      propertyPath: bossManage
+      value: 
+      objectReference: {fileID: 312312045886027120}
     - target: {fileID: 8193837133826089693, guid: a26dca3279375b54d9ce11707b806da0, type: 3}
       propertyPath: m_Name
       value: Spider
@@ -541,11 +556,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2926187866527415629, guid: 3129a6b84f766254886c2811fef1724a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 29.45
+      value: -7.4
       objectReference: {fileID: 0}
     - target: {fileID: 2926187866527415629, guid: 3129a6b84f766254886c2811fef1724a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 65.03
+      value: -97.2
       objectReference: {fileID: 0}
     - target: {fileID: 2926187866527415629, guid: 3129a6b84f766254886c2811fef1724a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -559,6 +574,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7983416792382683947, guid: 3129a6b84f766254886c2811fef1724a, type: 3}
+      propertyPath: bossManage
+      value: 
+      objectReference: {fileID: 312312045886027120}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3129a6b84f766254886c2811fef1724a, type: 3}
 --- !u!224 &4615767971703502721 stripped

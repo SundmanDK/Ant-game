@@ -117,7 +117,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 1
+  m_AngularDrag: 10
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inArea: 0
+  followingAnt: 0
 --- !u!114 &1518841834831263611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,13 +151,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewRadius: 12
-  viewAngle: 80
+  viewAngle: 360
   targetMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 16384
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 128
   visibleTargets: []
 --- !u!114 &3704898063717100126
 MonoBehaviour:
@@ -170,14 +171,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8468bbb464c8f0e4cb976a9ccd986536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  armor: 0
-  attackSpeed: 0
-  damage: 0
-  moveSpeed: 0
-  targetLayer: 0
-  numberText: 
-  dmgText: {fileID: 0}
+  health: 40
+  armor: 2
+  attackSpeed: 1
+  damage: 2
+  moveSpeed: 7
+  targetLayer: 14
+  actualDamage: 0
+  dmgText: {fileID: 4885865928676251705, guid: 1dfe2fb7cfa3fbe44899b2b488428de3, type: 3}
+  bossManage: {fileID: 0}
 --- !u!1 &3911412669700928489
 GameObject:
   m_ObjectHideFlags: 0

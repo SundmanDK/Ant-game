@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3284317645753193438}
   - component: {fileID: 3284317645753193433}
   - component: {fileID: 3284317645753193434}
-  - component: {fileID: 8538468823924433928}
+  - component: {fileID: 1289070334}
   m_Layer: 13
   m_Name: BeetleBuddy
   m_TagString: Untagged
@@ -117,7 +117,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 1
+  m_AngularDrag: 10
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inArea: 0
+  followingAnt: 0
 --- !u!114 &3284317645753193434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,12 +154,12 @@ MonoBehaviour:
   viewAngle: 80
   targetMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 16384
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 128
   visibleTargets: []
---- !u!114 &8538468823924433928
+--- !u!114 &1289070334
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,18 +168,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 3284317645753193436}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34dfc026e5f069b49b1f6e9bf18a6d27, type: 3}
+  m_Script: {fileID: 11500000, guid: b096d1a3fb89d524397ab691bb549d74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  armor: 2
-  attackSpeed: 1
-  damage: 3
-  moveSpeed: 5
+  health: 500
+  armor: 20
+  attackSpeed: 1.2
+  damage: 7
+  moveSpeed: 6
   targetLayer: 14
-  numberText: 
+  actualDamage: 0
   dmgText: {fileID: 4885865928676251705, guid: 1dfe2fb7cfa3fbe44899b2b488428de3, type: 3}
-  slowOnCooldown: 0
+  bossManage: {fileID: 0}
 --- !u!1 &5554078140297958978
 GameObject:
   m_ObjectHideFlags: 0

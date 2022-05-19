@@ -117,7 +117,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 1
+  m_AngularDrag: 10
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inArea: 0
+  followingAnt: 0
 --- !u!114 &8193837132948636538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,10 +154,10 @@ MonoBehaviour:
   viewAngle: 80
   targetMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 16384
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 128
   visibleTargets: []
 --- !u!114 &3052554490565031080
 MonoBehaviour:
@@ -176,9 +177,10 @@ MonoBehaviour:
   damage: 4
   moveSpeed: 7
   targetLayer: 14
-  numberText: 
+  actualDamage: 0
   dmgText: {fileID: 4885865928676251705, guid: 1dfe2fb7cfa3fbe44899b2b488428de3, type: 3}
   slowOnCooldown: 0
+  bossManage: {fileID: 0}
 --- !u!1 &8193837133826089693
 GameObject:
   m_ObjectHideFlags: 0
