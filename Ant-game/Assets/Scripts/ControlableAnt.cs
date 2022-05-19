@@ -20,13 +20,7 @@ public class ControlableAnt : MonoBehaviour{
     private float angle;
     Camera viewCamera;
 
-    public int maxHealth = 25;
-    public int currentHealth;
     private Stats stats;
-
-    public HealthBar healthBar;
-
-    
 
     void Start(){
         rigidbodyComponent = GetComponent<Rigidbody2D>();
@@ -47,18 +41,6 @@ public class ControlableAnt : MonoBehaviour{
             goTo = true;
     }
 
-    void TakeDamage(int damage){
-        currentHealth -= damage;
-
-        healthBar.SetHealth(currentHealth);
-        updateHealthbar();
-    }
-
-    public void updateHealthbar(){
-        healthBar.SetHealth(currentHealth);
-    }
-
-
     void FixedUpdate(){
         if (goTo)
             MoveTo(Marker.transform);
@@ -70,7 +52,7 @@ public class ControlableAnt : MonoBehaviour{
         Vector3 directionToTarget = (destination.position - transform.position).normalized;
         float angle = Vector3.Angle(transform.up, directionToTarget);
         transform.RotateAround(transform.position, transform.forward, angle);
-        rigidbodyComponent.velocity = transform.up * stats.moveSpeed;
+        rigidbodyComponent.velocity = transform.up * moveSpeed;
     }
 
     void ChangeSprite(){

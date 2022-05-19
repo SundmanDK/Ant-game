@@ -4,8 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class NestStorage : MonoBehaviour
-{
+public class NestStorage : MonoBehaviour{
     public int food;
     private int oldFood;
     public int score;
@@ -17,20 +16,23 @@ public class NestStorage : MonoBehaviour
     private int armorCostFactor;
     private int healthCostFactor;
     private int damageCostFactor;
+    private int speedCostFactor;
+    private int speedBuff;
 
     public Button spawnButton;
     public Button healthButton;
     public Button healButton;
     public Button damageButton;
     public Button armorButton;
+    public Button speedButton;
 
     public TextMeshProUGUI textDisplayFood;
     public TextMeshPro FloatingText;
     public GameObject Ant;
     public GameObject ControllableAnt;
     private AntCombat AC;
+    private AntBehaviour[] ants;
     
-
     public Color numberWhiteColor;
     public Color numberRedColor;
 
@@ -44,7 +46,8 @@ public class NestStorage : MonoBehaviour
     string damageText;
     Text armorRef;
     string armorText;
-
+    Text speedRef;
+    string speedText;
 
     // Start is called before the first frame update
     void Start(){
@@ -56,8 +59,8 @@ public class NestStorage : MonoBehaviour
         armorCostFactor = 1;
         healthCostFactor = 1;
         damageCostFactor = 1;
-
-
+        speedCostFactor = 1;
+        speedBuff = 2;
        
         AC = ControllableAnt.GetComponent<AntCombat>();
 
@@ -73,7 +76,6 @@ public class NestStorage : MonoBehaviour
         antBuyText = antBuyRef.text;
         updateButtonText(antBuyRef, antBuyText, 5 * antCostFactor);
         spawnBtn.onClick.AddListener(checkSpawnButton);
-
 
         Button healBtn = healButton.GetComponent<Button>();
         healRef = healBtn.transform.GetChild(0).gameObject.GetComponent<Text>();
@@ -98,6 +100,12 @@ public class NestStorage : MonoBehaviour
         armorText = armorRef.text;
         updateButtonText(armorRef, armorText, 20);
         armorBtn.onClick.AddListener(checkArmorButton);
+
+        Button speedbtn = speedButton.GetComponent<Button>();
+        speedRef = speedButton.transform.GetChild(0).gameObject.GetComponent<Text>();
+        speedText = speedRef.text;
+        updateButtonText(speedRef, speedText, 20);
+        speedbtn.onClick.AddListener(checkSpeedButton);
     }
 
     void Update()
@@ -192,6 +200,22 @@ public class NestStorage : MonoBehaviour
     void executeDamageButton(int cost){
         pay(cost);
         AC.damage += 5;
+    }
+
+    void checkSpeedButton(){
+        int cost = calculateCost(20, speedCostFactor);
+        if (gold >= cost){
+            executeSpeedButton(cost);
+            speedCostFactor += 1;
+            updateButtonText(speedRef, speedText, calculateCost(20, speedCostFactor));
+        }
+    }
+    void executeSpeedButton(int cost){
+        pay(cost);
+        ants = GetComponentsInChildren<AntBehaviour>();
+        foreach(AntBehaviour ant in ants){
+            ant.moveSpeed += speedBuff;
+        }
     }
 
     void pay(int cost){
