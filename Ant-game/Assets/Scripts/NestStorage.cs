@@ -18,6 +18,7 @@ public class NestStorage : MonoBehaviour{
     private int damageCostFactor;
     private int speedCostFactor;
     private int speedBuff;
+    private int moveSpeed = 6;
     private float newXPos;
     private float newYPos;
 
@@ -148,6 +149,10 @@ public class NestStorage : MonoBehaviour{
         newXPos = this.transform.position.x + GetModifier();
         newYPos = this.transform.position.y + GetModifier();
         Instantiate(Ant, new Vector3(newXPos, newYPos), Quaternion.Euler(0, 0, Random.Range(0f, 360f)), gameObject.transform);
+        ants = GetComponentsInChildren<AntBehaviour>();
+        foreach(AntBehaviour ant in ants){
+            ant.moveSpeed = moveSpeed;
+        }
     }
     float GetModifier(){
         float modifier = 5f;
@@ -219,6 +224,7 @@ public class NestStorage : MonoBehaviour{
     }
     void executeSpeedButton(int cost){
         pay(cost);
+        moveSpeed += speedBuff;
         ants = GetComponentsInChildren<AntBehaviour>();
         foreach(AntBehaviour ant in ants){
             ant.moveSpeed += speedBuff;
