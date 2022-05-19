@@ -20,9 +20,7 @@ public class Stats : MonoBehaviour{
     private float poisonTickDuration = 2;
     private int poisonTicks;
     public int actualDamage;
-    public GameObject dmgText;
-    public GameObject bossManage;
-   
+    public GameObject dmgText;   
 
     void FixedUpdate(){
         AttackTimer();
