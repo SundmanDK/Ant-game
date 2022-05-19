@@ -11,11 +11,11 @@ public class Stats : MonoBehaviour{
     public int targetLayer;
     private float timeForAttack;
     private bool readyForAttack = true;
-    private bool slowedSpeed = false;
+    protected bool slowedSpeed = false;
     private float slowTimer;
     private float slowedTime = 4;
     private int poisonDmg;
-    private bool poisoned;
+    protected bool poisoned;
     private float poisonTimer;
     private float poisonTickDuration = 2;
     private int poisonTicks;

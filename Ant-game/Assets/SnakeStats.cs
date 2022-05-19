@@ -10,8 +10,6 @@ public class SnakeStats : Enemies{
 
     void FixedUpdate(){
         AttackTimer();
-        SlowedTimer();
-        PoisonTimer();
         if(health <= 0){
             Death();
         }
@@ -33,6 +31,11 @@ public class SnakeStats : Enemies{
     private void ApplyPoison(Collision2D target){
         target.gameObject.GetComponent<Stats>().Poison(damage/4);
         poisonOnCooldown = true;
+    }
+
+    protected override void Death(){
+        base.Death();
+        Ant.GetComponent<AntCombat>().poisonUnlocked = true;
     }
 
 }

@@ -7,6 +7,10 @@ public class AntCombat : Stats{
     public GameObject InitializeGameover;
     private Camera cam;
     public int maxHealth;
+    public bool poisonUnlocked = false;
+    private float poisonCooldown = 10;
+    public bool poisonOnCooldown = false;
+    private float timeOnCooldown;
 
 
     void Start(){
@@ -15,6 +19,34 @@ public class AntCombat : Stats{
         healthBar.SetMaxHealth(health);
         healthBar.SetHealth(health);
         cam = Camera.main;
+    }
+
+    void FixedUpdate(){
+        AttackTimer();
+
+        if(slowedSpeed){
+            SlowedTimer();
+        }
+        if(poisoned){
+            PoisonTimer();
+        }
+        if(health <= 0){
+            Death();
+        }
+        if(poisonOnCooldown && poisonUnlocked){
+            timeOnCooldown += Time.deltaTime;
+            if (timeOnCooldown > poisonCooldown){
+                poisonOnCooldown = false;
+                timeOnCooldown = 0;
+            }
+        }
+    }
+
+    protected override void Attack(Collision2D target){
+        base.Attack(target);
+        if(!poisonOnCooldown && poisonUnlocked){
+            ApplyPoison(target);
+        }
     }
 
     public void heal(int hp){
@@ -39,5 +71,10 @@ public class AntCombat : Stats{
     protected override void Death(){
         Destroy(gameObject);
         InitializeGameover.GetComponent<GameoverInitializeScript>().Lost();
+    }
+
+    private void ApplyPoison(Collision2D target){
+        target.gameObject.GetComponent<Stats>().Poison(damage/4);
+        poisonOnCooldown = true;
     }
 }

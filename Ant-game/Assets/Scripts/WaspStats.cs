@@ -53,7 +53,6 @@ public class WaspStats : Enemies{
     protected override void Death(){
         base.Death();
         Ant.GetComponent<AntCombat>().moveSpeed += 5;
-
     }
 }
 

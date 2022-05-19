@@ -33,4 +33,9 @@ public class SpiderStats : Enemies{
             }
         }
     }
+
+    protected override void Death(){
+        base.Death();
+        Ant.GetComponent<AntCombat>().damage += 5;
+    }
 }
