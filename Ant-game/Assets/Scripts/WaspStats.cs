@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaspStats : Stats{
+public class WaspStats : Enemies{
     private float chargeCooldown = 10;
     public bool chargeOnCooldown = false;
     private float timeOnCooldown = 0;
@@ -10,14 +10,18 @@ public class WaspStats : Stats{
     private float timeRemaining = 2;
     private float startSpeed;
     private bool endCharge;
-    public GameObject bossManage;
 
     void Start(){
         behaviour = GetComponent<SpiderStuff>();
         startSpeed = moveSpeed;
     }
 
-    void Update(){
+    void FixedUpdate(){
+        AttackTimer();
+        if(health <= 0){
+            Death();
+        }
+    
         if(behaviour.followingAnt){
             Charge();
         }
@@ -32,6 +36,7 @@ public class WaspStats : Stats{
             }
         }
     }
+        
     private void ChargeAction(){
         moveSpeed = 30;
     }
@@ -44,18 +49,12 @@ public class WaspStats : Stats{
         base.Attack(target);
         moveSpeed = startSpeed;
         endCharge = true;
-     
-    }
-    protected override void Death(){
-        Destroy(transform.parent.gameObject);
-        bossManage.GetComponent<BossManage>().updateBossCount();
     }
 
-        void FixedUpdate(){
-        AttackTimer();
-        if(health <= 0){
-            Death();
-        }
+    protected override void Death(){
+        base.Death();
+        Ant.GetComponent<AntCombat>().moveSpeed += 5;
+
     }
 }
 
