@@ -13,6 +13,7 @@ public class AntCombat : Stats{
         maxHealth = health;
         healthBar = GameObject.Find("Health bar").GetComponent<HealthBar>();
         healthBar.SetMaxHealth(health);
+        healthBar.SetHealth(health);
         cam = Camera.main;
     }
 

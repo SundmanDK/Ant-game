@@ -179,8 +179,8 @@ public class NestStorage : MonoBehaviour{
     void executeHealthButton(int cost){
         pay(cost);
         AC.maxHealth += 10;
+        AC.healthBar.SetMaxHealth(AC.maxHealth);
         AC.heal(10);
-        AC.healthBar.SetMaxHealth(AC.health);
     }
 
     void checkArmorButton(){
