@@ -178,8 +178,9 @@ public class NestStorage : MonoBehaviour{
     }
     void executeHealthButton(int cost){
         pay(cost);
-        AC.maxHealth += 50;
-        AC.heal(50);
+        AC.maxHealth += 10;
+        AC.heal(10);
+        AC.healthBar.SetMaxHealth(AC.health);
     }
 
     void checkArmorButton(){
@@ -192,7 +193,7 @@ public class NestStorage : MonoBehaviour{
     }
     void executeArmorButton(int cost){
         pay(cost);
-        AC.armor += 10;
+        AC.armor += 2;
     }
 
     void checkDamageButton(){
@@ -205,7 +206,7 @@ public class NestStorage : MonoBehaviour{
     }
     void executeDamageButton(int cost){
         pay(cost);
-        AC.damage += 5;
+        AC.damage += 2;
     }
 
     void checkSpeedButton(){
