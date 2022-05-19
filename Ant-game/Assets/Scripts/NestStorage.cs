@@ -30,6 +30,15 @@ public class NestStorage : MonoBehaviour{
     public Button speedButton;
 
     public TextMeshProUGUI textDisplayFood;
+    public TextMeshProUGUI statTextArmor;
+    public TextMeshProUGUI statTextAttack;
+    public TextMeshProUGUI statTextWorker;
+
+
+    public TextMeshProUGUI statBoardTextArmor;
+    public TextMeshProUGUI statBoardTextAttack;
+    public TextMeshProUGUI statBoardTextMaxHealth;
+    public TextMeshProUGUI statBoardTextSpeed;
     public TextMeshPro FloatingText;
     public GameObject Ant;
     public GameObject ControllableAnt;
@@ -152,6 +161,7 @@ public class NestStorage : MonoBehaviour{
         ants = GetComponentsInChildren<AntBehaviour>();
         foreach(AntBehaviour ant in ants){
             ant.moveSpeed = moveSpeed;
+            showStats();
         }
     }
     float GetModifier(){
@@ -171,6 +181,7 @@ public class NestStorage : MonoBehaviour{
     void executeHealButton(int cost){
         pay(cost);
         AC.heal(2);
+        showStats();
     }
     
     void checkHealthButton(){
@@ -186,6 +197,7 @@ public class NestStorage : MonoBehaviour{
         AC.maxHealth += 10;
         AC.healthBar.SetMaxHealth(AC.maxHealth);
         AC.heal(10);
+        showStats();
     }
 
     void checkArmorButton(){
@@ -199,6 +211,7 @@ public class NestStorage : MonoBehaviour{
     void executeArmorButton(int cost){
         pay(cost);
         AC.armor += 2;
+        showStats();
     }
 
     void checkDamageButton(){
@@ -212,6 +225,7 @@ public class NestStorage : MonoBehaviour{
     void executeDamageButton(int cost){
         pay(cost);
         AC.damage += 2;
+        showStats();
     }
 
     void checkSpeedButton(){
@@ -229,6 +243,7 @@ public class NestStorage : MonoBehaviour{
         ants = GetComponentsInChildren<AntBehaviour>();
         foreach(AntBehaviour ant in ants){
             ant.moveSpeed = moveSpeed;
+            showStats();
         }
     }
 
@@ -257,5 +272,20 @@ public class NestStorage : MonoBehaviour{
     {
         textDisplayFood.color = numberWhiteColor;
         textDisplayFood.alpha = 255f;
+    }
+    void showStats()
+    {
+
+        string workcount = gameObject.transform.childCount.ToString();
+        statTextArmor.text = AC.armor.ToString();
+        statTextAttack.text = AC.damage.ToString();
+        statTextWorker.text = workcount;
+
+        statBoardTextArmor.text = AC.armor.ToString();
+        statBoardTextAttack.text = AC.damage.ToString();
+        statBoardTextMaxHealth.text = AC.maxHealth.ToString();
+        statBoardTextSpeed.text = AC.moveSpeed.ToString();
+
+
     }
 }
