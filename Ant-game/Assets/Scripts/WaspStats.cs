@@ -10,6 +10,7 @@ public class WaspStats : Stats{
     private float timeRemaining = 2;
     private float startSpeed;
     private bool endCharge;
+    public GameObject bossManage;
 
     void Start(){
         behaviour = GetComponent<SpiderStuff>();
@@ -45,6 +46,11 @@ public class WaspStats : Stats{
         endCharge = true;
      
     }
+    protected override void Death(){
+        Destroy(transform.parent.gameObject);
+        bossManage.GetComponent<BossManage>().updateBossCount();
+    }
+
         void FixedUpdate(){
         AttackTimer();
         if(health <= 0){

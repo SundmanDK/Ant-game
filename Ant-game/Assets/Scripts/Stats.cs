@@ -117,7 +117,6 @@ public class Stats : MonoBehaviour{
 
     protected virtual void Death(){
         Destroy(transform.parent.gameObject);
-        bossManage.GetComponent<BossManage>().updateBossCount();
     }
 
     private void killWorkerAnts(Collision2D target){
