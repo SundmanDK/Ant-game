@@ -50,7 +50,7 @@ public class ControlableAnt : MonoBehaviour{
         Vector3 directionToTarget = (destination.position - transform.position).normalized;
         float angle = Vector3.Angle(transform.up, directionToTarget);
         transform.RotateAround(transform.position, transform.forward, angle);
-        rigidbodyComponent.velocity = transform.up * moveSpeed;
+        rigidbodyComponent.velocity = transform.up * stats.moveSpeed;
     }
 
     void ChangeSprite(){

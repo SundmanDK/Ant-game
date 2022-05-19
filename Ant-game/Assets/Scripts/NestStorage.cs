@@ -17,8 +17,8 @@ public class NestStorage : MonoBehaviour{
     private int healthCostFactor;
     private int damageCostFactor;
     private int speedCostFactor;
-    private int speedBuff;
-    private int moveSpeed = 6;
+    private float speedBuff;
+    private float moveSpeed = 6;
     private float newXPos;
     private float newYPos;
 
@@ -225,9 +225,10 @@ public class NestStorage : MonoBehaviour{
     void executeSpeedButton(int cost){
         pay(cost);
         moveSpeed += speedBuff;
+        AC.moveSpeed += speedBuff;
         ants = GetComponentsInChildren<AntBehaviour>();
         foreach(AntBehaviour ant in ants){
-            ant.moveSpeed += speedBuff;
+            ant.moveSpeed = moveSpeed;
         }
     }
 
