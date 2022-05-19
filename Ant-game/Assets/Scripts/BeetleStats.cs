@@ -6,8 +6,10 @@ public class BeetleStats : Stats
 {
     public override void TakeDamage(int Dmg){
         if(Dmg - armor > 0){
-            health -= Dmg - armor;
+            actualDamage = Dmg - armor;
+        } else {
+            actualDamage = 0;
         }
-        CallDamangeVisual();
+        CallDamangeVisual(actualDamage.ToString());
     }
 }

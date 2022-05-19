@@ -25,6 +25,11 @@ public class AntCombat : Stats{
         healthBar.SetHealth(health);
     }
 
+    protected override void TakeTrueDamage(int Dmg){
+        base.TakeTrueDamage(Dmg);
+        healthBar.SetHealth(health);
+    }
+
     public override void TakeDamage(int Dmg){
         base.TakeDamage(Dmg);
         healthBar.SetHealth(health);

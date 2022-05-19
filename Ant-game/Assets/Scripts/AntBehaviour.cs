@@ -31,7 +31,7 @@ public class AntBehaviour : MonoBehaviour{
     void Start(){
         rigidbodyComponent = GetComponent<Rigidbody2D>();
         NS = GetComponentInParent<NestStorage>();
-        Physics2D.IgnoreLayerCollision(0,0,true);
+        Physics2D.IgnoreLayerCollision(14,14,true);
         holdingFood = false;
         angleSegment = viewAngle / 3;
         StartCoroutine("FindTargetsWithDelay", .2f);

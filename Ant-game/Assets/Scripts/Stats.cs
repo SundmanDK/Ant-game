@@ -19,7 +19,7 @@ public class Stats : MonoBehaviour{
     private float poisonTimer;
     private float poisonTickDuration = 2;
     private int poisonTicks;
-    public string numberText;
+    public int actualDamage;
     public GameObject dmgText;
     public GameObject bossManage;
    
@@ -80,18 +80,20 @@ public class Stats : MonoBehaviour{
         target.gameObject.GetComponent<Stats>().TakeDamage(damage);
     }
 
-    private void TakeTrueDamage(int Dmg){
+    protected virtual void TakeTrueDamage(int Dmg){
         health -= Dmg;
-        CallDamangeVisual();
+        CallDamangeVisual(Dmg.ToString());
     }
 
     public virtual void TakeDamage(int Dmg){
+
         if(Dmg - armor > 0){
-            health -= Dmg - armor;
+            actualDamage = Dmg - armor;
         } else {
-            health -= 1;
+            actualDamage = 1;
         }
-        CallDamangeVisual();
+        health -= actualDamage;
+        CallDamangeVisual(actualDamage.ToString());
     }
     public void SlowedSpeed(){
         slowTimer = 0;
@@ -123,10 +125,8 @@ public class Stats : MonoBehaviour{
         Debug.Log("target: "+target);
     }
 
-    public void CallDamangeVisual()
-    {
-        numberText = damage.ToString();
-        dmgText.GetComponentInChildren<TextMeshPro>().text = numberText;
+    public void CallDamangeVisual(string displayText){
+        dmgText.GetComponentInChildren<TextMeshPro>().text = displayText;
         dmgText.GetComponent<SpawnDmgText>().PrintDmg();
     }
 }

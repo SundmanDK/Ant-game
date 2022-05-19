@@ -18,6 +18,8 @@ public class NestStorage : MonoBehaviour{
     private int damageCostFactor;
     private int speedCostFactor;
     private int speedBuff;
+    private float newXPos;
+    private float newYPos;
 
     public Button spawnButton;
     public Button healthButton;
@@ -108,28 +110,23 @@ public class NestStorage : MonoBehaviour{
         speedbtn.onClick.AddListener(checkSpeedButton);
     }
 
-    void Update()
-    {
-        if (food != oldFood)
-        {
+    void Update(){
+        if (food != oldFood){
             everyFood();
         }
         oldFood = food;
     }
 
-    void everyFood() {
+    void everyFood(){
         CallFloatingText();
         UpdateGold();
         UpdateScore();
     }
 
-    void UpdateScore()
-    {
+    void UpdateScore(){
         score = food * 10;
-
     }
-    void UpdateGold()
-    {
+    void UpdateGold(){
         gold += 10;
         textDisplayFood.text = gold.ToString();
     }
@@ -148,7 +145,16 @@ public class NestStorage : MonoBehaviour{
     }
     void executeSpawnButton(int cost){
         pay(cost);
-        Instantiate(Ant, new Vector3(0f, 0f, 0f), Quaternion.identity, gameObject.transform);
+        newXPos = this.transform.position.x + GetModifier();
+        newYPos = this.transform.position.y + GetModifier();
+        Instantiate(Ant, new Vector3(newXPos, newYPos), Quaternion.Euler(0, 0, Random.Range(0f, 360f)), gameObject.transform);
+    }
+    float GetModifier(){
+        float modifier = 5f;
+        if (Random.Range(0, 2) > 0)
+            return -modifier;
+        else
+            return modifier;
     }
 
     void checkHealButton(){

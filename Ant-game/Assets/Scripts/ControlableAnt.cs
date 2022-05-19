@@ -27,11 +27,10 @@ public class ControlableAnt : MonoBehaviour{
         fow = GetComponent<CombatFieldOfView>();
         Marker = GameObject.Find("GoToMarker");
         viewCamera = Camera.main;
-        Physics2D.IgnoreLayerCollision(0,0,true);
+        Physics2D.IgnoreLayerCollision(14,14,true);
         holdingFood = false;
         stats = GetComponent<Stats>(); 
         moveSpeed = stats.moveSpeed;
-
     }
 
     void Update(){ 
@@ -78,14 +77,14 @@ public class ControlableAnt : MonoBehaviour{
     private void OnTriggerEnter2D(Collider2D col){
         if (col.gameObject.layer == 6 && !holdingFood){     //pick up food
             FG = col.gameObject.GetComponent<FoodGrouping>();
-            FG.amountOfFood -= 2;
+            FG.amountOfFood -= 1;
             FG.updateSize();
             holdingFood = true;
             ChangeSprite();
         }
         if (col.gameObject.layer == 8 && holdingFood){       //deliver food to nest
             holdingFood = false;
-            NS.food += 2;
+            NS.food += 1;
             ChangeSprite();
         }
         if (col.gameObject.layer == 11){
