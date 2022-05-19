@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnakeStats : Stats{
+public class SnakeStats : Enemies{
 
     private float poisonCooldown = 10;
     public bool poisonOnCooldown = false;
     private float timeOnCooldown;
-    public GameObject bossManage;
 
     void FixedUpdate(){
         AttackTimer();
@@ -23,11 +22,6 @@ public class SnakeStats : Stats{
                 timeOnCooldown = 0;
             }
         }
-    }
-
-    protected override void Death(){
-        Destroy(transform.parent.gameObject);
-        bossManage.GetComponent<BossManage>().updateBossCount();
     }
 
     protected override void Attack(Collision2D target){

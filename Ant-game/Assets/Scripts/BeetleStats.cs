@@ -2,10 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeetleStats : Stats
-{
-
-    public GameObject bossManage;
+public class BeetleStats : Enemies{
     
     public override void TakeDamage(int Dmg){
         if(Dmg - armor > 0){
@@ -13,11 +10,13 @@ public class BeetleStats : Stats
         } else {
             actualDamage = 0;
         }
+        health -= actualDamage;
         CallDamangeVisual(actualDamage.ToString());
     }
 
     protected override void Death(){
-        Destroy(transform.parent.gameObject);
-        bossManage.GetComponent<BossManage>().updateBossCount();
+        base.Death();
+        Ant.GetComponent<AntCombat>().armor += 20;
     }
+
 }
