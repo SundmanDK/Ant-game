@@ -6,6 +6,7 @@ public class SpiderStats : Stats{
     private float slowCooldown = 10;
     public bool slowOnCooldown = false;
     private float timeOnCooldown;
+    public GameObject bossManage;
 
     protected override void Attack(Collision2D target){
         base.Attack(target);
@@ -16,6 +17,10 @@ public class SpiderStats : Stats{
     private void ApplySlow(Collision2D target){
         target.gameObject.GetComponent<Stats>().SlowedSpeed();
         slowOnCooldown = true;
+    }
+    protected override void Death(){
+        Destroy(transform.parent.gameObject);
+        bossManage.GetComponent<BossManage>().updateBossCount();
     }
     void FixedUpdate(){
         if (health <= 0)
