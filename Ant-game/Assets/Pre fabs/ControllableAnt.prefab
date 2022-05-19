@@ -106,9 +106,6 @@ MonoBehaviour:
   food: {fileID: 0}
   moveSpeed: 6
   holdingFood: 0
-  maxHealth: 25
-  currentHealth: 0
-  healthBar: {fileID: 0}
 --- !u!114 &-8079183091384580027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,11 +176,14 @@ MonoBehaviour:
   armor: 2
   attackSpeed: 1
   damage: 1
+  moveSpeed: 0
   targetLayer: 13
   numberText: 
-  dmgText: {fileID: 0}
+  dmgText: {fileID: 4885865928676251705, guid: 1dfe2fb7cfa3fbe44899b2b488428de3, type: 3}
+  bossManage: {fileID: 0}
   healthBar: {fileID: 0}
   InitializeGameover: {fileID: 0}
+  maxHealth: 0
 --- !u!114 &-6733370617328179807
 MonoBehaviour:
   m_ObjectHideFlags: 0

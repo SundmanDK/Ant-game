@@ -11,7 +11,6 @@ public class ControlableAnt : MonoBehaviour{
     public SpriteRenderer spriteRenderer;
     public Sprite noFoodSprite;
     public Sprite foodSprite;
-    public GameObject food;
     
 
     public float moveSpeed;
