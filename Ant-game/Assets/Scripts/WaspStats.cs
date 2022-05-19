@@ -39,7 +39,7 @@ public class WaspStats : Stats{
         chargeOnCooldown = true;
 
     }
-    protected void Attack(Collision2D target){
+    protected override void Attack(Collision2D target){
         base.Attack(target);
         moveSpeed = startSpeed;
         endCharge = true;
