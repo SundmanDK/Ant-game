@@ -12,6 +12,7 @@ public class WaspStats : Enemies{
     private bool endCharge;
 
     void Start(){
+        NS = nest.GetComponent<NestStorage>();
         behaviour = GetComponent<SpiderStuff>();
         startSpeed = moveSpeed;
     }

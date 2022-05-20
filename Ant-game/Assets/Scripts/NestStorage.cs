@@ -176,6 +176,11 @@ public class NestStorage : MonoBehaviour{
         else
             return modifier;
     }
+    public void antDiedDecreaseCost(){
+        antCostFactor -= 1;
+        updateButtonText(antBuyRef, antBuyText, calculateCost(5, antCostFactor));
+        showStats();
+    }
 
     void checkHealButton(){
         cost = 20;

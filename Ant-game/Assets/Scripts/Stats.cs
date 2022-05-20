@@ -9,8 +9,8 @@ public class Stats : MonoBehaviour{
     public int damage;
     public float moveSpeed;
     public int targetLayer;
-    private float timeForAttack;
-    private bool readyForAttack = true;
+    protected float timeForAttack;
+    protected bool readyForAttack = true;
     protected bool slowedSpeed = false;
     private float slowTimer;
     private float slowedTime = 4;
@@ -65,15 +65,12 @@ public class Stats : MonoBehaviour{
         
     }
 
-    private void OnCollisionEnter2D(Collision2D target){
+    protected virtual void OnCollisionEnter2D(Collision2D target){
         if(target.gameObject.layer == targetLayer && readyForAttack){
-            if (target.gameObject.GetComponent<Stats>() != null){ //Check if target is a combatant or a worker, relevant for enemies.
-                Attack(target);
-                timeForAttack = 0;
-                readyForAttack = false;
-            } else {
-                killWorkerAnts(target);
-            }
+            Attack(target);
+            timeForAttack = 0;
+            readyForAttack = false;
+            
         }
     }
 
@@ -118,11 +115,6 @@ public class Stats : MonoBehaviour{
 
     protected virtual void Death(){
         Destroy(transform.parent.gameObject);
-    }
-
-    private void killWorkerAnts(Collision2D target){
-        Destroy(target.gameObject);
-        Debug.Log("target: "+target);
     }
 
     public void CallDamangeVisual(string displayText){
