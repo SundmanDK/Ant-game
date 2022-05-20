@@ -19,6 +19,8 @@ public class NestStorage : MonoBehaviour{
     private int speedCostFactor;
     private float speedBuff;
     private float moveSpeed = 6;
+    private int viewRadius = 10;
+    private int viewBuff;
     private float newXPos;
     private float newYPos;
 
@@ -73,6 +75,7 @@ public class NestStorage : MonoBehaviour{
         damageCostFactor = 1;
         speedCostFactor = 1;
         speedBuff = 2;
+        viewBuff = 2;
        
         AC = ControllableAnt.GetComponent<AntCombat>();
 
@@ -162,6 +165,7 @@ public class NestStorage : MonoBehaviour{
         ants = GetComponentsInChildren<AntBehaviour>();
         foreach(AntBehaviour ant in ants){
             ant.moveSpeed = moveSpeed;
+            ant.viewRadius = viewRadius;
             showStats();
         }
     }
@@ -181,7 +185,7 @@ public class NestStorage : MonoBehaviour{
     }
     void executeHealButton(int cost){
         pay(cost);
-        AC.heal(2);
+        AC.heal((int) (AC.maxHealth * 0.1));
         showStats();
     }
     
@@ -240,10 +244,12 @@ public class NestStorage : MonoBehaviour{
     void executeSpeedButton(int cost){
         pay(cost);
         moveSpeed += speedBuff;
+        viewRadius += viewBuff;    //Scales view with speed
         AC.moveSpeed += speedBuff;
         ants = GetComponentsInChildren<AntBehaviour>();
         foreach(AntBehaviour ant in ants){
             ant.moveSpeed = moveSpeed;
+            ant.viewRadius = viewRadius;
             showStats();
         }
     }

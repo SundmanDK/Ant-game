@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4687752701114978925}
   - component: {fileID: 4687752701114978924}
-  - component: {fileID: 4687752701114978927}
   - component: {fileID: 4687752701114978898}
   - component: {fileID: 4687752701114978899}
   - component: {fileID: 8810071782916752651}
@@ -86,24 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4687752701114978927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4687752701114978926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14e12bcabf55bae4782c1cf2c3b23df4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Ant: {fileID: 7364772483841004672, guid: 57a2a6b992bd55b45b3a16fe567e238c, type: 3}
-  numberToSpawn: 1
-  limit: 10
-  rate: 1
-  moveSpeed: 6
-  Ants: []
 --- !u!58 &4687752701114978898
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -156,4 +137,24 @@ MonoBehaviour:
   food: 0
   score: 0
   gold: 0
+  maxHealth: 0
+  currentHealth: 0
+  spawnButton: {fileID: 0}
+  healthButton: {fileID: 0}
+  healButton: {fileID: 0}
+  damageButton: {fileID: 0}
+  armorButton: {fileID: 0}
+  speedButton: {fileID: 0}
   textDisplayFood: {fileID: 0}
+  statTextArmor: {fileID: 0}
+  statTextAttack: {fileID: 0}
+  statTextWorker: {fileID: 0}
+  statBoardTextArmor: {fileID: 0}
+  statBoardTextAttack: {fileID: 0}
+  statBoardTextMaxHealth: {fileID: 0}
+  statBoardTextSpeed: {fileID: 0}
+  FloatingText: {fileID: 0}
+  Ant: {fileID: 0}
+  ControllableAnt: {fileID: 0}
+  numberWhiteColor: {r: 0, g: 0, b: 0, a: 0}
+  numberRedColor: {r: 0, g: 0, b: 0, a: 0}

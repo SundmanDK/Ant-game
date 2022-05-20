@@ -23,9 +23,7 @@ public class BossManage : MonoBehaviour
         }
     }
 
-
-    public void Victory()
-    {
+    public void Victory(){
         InitializeGameover.GetComponent<GameoverInitializeScript>().Win();
 
     }
