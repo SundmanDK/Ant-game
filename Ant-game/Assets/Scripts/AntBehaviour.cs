@@ -27,26 +27,16 @@ public class AntBehaviour : MonoBehaviour{
     public float timeBeforeNewPheromone = 2.0f;
     public float timer = 0.0f;
 
-    // Start is called before the first frame update
     void Start(){
         rigidbodyComponent = GetComponent<Rigidbody2D>();
         NS = GetComponentInParent<NestStorage>();
         Physics2D.IgnoreLayerCollision(14,14,true);
         holdingFood = false;
         angleSegment = viewAngle / 3;
-        StartCoroutine("FindTargetsWithDelay", .2f);
     }
 
-    IEnumerator FindTargetsWithDelay(float delay){
-        while (true) {
-            yield return new WaitForSeconds(delay);
-            FOVAssignWeights();
-        }
-    }
-
-    // Update is called once per frame
     void FixedUpdate(){
-        //FOVAssignWeights();
+        FOVAssignWeights();
 
         move();
 

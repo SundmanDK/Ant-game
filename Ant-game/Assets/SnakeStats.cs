@@ -34,8 +34,8 @@ public class SnakeStats : Enemies{
     }
 
     protected override void Death(){
-        base.Death();
         Ant.GetComponent<AntCombat>().poisonUnlocked = true;
+        base.Death();
     }
 
 }

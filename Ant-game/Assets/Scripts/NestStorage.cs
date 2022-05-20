@@ -285,7 +285,7 @@ public class NestStorage : MonoBehaviour{
         textDisplayFood.color = numberWhiteColor;
         textDisplayFood.alpha = 255f;
     }
-    void showStats()
+    public void showStats()
     {
 
         string workcount = gameObject.transform.childCount.ToString();

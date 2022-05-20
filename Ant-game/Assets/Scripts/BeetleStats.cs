@@ -15,8 +15,8 @@ public class BeetleStats : Enemies{
     }
 
     protected override void Death(){
-        base.Death();
         Ant.GetComponent<AntCombat>().armor += 20;
+        base.Death();
     }
 
 }
