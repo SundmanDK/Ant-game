@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpiderStuff : MonoBehaviour
+public class EnemyBehaviour : MonoBehaviour
 {
     private Rigidbody2D rigidbodyComponent;
     private float moveSpeed;

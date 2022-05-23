@@ -6,14 +6,14 @@ public class WaspStats : Enemies{
     private float chargeCooldown = 10;
     public bool chargeOnCooldown = false;
     private float timeOnCooldown = 0;
-    private SpiderStuff behaviour;
+    private EnemyBehaviour behaviour;
     private float timeRemaining = 2;
     private float startSpeed;
     private bool endCharge;
 
     void Start(){
         NS = nest.GetComponent<NestStorage>();
-        behaviour = GetComponent<SpiderStuff>();
+        behaviour = GetComponent<EnemyBehaviour>();
         startSpeed = moveSpeed;
     }
 

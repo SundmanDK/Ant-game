@@ -77,7 +77,7 @@
      <Compile Include="Assets\Scripts\pheromoneInstantiat.cs" />
      <Compile Include="Assets\Scripts\SpiderStats.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
-     <Compile Include="Assets\Scripts\SpiderStuff.cs" />
+     <Compile Include="Assets\Scripts\EnemyBehaviour.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
      <Compile Include="Assets\Scripts\SpawnDmgText.cs" />
