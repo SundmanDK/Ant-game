@@ -32,6 +32,8 @@ public class Enemies : Stats{
     protected override void Death(){
         Destroy(transform.parent.gameObject);
         bossManage.GetComponent<BossManage>().updateBossCount();
+        NS.killedBosses += 1;
+        NS.IncreaseIncome();
         NS.showStats();
     }    
 }
