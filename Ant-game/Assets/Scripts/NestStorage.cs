@@ -9,6 +9,7 @@ public class NestStorage : MonoBehaviour{
     private int oldFood;
     public int score;
     public int gold;
+    public int income;
     private int cost;
     public int maxHealth;
     public int currentHealth;
@@ -17,7 +18,6 @@ public class NestStorage : MonoBehaviour{
     private int healthCostFactor;
     private int damageCostFactor;
     private int speedCostFactor;
-    public int income;
     public int killedBosses;
     private float speedBuff;
     private float moveSpeed = 6;
@@ -82,6 +82,7 @@ public class NestStorage : MonoBehaviour{
         viewBuff = 2;
        
         AC = ControllableAnt.GetComponent<AntCombat>();
+    
 
 
         Color numberWhiteColor = new Color(255, 255, 255);
@@ -147,6 +148,11 @@ public class NestStorage : MonoBehaviour{
     void UpdateGold(){
         gold += income;
         textDisplayFood.text = gold.ToString();
+
+    }
+    public void IncreasedIncome(){
+        income = 10 + 5 * killedBosses;
+        FloatingText.text = income.ToString();
     }
     public void IncreaseIncome(){
         income = 10 + 5 *killedBosses;
