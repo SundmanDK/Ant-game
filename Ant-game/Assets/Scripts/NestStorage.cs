@@ -272,22 +272,20 @@ public class NestStorage : MonoBehaviour{
         return startCost * factor;
     }
 
-    void failedMoney()
-    {
+    void failedMoney(){
         textDisplayFood.color = numberRedColor;
         textDisplayFood.alpha = 255f;
         textDisplayFood.text = gold.ToString();
         Invoke("changeColorBack", 1);
 
     }
-    void changeColorBack()
-    {
+    
+    void changeColorBack(){
         textDisplayFood.color = numberWhiteColor;
         textDisplayFood.alpha = 255f;
     }
-    public void showStats()
-    {
 
+    public void showStats(){
         string workcount = gameObject.transform.childCount.ToString();
         statTextArmor.text = AC.armor.ToString();
         statTextAttack.text = AC.damage.ToString();
