@@ -12,6 +12,9 @@ public class SpiderStats : Enemies{
         if(!slowOnCooldown){
             ApplySlow(target);
         }
+        if(poisoned){
+            PoisonTimer();
+        }
     }
     
     private void ApplySlow(Collision2D target){
@@ -20,11 +23,11 @@ public class SpiderStats : Enemies{
     }
 
     void FixedUpdate(){
-        if (health <= 0)
-        {
+        if (health <= 0){
             Death();
         }
         AttackTimer();
+        PoisonTimer();
         if(slowOnCooldown){
             timeOnCooldown += Time.deltaTime;
             if (timeOnCooldown > slowCooldown){

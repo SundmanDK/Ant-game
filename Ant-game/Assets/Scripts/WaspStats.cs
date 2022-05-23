@@ -19,10 +19,11 @@ public class WaspStats : Enemies{
 
     void FixedUpdate(){
         AttackTimer();
+        PoisonTimer();
         if(health <= 0){
             Death();
         }
-    
+        
         if(behaviour.followingAnt){
             Charge();
         }

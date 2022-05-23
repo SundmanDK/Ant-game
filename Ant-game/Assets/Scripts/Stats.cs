@@ -24,13 +24,9 @@ public class Stats : MonoBehaviour{
 
     void FixedUpdate(){
         AttackTimer();
-
-        if(slowedSpeed){
-            SlowedTimer();
-        }
-        if(poisoned){
-            PoisonTimer();
-        }
+        SlowedTimer();
+        PoisonTimer();
+        
         if(health <= 0){
             Death();
         }
@@ -45,24 +41,26 @@ public class Stats : MonoBehaviour{
         }
     }
     protected void SlowedTimer(){
-        slowTimer += Time.deltaTime;
-        if (slowTimer > slowedTime){
-            NormalSpeed();
-        }
-        
-    }
-    protected void PoisonTimer(){
-        poisonTimer += Time.deltaTime;
-        if (poisonTimer > poisonTickDuration){
-            TakeTrueDamage(poisonDmg);
-            poisonTimer = 0;
-            poisonTicks += 1;
-            if(poisonTicks >= 4){
-                poisoned = false;
-                poisonTicks = 0;
+        if(slowedSpeed){
+            slowTimer += Time.deltaTime;
+            if (slowTimer > slowedTime){
+                NormalSpeed();
             }
         }
-        
+    }
+    protected void PoisonTimer(){
+        if(poisoned){
+            poisonTimer += Time.deltaTime;
+            if (poisonTimer > poisonTickDuration){
+                TakeTrueDamage(poisonDmg);
+                poisonTimer = 0;
+                poisonTicks += 1;
+                if(poisonTicks >= 4){
+                    poisoned = false;
+                    poisonTicks = 0;
+                }
+            }
+        }        
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D target){
