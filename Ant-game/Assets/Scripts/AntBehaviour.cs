@@ -54,16 +54,13 @@ public class AntBehaviour : MonoBehaviour{
 
     void pheromoneLayer(){
         timer += Time.deltaTime;
-        if (holdingFood == true) {  //Holding food lay red pheromone
-            if (timer > timeBeforeNewPheromone){
+        if (timer > timeBeforeNewPheromone){
+            if (holdingFood == true)  //Holding food lay red pheromone
                 Instantiate(redPheromone, transform.position, Quaternion.identity, pheromoneGroupe.transform);
-                timer = timer - timeBeforeNewPheromone;
-            }
-        }else{                      //Not holding food lay blue pheromone
-            if (timer > timeBeforeNewPheromone){
+            else                      //Not holding food lay blue pheromone
                 Instantiate(bluePheromone, transform.position, Quaternion.identity, pheromoneGroupe.transform);
-                timer = timer - timeBeforeNewPheromone;
-            }
+            
+            timer = timer - timeBeforeNewPheromone;
         }
     }
 
