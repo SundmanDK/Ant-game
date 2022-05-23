@@ -166,8 +166,8 @@ public class NestStorage : MonoBehaviour{
         foreach(AntBehaviour ant in ants){
             ant.moveSpeed = moveSpeed;
             ant.viewRadius = viewRadius;
-            showStats();
         }
+        showStats();
     }
     float GetModifier(){
         float modifier = 5f;
