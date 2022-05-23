@@ -23,13 +23,9 @@ public class AntCombat : Stats{
 
     void FixedUpdate(){
         AttackTimer();
-
-        if(slowedSpeed){
-            SlowedTimer();
-        }
-        if(poisoned){
-            PoisonTimer();
-        }
+        SlowedTimer();
+        PoisonTimer();
+        
         if(health <= 0){
             Death();
         }
