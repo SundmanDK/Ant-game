@@ -9,23 +9,22 @@ public class pheromoneControlableAnt : MonoBehaviour
     private ControlableAnt move;
     public Transform redPheromone;
     public Transform bluePheromone;
-    void Start()
-    {
+    public GameObject pheromoneGroupe;
+
+    void Start(){
         move = GetComponent<ControlableAnt>();
     }
 
-    void FixedUpdate()
-    {
+    void FixedUpdate(){
         timer += Time.deltaTime;
-        if (move.holdingFood == true) { //Debug.Log("I'm holding food, so I'm releasing red pheromones");
+        if (move.holdingFood == true) {
             if (timer > timeToThink){
-                Instantiate(redPheromone, transform.position, Quaternion.identity);
+                Instantiate(redPheromone, transform.position, Quaternion.identity, pheromoneGroupe.transform);
                 timer = timer - timeToThink;
             }
-
-        }else{ //Debug.Log("I'm not holding food, so I'm releasing blue pheromones");
+        }else{
             if (timer > timeToThink){
-                Instantiate(bluePheromone, transform.position, Quaternion.identity);
+                Instantiate(bluePheromone, transform.position, Quaternion.identity, pheromoneGroupe.transform);
                 timer = timer - timeToThink;
             }
         }

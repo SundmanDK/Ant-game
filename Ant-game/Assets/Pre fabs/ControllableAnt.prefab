@@ -103,7 +103,6 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4345894374680401507}
   noFoodSprite: {fileID: 21300000, guid: c6197bbd81fccf846af5b7d754fec8f2, type: 3}
   foodSprite: {fileID: 21300000, guid: 1a55b3e332d79b541a354ed25aff0374, type: 3}
-  food: {fileID: 0}
   moveSpeed: 6
   holdingFood: 0
 --- !u!114 &-8079183091384580027
@@ -123,6 +122,7 @@ MonoBehaviour:
   weight: 1
   redPheromone: {fileID: 6012901642658095460, guid: 7e09623e87a25d549ac2082bdb0f2295, type: 3}
   bluePheromone: {fileID: 1385719544258867594, guid: 2d4c8884a1ef12843bf659a0ca1f3750, type: 3}
+  pheromoneGroupe: {fileID: 1337131891356213847, guid: c9a425c3ba75ef44c899818f519ed96f, type: 3}
 --- !u!70 &4345894374680401510
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -178,12 +178,13 @@ MonoBehaviour:
   damage: 1
   moveSpeed: 0
   targetLayer: 13
-  numberText: 
+  actualDamage: 0
   dmgText: {fileID: 4885865928676251705, guid: 1dfe2fb7cfa3fbe44899b2b488428de3, type: 3}
-  bossManage: {fileID: 0}
   healthBar: {fileID: 0}
   InitializeGameover: {fileID: 0}
   maxHealth: 0
+  poisonUnlocked: 0
+  poisonOnCooldown: 0
 --- !u!114 &-6733370617328179807
 MonoBehaviour:
   m_ObjectHideFlags: 0

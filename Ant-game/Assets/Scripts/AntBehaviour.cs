@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AntBehaviour : MonoBehaviour{
     private Rigidbody2D rigidbodyComponent;
+    private GameObject pheromoneGroupe;
     private FoodGrouping FG;
     private NestStorage NS;
     public SpriteRenderer spriteRenderer;
@@ -31,6 +32,7 @@ public class AntBehaviour : MonoBehaviour{
         rigidbodyComponent = GetComponent<Rigidbody2D>();
         NS = GetComponentInParent<NestStorage>();
         Physics2D.IgnoreLayerCollision(14,14,true);
+        pheromoneGroupe = GameObject.Find("PheromoneGroup");
         holdingFood = false;
         angleSegment = viewAngle / 3;
     }
@@ -54,12 +56,12 @@ public class AntBehaviour : MonoBehaviour{
         timer += Time.deltaTime;
         if (holdingFood == true) {  //Holding food lay red pheromone
             if (timer > timeBeforeNewPheromone){
-                Instantiate(redPheromone, transform.position, Quaternion.identity);
+                Instantiate(redPheromone, transform.position, Quaternion.identity, pheromoneGroupe.transform);
                 timer = timer - timeBeforeNewPheromone;
             }
         }else{                      //Not holding food lay blue pheromone
             if (timer > timeBeforeNewPheromone){
-                Instantiate(bluePheromone, transform.position, Quaternion.identity);
+                Instantiate(bluePheromone, transform.position, Quaternion.identity, pheromoneGroupe.transform);
                 timer = timer - timeBeforeNewPheromone;
             }
         }

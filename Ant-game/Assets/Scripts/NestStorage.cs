@@ -279,12 +279,12 @@ public class NestStorage : MonoBehaviour{
         Invoke("changeColorBack", 1);
 
     }
-    
+
     void changeColorBack(){
         textDisplayFood.color = numberWhiteColor;
         textDisplayFood.alpha = 255f;
     }
-
+    
     public void showStats(){
         string workcount = gameObject.transform.childCount.ToString();
         statTextArmor.text = AC.armor.ToString();

@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acce1664a3d21e842ad51ef320c09fe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pheromoneGroupe: {fileID: 1337131891356213847, guid: c9a425c3ba75ef44c899818f519ed96f, type: 3}
   spriteRenderer: {fileID: 7364772483841004675}
   noFoodSprite: {fileID: 21300000, guid: c6197bbd81fccf846af5b7d754fec8f2, type: 3}
   foodSprite: {fileID: 21300000, guid: 1a55b3e332d79b541a354ed25aff0374, type: 3}
