@@ -10,15 +10,11 @@ public class pheromoneInstantiat : MonoBehaviour
     public Transform redPheromone;
     public Transform bluePheromone;
     
-    void Start()
-    {
+    void Start(){
         mT = GetComponent<AntBehaviour>();
     }
 
-
-
-    void FixedUpdate()
-    {
+    void FixedUpdate(){
         timer += Time.deltaTime;
         if (mT.holdingFood == true) { //Debug.Log("I'm holding food, so I'm releasing red pheromones");
             if (timer > timeToThink){
