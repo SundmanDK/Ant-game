@@ -134,11 +134,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf71a48344cc1e45b4cc42456bb92b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: 0
+  food: 1000000
   score: 0
   gold: 0
+  income: 0
   maxHealth: 0
   currentHealth: 0
+  killedBosses: 0
   spawnButton: {fileID: 0}
   healthButton: {fileID: 0}
   healButton: {fileID: 0}
