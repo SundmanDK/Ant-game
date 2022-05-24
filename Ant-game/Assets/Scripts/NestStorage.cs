@@ -145,6 +145,7 @@ public class NestStorage : MonoBehaviour{
     void UpdateScore(){
         score = food * 10;
     }
+    
     void UpdateGold(){
         gold += income;
         textDisplayFood.text = gold.ToString();
@@ -153,10 +154,6 @@ public class NestStorage : MonoBehaviour{
     public void IncreasedIncome(){
         income = 10 + 5 * killedBosses;
         FloatingText.text = income.ToString();
-    }
-    public void IncreaseIncome(){
-        income = 10 + 5 *killedBosses;
-        FloatingText.text = income.ToString(); 
     }
 
     void CallFloatingText(){

@@ -72,17 +72,17 @@ public class AntBehaviour : MonoBehaviour{
 
         Collider2D[] targetsInViewRadius = Physics2D.OverlapCircleAll(transform.position, viewRadius, targetMask);
 
-        for (int i = 0; i < targetsInViewRadius.Length; i++){
-            Transform target = targetsInViewRadius[i].transform;
-            Vector3 directionToTarget = (target.position - transform.position).normalized;
+        foreach (Collider2D t in targetsInViewRadius){
+            Transform target = t.transform;
+            Vector3 vectorToTarget = (target.position - transform.position).normalized;
 
-            if (Vector3.Angle(-transform.right, directionToTarget) < 90 - viewAngle/6 && Vector3.Angle(transform.up, directionToTarget) < viewAngle/2){
+            if (Vector3.Angle(-transform.right, vectorToTarget) < 90 - viewAngle/6 && Vector3.Angle(transform.up, vectorToTarget) < viewAngle/2){
                 weightLeft += AssignWeight(target);
 
-            } else if (Vector3.Angle(transform.right, directionToTarget) < 90 - viewAngle/6 && Vector3.Angle(transform.up, directionToTarget) < viewAngle/2){
+            } else if (Vector3.Angle(transform.right, vectorToTarget) < 90 - viewAngle/6 && Vector3.Angle(transform.up, vectorToTarget) < viewAngle/2){
                 weightRight += AssignWeight(target);
 
-            } else if (Vector3.Angle(transform.up, directionToTarget) < viewAngle/6){
+            } else if (Vector3.Angle(transform.up, vectorToTarget) < viewAngle/6){
                 weightForward += AssignWeight(target);
             }
         }

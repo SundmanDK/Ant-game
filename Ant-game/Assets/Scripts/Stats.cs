@@ -68,7 +68,6 @@ public class Stats : MonoBehaviour{
             Attack(target);
             timeForAttack = 0;
             readyForAttack = false;
-            
         }
     }
 

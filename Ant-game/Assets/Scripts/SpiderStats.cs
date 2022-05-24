@@ -12,9 +12,6 @@ public class SpiderStats : Enemies{
         if(!slowOnCooldown){
             ApplySlow(target);
         }
-        if(poisoned){
-            PoisonTimer();
-        }
     }
     
     private void ApplySlow(Collision2D target){
