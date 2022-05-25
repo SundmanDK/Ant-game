@@ -255,7 +255,7 @@ public class NestStorage : MonoBehaviour{
             executeSpeedButton(cost);
             speedCostFactor += 1;
             updateButtonText(speedRef, speedText, calculateCost(20, speedCostFactor));
-        }
+        } else failedMoney();
     }
     void executeSpeedButton(int cost){
         pay(cost);
