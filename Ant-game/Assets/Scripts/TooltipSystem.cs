@@ -1,3 +1,10 @@
+//
+// *Inspired by tutorial on how to make tooltips 
+//   Auther : Game Dev Guide 
+//   Channel: https://www.youtube.com/c/GameDevGuide
+//
+//   Source : https://www.youtube.com/watch?v=HXFoUGw7eKk&t=519s&ab_channel=GameDevGuide
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
