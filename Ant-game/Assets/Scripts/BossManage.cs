@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossManage : MonoBehaviour
-{
+public class BossManage : MonoBehaviour{
    
     public GameObject InitializeGameover;
     public Stats[] enemies;
@@ -13,7 +12,6 @@ public class BossManage : MonoBehaviour
     public void updateBossCount(){
         children = gameObject.transform.childCount;
         if (children <= 1) { Victory(); }
-        Debug.Log("dead boss");
         statIncrease += 5;
         enemies = GetComponentsInChildren<Stats>();
         foreach(Stats stats in enemies){
@@ -25,6 +23,5 @@ public class BossManage : MonoBehaviour
 
     public void Victory(){
         InitializeGameover.GetComponent<GameoverInitializeScript>().Win();
-
     }
 }

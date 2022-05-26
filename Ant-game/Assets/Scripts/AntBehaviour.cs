@@ -86,6 +86,7 @@ public class AntBehaviour : MonoBehaviour{
                 weightForward += AssignWeight(target);
             }
         }
+        //Source from https://www.youtube.com/watch?v=rQG9aUWarwE&ab_channel=SebastianLague adapted to our purpose.
     }
 
     float AssignWeight(Transform target){
