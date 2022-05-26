@@ -1,3 +1,13 @@
+//
+// *The section of scenemangement & buttons are inspired by tutorial
+//  on learning how to make main menu using Unity
+//
+//   Auther : Brackeys
+//   Channel: https://www.youtube.com/c/Brackeys
+//   Source : https://www.youtube.com/watch?v=zc8ac_qUXQY&t=287s&ab_channel=Brackeys
+
+
+
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
