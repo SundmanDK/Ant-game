@@ -10,7 +10,6 @@ public class CameraController : MonoBehaviour
     private float tuneBorderRight = 75f;
     private float tuneBorderLeft = 75f;
     private float tuneBorderUp = 75f;
-    // private float tuneBorderDown  = 150f;
 
     private float boundsCameraRight = 100f;
     private float boundsCameraLeft = -100f;
@@ -20,10 +19,6 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         Vector3 mousePos = Input.mousePosition;
-        //     Debug.Log("these are the mousePos.x:" + mousePos.x);
-        //Debug.Log("these are the mousePos.y:" + mousePos.y);
-        //    Debug.Log("these are the position.x:" + transform.position.x);
-        //Debug.Log("these are the position.y:" + transform.position.y);
 
 
         if (lockCamera==true) {
