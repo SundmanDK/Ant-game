@@ -1,3 +1,12 @@
+//
+// The field of view in this script was made by modifying the code 
+// in the linked tutorial to fit our purpose best.
+// Method inspired by the turorial: FOVAssignWeights()
+//
+// Author : Sebastian Lague
+// Channel: https://www.youtube.com/c/SebastianLague
+// Source : https://www.youtube.com/watch?v=rQG9aUWarwE&ab_channel=SebastianLague
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -86,7 +95,6 @@ public class AntBehaviour : MonoBehaviour{
                 weightForward += AssignWeight(target);
             }
         }
-        //Source from https://www.youtube.com/watch?v=rQG9aUWarwE&ab_channel=SebastianLague adapted to our purpose.
     }
 
     float AssignWeight(Transform target){

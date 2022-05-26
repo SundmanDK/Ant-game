@@ -11,37 +11,23 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-
-
-public class Tooltip : MonoBehaviour
-{
-
+public class Tooltip : MonoBehaviour{
     public TextMeshProUGUI textHeader;
-
     public TextMeshProUGUI textContent;
-
     public LayoutElement LayoutElement;
-
     public int characterWrapLimit;
-
     public RectTransform rectTransform;
 
-    private void Awake()
-    {
+    private void Awake(){
         rectTransform = GetComponent<RectTransform>();
     }
 
-    public void SetText(string content, string header ="")
-    {
-        if (string.IsNullOrEmpty(header))
-        {
+    public void SetText(string content, string header =""){
+        if (string.IsNullOrEmpty(header)){
             textHeader.gameObject.SetActive(false);
-        }
-        else
-        {
+        } else {
             textHeader.gameObject.SetActive(true);
             textHeader.text = header;
-
         }
 
         textContent.text = content;
@@ -51,9 +37,7 @@ public class Tooltip : MonoBehaviour
         LayoutElement.enabled = (headerLength > characterWrapLimit || contentLength > characterWrapLimit) ? true : false;
     }
 
-    private void Update()
-    {
-
+    private void Update(){
         Vector2 position = Input.mousePosition;
 
         float pivotX = position.x / Screen.width;
@@ -61,7 +45,5 @@ public class Tooltip : MonoBehaviour
 
         rectTransform.pivot = new Vector2(pivotX,pivotY); 
         transform.position = position;
-
-
     }
 }

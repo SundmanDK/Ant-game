@@ -6,7 +6,6 @@
 //   Channel: https://www.youtube.com/c/Brackeys
 //   Source : https://www.youtube.com/watch?v=zc8ac_qUXQY&t=287s&ab_channel=Brackeys
 
-
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -30,8 +29,7 @@ public class startMenu : MonoBehaviour
 
     public TextMeshProUGUI tutorialText;
 
-    void Start()
-    {
+    void Start(){
         page = 1;
         updateText();
 
@@ -58,58 +56,39 @@ public class startMenu : MonoBehaviour
         backBtn.onClick.AddListener(backClick);
 
         tutorialMenu.SetActive(false);
-
     }
 
-
-    void startClick()
-    {
-
+    void startClick(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        Debug.Log("´Starting game ...");
     }
-    void endClick()
-    {
-        Debug.Log("Goodbye");
+
+    void endClick(){
         Application.Quit();
     }
 
-    void tutorialClick()
-    {
-        Debug.Log("tutorial starting");
-    
+    void tutorialClick(){   
         startUpMenu.SetActive(false);
         tutorialMenu.SetActive(true);
-       
     }
 
-    void cancelClick()
-    {
+    void cancelClick(){
         startUpMenu.SetActive(true);
         tutorialMenu.SetActive(false);
     }
 
-    void nextClick()
-    {
-            page = page + 1;
-        Debug.Log(page);
+    void nextClick(){
+        page = page + 1;
         updateText();
         if (page == 9) { page = 8; }
-
     }
 
-    void backClick()
-    {
-            page = page -1;
-        Debug.Log(page);
+    void backClick(){
+        page = page -1;
         updateText();
         if (page == 0) { page = 1; }
-
-
     }
 
-    void updateText()
-    {
+    void updateText(){
         if (page == 1) { tutorialText.text = "Ant colony is a game about you together with your workers collect resources and defeat bosses."; }
         if (page == 2) { tutorialText.text = "Left click to move your character. Food sources are scattered around the environment. Move your ant into the nutritious cucumbers to pick up a piece. Now return the food to your ant colony."; }
         if (page == 3) { tutorialText.text = "Food collected can be spent on a variety of upgrades and services for you and your colony! Use it wisely. It is crucial for your survival that you expand your population with worker ants."; }

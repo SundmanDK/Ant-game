@@ -1,3 +1,10 @@
+//
+// Following code was made by following the linked tutorial
+//
+// Author : Brackeys
+// Channel: https://www.youtube.com/c/Brackeys
+// Source : https://www.youtube.com/watch?v=BLfNP4Sc_iA&t=997s&ab_channel=Brackeys
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,5 +26,4 @@ public class HealthBar : MonoBehaviour{
         slider.value = health;
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
-    // Source https://discord.com/channels/760817916047261746/938782013807280129/979331307127599135
 }

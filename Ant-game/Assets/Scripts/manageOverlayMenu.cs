@@ -14,38 +14,29 @@ using UnityEngine;
 using TMPro;
 
 public class manageOverlayMenu : MonoBehaviour {
-public GameObject overlayMenu;
-public GameObject scoreMenu;
-public GameObject warningMenu;
-public GameObject options;
-public GameObject changeSpritePheromone;
-public GameObject changeCameralock;
+    public GameObject overlayMenu;
+    public GameObject scoreMenu;
+    public GameObject warningMenu;
+    public GameObject options;
+    public GameObject changeSpritePheromone;
+    public GameObject changeCameralock;
+    public GameObject Nest;
 
-
-public TMPro.TextMeshProUGUI textScore;
-public GameObject Nest;
-private Color scoreColor;
-public Button resumeButton;
-public Button quitButton;
-public Button yesButton;
-public Button noButton;
-    
-public Button optionsButtonRed;
-public Button optionsButtonBlue;
-public Button optionsCamaraLock;
+    public TMPro.TextMeshProUGUI textScore;
+    private Color scoreColor;
+    public Button resumeButton;
+    public Button quitButton;
+    public Button yesButton;
+    public Button noButton;
+    public Button optionsButtonRed;
+    public Button optionsButtonBlue;
+    public Button optionsCamaraLock;
 
     public bool toogleButttonRed;
     public bool toggleButtonBlue;
     public bool toogleButtonCamaraLock;
-
-    
-
  
-    void Start()
-    {
-       
-
-
+    void Start(){
         Color scoreColor = new Color(255f,255f, 0);
         textScore.color = scoreColor;
         Button resumeBtn = resumeButton.GetComponent<Button>();
@@ -68,120 +59,76 @@ public Button optionsCamaraLock;
 
         Button optionsBtnCamara = optionsCamaraLock.GetComponent<Button>();
         optionsBtnCamara.onClick.AddListener(lockCamara);
-
-
-
-        //   textScore = gameObject.GetComponent<TMPro.TextMeshProUGUI>();
-
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-
+    void Update(){
         if (Input.GetKeyDown(KeyCode.Escape)){
         warningMenu.gameObject.SetActive(false);
            toggleWindow();
         }
 
         if (overlayMenu.gameObject.activeSelf){
-                       Time.timeScale = 0f;
+            Time.timeScale = 0f;
             
             textScore.text = Nest.GetComponent<NestStorage>().score.ToString();
-
         } else {
             Time.timeScale = 1;
     
         }
-        
- 
-
-
     }
-
-  
 
     void toggleWindow(){
        
         overlayMenu.gameObject.SetActive(!overlayMenu.gameObject.activeSelf);
         scoreMenu.gameObject.SetActive(!scoreMenu.gameObject.activeSelf);
         options.gameObject.SetActive(!options.gameObject.activeSelf);
-}
+    }
 
+    void warningWindow(){
+        warningMenu.gameObject.SetActive(!warningMenu.gameObject.activeSelf);
+    }
 
-void warningWindow(){
-    warningMenu.gameObject.SetActive(!warningMenu.gameObject.activeSelf);
-     
-}
-
-    void quitToMenu()
-    {
+    void quitToMenu(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
-void closeWarningWindow(){
+    void closeWarningWindow(){
         warningMenu.gameObject.SetActive(false);
+    }
 
-}
-
-
-    void showRed()
-    {
-         if (toogleButttonRed)
-         {
+    void showRed(){
+         if (toogleButttonRed){
             toogleButttonRed = !toogleButttonRed;
-             optionsButtonRed.GetComponent<ButtonSpriteChanger>().ButtonOnVisual();
-             changeSpritePheromone.GetComponent<typePheromone>().Visable();
-
-         }
-         else
-         {
+            optionsButtonRed.GetComponent<ButtonSpriteChanger>().ButtonOnVisual();
+            changeSpritePheromone.GetComponent<typePheromone>().Visable();
+         } else {
             toogleButttonRed = !toogleButttonRed;
-             optionsButtonRed.GetComponent<ButtonSpriteChanger>().ButtonOffVisual();
-             changeSpritePheromone.GetComponent<typePheromone>().Invisable();
-
-         }
+            optionsButtonRed.GetComponent<ButtonSpriteChanger>().ButtonOffVisual();
+            changeSpritePheromone.GetComponent<typePheromone>().Invisable();
+        }
  
     }
-        void showBlue()
-        {
-            
-      
+    void showBlue() {   
         if (toggleButtonBlue) {
             toggleButtonBlue = !toggleButtonBlue;
             optionsButtonBlue.GetComponent<ButtonSpriteChanger>().ButtonOnVisual();
             changeSpritePheromone.GetComponent<typePheromone>().Visable();
-
-    
-            
-
-        }
-        else
-        {
+        } else {
             toggleButtonBlue = !toggleButtonBlue;
             optionsButtonBlue.GetComponent<ButtonSpriteChanger>().ButtonOffVisual();
             changeSpritePheromone.GetComponent<typePheromone>().Invisable();
-
         }
     }
-void lockCamara()
-    {
-        if (toogleButtonCamaraLock)
-        {
+
+    void lockCamara(){
+        if (toogleButtonCamaraLock){
             toogleButtonCamaraLock = !toogleButtonCamaraLock;
             optionsCamaraLock.GetComponent<ButtonSpriteChanger>().ButtonOnVisual();
             changeCameralock.GetComponent<CameraController>().lookToggleCamera();
-
-
-        }
-        else
-        {
+        } else {
             toogleButtonCamaraLock = !toogleButtonCamaraLock;
             optionsCamaraLock.GetComponent<ButtonSpriteChanger>().ButtonOffVisual();
             changeCameralock.GetComponent<CameraController>().lookToggleCamera();
-
         }
-
     }
 }

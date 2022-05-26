@@ -1,3 +1,10 @@
+//
+// Following code was made by following the linked tutorial
+//
+// Author : Sebastian Lague
+// Channel: https://www.youtube.com/c/SebastianLague
+// Source : https://www.youtube.com/watch?v=rQG9aUWarwE&ab_channel=SebastianLague
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,9 +18,8 @@ public class CombatFieldOfView : MonoBehaviour{
     float angleSegment;
 
     public LayerMask targetMask;
-    public LayerMask obstacleMask; //not used yet
+    public LayerMask obstacleMask;
 
-    //[HideInInspector]
     public List<Transform> visibleTargets = new List<Transform>();
 
     void Start(){
@@ -42,5 +48,3 @@ public class CombatFieldOfView : MonoBehaviour{
         }
     }
 }
-
-// Source from https://www.youtube.com/watch?v=rQG9aUWarwE&ab_channel=SebastianLague with additions to serve our purpose.
