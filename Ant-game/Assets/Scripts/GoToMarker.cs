@@ -6,8 +6,6 @@ public class GoToMarker : MonoBehaviour{
 
     Camera viewCamera;
 
-
-
     // Start is called before the first frame update
     void Start(){
         viewCamera = Camera.main;

@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
-{
+public class HealthBar : MonoBehaviour{
 
     public Slider slider;
     public Gradient gradient;
@@ -20,5 +19,5 @@ public class HealthBar : MonoBehaviour
         slider.value = health;
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
-    
+    // Source https://discord.com/channels/760817916047261746/938782013807280129/979331307127599135
 }
