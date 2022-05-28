@@ -9,16 +9,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class CombatFieldOfView : MonoBehaviour{
-
+public class CombatFieldOfView : MonoBehaviour{ 
     public float viewRadius;
     [Range(0,360)]
     public float viewAngle;
     float angleSegment;
 
     public LayerMask targetMask;
-    public LayerMask obstacleMask;
 
     public List<Transform> visibleTargets = new List<Transform>();
 

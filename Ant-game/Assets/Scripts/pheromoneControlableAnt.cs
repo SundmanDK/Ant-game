@@ -5,7 +5,6 @@ public class pheromoneControlableAnt : MonoBehaviour
 {
     public float timeToThink = 2.0f;
     public float timer = 0.0f;
-    public float weight = 1;
     private ControlableAnt move;
     public Transform redPheromone;
     public Transform bluePheromone;

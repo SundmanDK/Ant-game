@@ -12,8 +12,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using TMPro;
 
-public class startMenu : MonoBehaviour
-{
+public class startMenu : MonoBehaviour{
     public Button startButton;
     public Button exitButton;
     public Button tutorialButton;

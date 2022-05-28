@@ -12,7 +12,6 @@ public class AntCombat : Stats{
     public bool poisonOnCooldown = false;
     private float timeOnCooldown;
 
-
     void Start(){
         maxHealth = health;
         healthBar = GameObject.Find("Health bar").GetComponent<HealthBar>();

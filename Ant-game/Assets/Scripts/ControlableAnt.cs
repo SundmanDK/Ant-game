@@ -3,7 +3,6 @@ using System.Collections;
 
 public class ControlableAnt : MonoBehaviour{
     private Rigidbody2D rigidbodyComponent;
-    private Rigidbody2D rigidbodyComponentChild;
     private GameObject Marker;
     private CombatFieldOfView fow;
     private FoodGrouping FG;
@@ -11,7 +10,6 @@ public class ControlableAnt : MonoBehaviour{
     public SpriteRenderer spriteRenderer;
     public Sprite noFoodSprite;
     public Sprite foodSprite;
-    
 
     public float moveSpeed;
     public bool holdingFood;

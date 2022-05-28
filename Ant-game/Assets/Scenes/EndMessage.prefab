@@ -977,7 +977,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1903221943745308804}
-  - component: {fileID: 1066119451}
+  - component: {fileID: -3684689193144081349}
   m_Layer: 0
   m_Name: EndMessage
   m_TagString: Untagged
@@ -1000,7 +1000,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1066119451
+--- !u!114 &-3684689193144081349
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1009,9 +1009,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8282467007614070424}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 406a9d8c0ef04bf41908db8d074defdb, type: 3}
+  m_Script: {fileID: 11500000, guid: 34cb7e27de21149479fd5d48c82472b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textScore: {fileID: 1929925594772948166}
-  Nest: {fileID: 0}
+  Nest: {fileID: 4687752701114978926, guid: ed932c349d4c0ca42a5b850902343a5e, type: 3}
   quitButton: {fileID: 4352012596134881265}

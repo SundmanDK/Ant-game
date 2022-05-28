@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBehaviour : MonoBehaviour
-{
+public class EnemyBehaviour : MonoBehaviour{
     private Rigidbody2D rigidbodyComponent;
     private float moveSpeed;
     public bool inArea;
@@ -19,7 +18,6 @@ public class EnemyBehaviour : MonoBehaviour
         moveSpeed = stats.moveSpeed;
     }
 
-    
     void FixedUpdate(){
         if(inArea){
             followAnt();

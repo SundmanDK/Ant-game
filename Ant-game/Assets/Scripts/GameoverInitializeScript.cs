@@ -8,7 +8,6 @@ public class GameoverInitializeScript : MonoBehaviour{
     public GameObject ui;
 
     public void Lost(){
-    
         ui.gameObject.SetActive(false);
         Instantiate(endMessege, new Vector3(0, 0, 0), Quaternion.identity);
     }

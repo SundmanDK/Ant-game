@@ -78,7 +78,6 @@ public class manageOverlayMenu : MonoBehaviour {
     }
 
     void toggleWindow(){
-       
         overlayMenu.gameObject.SetActive(!overlayMenu.gameObject.activeSelf);
         scoreMenu.gameObject.SetActive(!scoreMenu.gameObject.activeSelf);
         options.gameObject.SetActive(!options.gameObject.activeSelf);

@@ -7,8 +7,6 @@ public class FoodGrouping : MonoBehaviour{
     private float scaleBasedOnFoodAmount;
     CircleCollider2D circleCol;
 
-
-    // Start is called before the first frame update
     void Start(){
         circleCol = GetComponent<CircleCollider2D>();
 
@@ -22,7 +20,6 @@ public class FoodGrouping : MonoBehaviour{
         }
     }
 
-    // Update is called once per frame
     public void updateSize(){
         scaleBasedOnFoodAmount = 1 + (amountOfFood / 10);
         Vector3 newScale = new Vector3(scaleBasedOnFoodAmount, scaleBasedOnFoodAmount, 1);

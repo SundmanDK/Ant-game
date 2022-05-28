@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class ManageWinMenu : MonoBehaviour{
+public class ManageGameOverMenu : MonoBehaviour{
     public TMPro.TextMeshProUGUI textScore;
     public GameObject Nest;
     public Button quitButton;

@@ -90,12 +90,9 @@ public class NestStorage : MonoBehaviour{
         viewBuff = 2;
        
         AC = ControllableAnt.GetComponent<AntCombat>();
-    
-
 
         Color numberWhiteColor = new Color(255, 255, 255);
         Color numberRedColor = new Color(255, 0, 0);
-
 
         FloatingText.text = income.ToString();
 
@@ -296,7 +293,6 @@ public class NestStorage : MonoBehaviour{
         textDisplayFood.alpha = 255f;
         textDisplayFood.text = gold.ToString();
         Invoke("changeColorBack", 1);
-
     }
 
     void changeColorBack(){
